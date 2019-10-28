@@ -1,0 +1,16 @@
+C:\Users\Code\Desktop\LibraryWinform\Library\obj\Debug\Library.csprojAssemblyReference.cache
+C:\Users\Code\Desktop\LibraryWinform\Library\obj\Debug\Library.Properties.Resources.resources
+C:\Users\Code\Desktop\LibraryWinform\Library\obj\Debug\Library.csproj.GenerateResource.cache
+C:\Users\Code\Desktop\LibraryWinform\Library\obj\Debug\Library.csproj.CoreCompileInputs.cache
+C:\Users\Code\Desktop\LibraryWinform\Library\bin\Debug\Library.exe.config
+C:\Users\Code\Desktop\LibraryWinform\Library\bin\Debug\Library.exe
+C:\Users\Code\Desktop\LibraryWinform\Library\bin\Debug\Library.pdb
+C:\Users\Code\Desktop\LibraryWinform\Library\bin\Debug\EntityFramework.dll
+C:\Users\Code\Desktop\LibraryWinform\Library\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Code\Desktop\LibraryWinform\Library\bin\Debug\EntityFramework.xml
+C:\Users\Code\Desktop\LibraryWinform\Library\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Code\Desktop\LibraryWinform\Library\obj\Debug\Library.csproj.CopyComplete
+C:\Users\Code\Desktop\LibraryWinform\Library\obj\Debug\Library.exe
+C:\Users\Code\Desktop\LibraryWinform\Library\obj\Debug\Library.pdb
+C:\Users\Code\Desktop\LibraryWinform\Library\obj\Debug\Library.Migrations.TablesBasicallyAdded.resources
+C:\Users\Code\Desktop\LibraryWinform\Library\obj\Debug\Library.Migrations.UserTablesNameChanged.resources
