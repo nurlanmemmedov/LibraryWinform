@@ -14,3 +14,11 @@ C:\Users\Code\Desktop\LibraryWinform\Library\obj\Debug\Library.exe
 C:\Users\Code\Desktop\LibraryWinform\Library\obj\Debug\Library.pdb
 C:\Users\Code\Desktop\LibraryWinform\Library\obj\Debug\Library.Migrations.TablesBasicallyAdded.resources
 C:\Users\Code\Desktop\LibraryWinform\Library\obj\Debug\Library.Migrations.UserTablesNameChanged.resources
+C:\Users\Code\Desktop\LibraryWinform\Library\obj\Debug\Library.Forms.Login.resources
+C:\Users\Code\Desktop\LibraryWinform\Library\obj\Debug\Library.Forms.ManagerCrud.resources
+C:\Users\Code\Desktop\LibraryWinform\Library\obj\Debug\Library.Forms.Operation.resources
+C:\Users\Code\Desktop\LibraryWinform\Library\obj\Debug\Library.Migrations.PhoneColumnAddedToManager.resources
+C:\Users\Code\Desktop\LibraryWinform\Library\obj\Debug\Library.Forms.BookCrud.resources
+C:\Users\Code\Desktop\LibraryWinform\Library\obj\Debug\Library.Migrations.AuthorColumnAddedToBook.resources
+C:\Users\Code\Desktop\LibraryWinform\Library\obj\Debug\Library.Forms.ClientCrud.resources
+C:\Users\Code\Desktop\LibraryWinform\Library\obj\Debug\Library.Migrations.OrderTableColumnsAdded.resources

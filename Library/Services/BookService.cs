@@ -28,10 +28,6 @@ namespace Library.Services
         }
         public void Update(Book book)
         {
-            if (!_libraryContext.Books.Contains(book))
-            {
-                throw new NullReferenceException();
-            }
             _libraryContext.Entry(book).State = System.Data.Entity.EntityState.Modified;
             _libraryContext.SaveChanges();
         }

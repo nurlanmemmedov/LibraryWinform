@@ -12,6 +12,7 @@ namespace Library.Models
         [Required]
 
         public string Surname { get; set; }
+        public string Phone { get; set; }
 
     }
 }

@@ -8,13 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Library
+namespace Library.Forms
 {
-    public partial class Form1 : Form
+    public partial class Operation : Form
     {
-        public Form1()
+        public Operation()
         {
             InitializeComponent();
+        }
+
+        private void BtnSearch_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
