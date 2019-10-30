@@ -10,14 +10,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Library.Models
 {
-    class Order
+    public class Order
     {
 
         public int Id { get; set; }
-        [Required]
-        public int ClientId { get; set; }
-        [Required]
-        public int BookId { get; set; }
+
         [Required]
         public DateTime OrderDate { get; set; }
         [Required]
@@ -27,7 +24,12 @@ namespace Library.Models
         public decimal Cost { get; set; }
         [Required]
         public bool Returned { get; set; }
+
+        [Required]
+        public int BookId { get; set; }
         public Book Book { get; set; }
+        [Required]
+        public int ClientId { get; set; }
         public Client Client { get; set; }
     }
 }

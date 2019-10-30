@@ -57,6 +57,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAL\LibraryContext.cs" />
+    <Compile Include="Forms\Adding.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Adding.Designer.cs">
+      <DependentUpon>Adding.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\BookCrud.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +93,18 @@
     <Compile Include="Forms\Operation.Designer.cs">
       <DependentUpon>Operation.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Returning.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Returning.Designer.cs">
+      <DependentUpon>Returning.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Search.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Search.Designer.cs">
+      <DependentUpon>Search.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\201910280600491_TablesBasicallyAdded.cs" />
     <Compile Include="Migrations\201910280600491_TablesBasicallyAdded.designer.cs">
       <DependentUpon>201910280600491_TablesBasicallyAdded.cs</DependentUpon>
@@ -107,6 +125,18 @@
     <Compile Include="Migrations\201910290549224_OrderTableColumnsAdded.designer.cs">
       <DependentUpon>201910290549224_OrderTableColumnsAdded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201910292047575_AttributesAdded.cs" />
+    <Compile Include="Migrations\201910292047575_AttributesAdded.designer.cs">
+      <DependentUpon>201910292047575_AttributesAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910292054337_AttributesAdded1.cs" />
+    <Compile Include="Migrations\201910292054337_AttributesAdded1.designer.cs">
+      <DependentUpon>201910292054337_AttributesAdded1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910292130006_AttributesDeleted.cs" />
+    <Compile Include="Migrations\201910292130006_AttributesDeleted.designer.cs">
+      <DependentUpon>201910292130006_AttributesDeleted.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\Book.cs" />
@@ -120,6 +150,10 @@
     <Compile Include="Services\BookService.cs" />
     <Compile Include="Services\ClientService.cs" />
     <Compile Include="Services\ManagerService.cs" />
+    <Compile Include="Services\OrderService.cs" />
+    <EmbeddedResource Include="Forms\Adding.resx">
+      <DependentUpon>Adding.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\BookCrud.resx">
       <DependentUpon>BookCrud.cs</DependentUpon>
     </EmbeddedResource>
@@ -135,6 +169,12 @@
     <EmbeddedResource Include="Forms\Operation.resx">
       <DependentUpon>Operation.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Returning.resx">
+      <DependentUpon>Returning.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Search.resx">
+      <DependentUpon>Search.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201910280600491_TablesBasicallyAdded.resx">
       <DependentUpon>201910280600491_TablesBasicallyAdded.cs</DependentUpon>
     </EmbeddedResource>
@@ -149,6 +189,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201910290549224_OrderTableColumnsAdded.resx">
       <DependentUpon>201910290549224_OrderTableColumnsAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910292047575_AttributesAdded.resx">
+      <DependentUpon>201910292047575_AttributesAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910292054337_AttributesAdded1.resx">
+      <DependentUpon>201910292054337_AttributesAdded1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910292130006_AttributesDeleted.resx">
+      <DependentUpon>201910292130006_AttributesDeleted.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

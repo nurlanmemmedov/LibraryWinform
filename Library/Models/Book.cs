@@ -8,7 +8,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Library.Models
 {
-    class Book
+    public class Book
     {
         public int Id { get; set; }
 
@@ -22,7 +22,7 @@ namespace Library.Models
         [Required]
         [Column(TypeName = "money")]
         public decimal Price { get; set; }
-        public ICollection<Order> Orders { get; set; }
+        public List<Order> Orders { get; set; }
 
     }
 }

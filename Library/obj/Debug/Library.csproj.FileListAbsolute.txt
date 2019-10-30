@@ -22,3 +22,9 @@ C:\Users\Code\Desktop\LibraryWinform\Library\obj\Debug\Library.Forms.BookCrud.re
 C:\Users\Code\Desktop\LibraryWinform\Library\obj\Debug\Library.Migrations.AuthorColumnAddedToBook.resources
 C:\Users\Code\Desktop\LibraryWinform\Library\obj\Debug\Library.Forms.ClientCrud.resources
 C:\Users\Code\Desktop\LibraryWinform\Library\obj\Debug\Library.Migrations.OrderTableColumnsAdded.resources
+C:\Users\Code\Desktop\LibraryWinform\Library\obj\Debug\Library.Forms.Search.resources
+C:\Users\Code\Desktop\LibraryWinform\Library\obj\Debug\Library.Forms.Adding.resources
+C:\Users\Code\Desktop\LibraryWinform\Library\obj\Debug\Library.Forms.Returning.resources
+C:\Users\Code\Desktop\LibraryWinform\Library\obj\Debug\Library.Migrations.AttributesAdded.resources
+C:\Users\Code\Desktop\LibraryWinform\Library\obj\Debug\Library.Migrations.AttributesAdded1.resources
+C:\Users\Code\Desktop\LibraryWinform\Library\obj\Debug\Library.Migrations.AttributesDeleted.resources

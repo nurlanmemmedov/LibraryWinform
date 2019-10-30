@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.BtnManagerCrud = new System.Windows.Forms.Button();
-            this.BtnBooksCrud = new System.Windows.Forms.Button();
             this.BtnClientsCrud = new System.Windows.Forms.Button();
+            this.BtnBooksCrud = new System.Windows.Forms.Button();
+            this.BtnManagerCrud = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.BtnSearch = new System.Windows.Forms.Button();
             this.BtnPayment = new System.Windows.Forms.Button();
+            this.BtnSearch = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -49,14 +49,15 @@
             this.panel1.Size = new System.Drawing.Size(232, 247);
             this.panel1.TabIndex = 0;
             // 
-            // BtnManagerCrud
+            // BtnClientsCrud
             // 
-            this.BtnManagerCrud.Location = new System.Drawing.Point(29, 33);
-            this.BtnManagerCrud.Name = "BtnManagerCrud";
-            this.BtnManagerCrud.Size = new System.Drawing.Size(177, 36);
-            this.BtnManagerCrud.TabIndex = 0;
-            this.BtnManagerCrud.Text = "Managers CRUD";
-            this.BtnManagerCrud.UseVisualStyleBackColor = true;
+            this.BtnClientsCrud.Location = new System.Drawing.Point(29, 174);
+            this.BtnClientsCrud.Name = "BtnClientsCrud";
+            this.BtnClientsCrud.Size = new System.Drawing.Size(177, 36);
+            this.BtnClientsCrud.TabIndex = 2;
+            this.BtnClientsCrud.Text = "Clients CRUD";
+            this.BtnClientsCrud.UseVisualStyleBackColor = true;
+            this.BtnClientsCrud.Click += new System.EventHandler(this.BtnClientsCrud_Click);
             // 
             // BtnBooksCrud
             // 
@@ -66,15 +67,17 @@
             this.BtnBooksCrud.TabIndex = 1;
             this.BtnBooksCrud.Text = "Books CRUD";
             this.BtnBooksCrud.UseVisualStyleBackColor = true;
+            this.BtnBooksCrud.Click += new System.EventHandler(this.BtnBooksCrud_Click);
             // 
-            // BtnClientsCrud
+            // BtnManagerCrud
             // 
-            this.BtnClientsCrud.Location = new System.Drawing.Point(29, 174);
-            this.BtnClientsCrud.Name = "BtnClientsCrud";
-            this.BtnClientsCrud.Size = new System.Drawing.Size(177, 36);
-            this.BtnClientsCrud.TabIndex = 2;
-            this.BtnClientsCrud.Text = "Clients CRUD";
-            this.BtnClientsCrud.UseVisualStyleBackColor = true;
+            this.BtnManagerCrud.Location = new System.Drawing.Point(29, 33);
+            this.BtnManagerCrud.Name = "BtnManagerCrud";
+            this.BtnManagerCrud.Size = new System.Drawing.Size(177, 36);
+            this.BtnManagerCrud.TabIndex = 0;
+            this.BtnManagerCrud.Text = "Managers CRUD";
+            this.BtnManagerCrud.UseVisualStyleBackColor = true;
+            this.BtnManagerCrud.Click += new System.EventHandler(this.BtnManagerCrud_Click);
             // 
             // panel2
             // 
@@ -85,6 +88,15 @@
             this.panel2.Size = new System.Drawing.Size(225, 174);
             this.panel2.TabIndex = 1;
             // 
+            // BtnPayment
+            // 
+            this.BtnPayment.Location = new System.Drawing.Point(15, 95);
+            this.BtnPayment.Name = "BtnPayment";
+            this.BtnPayment.Size = new System.Drawing.Size(190, 50);
+            this.BtnPayment.TabIndex = 1;
+            this.BtnPayment.Text = "Payment";
+            this.BtnPayment.UseVisualStyleBackColor = true;
+            // 
             // BtnSearch
             // 
             this.BtnSearch.Location = new System.Drawing.Point(15, 19);
@@ -94,15 +106,6 @@
             this.BtnSearch.Text = "Search";
             this.BtnSearch.UseVisualStyleBackColor = true;
             this.BtnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
-            // 
-            // BtnPayment
-            // 
-            this.BtnPayment.Location = new System.Drawing.Point(15, 95);
-            this.BtnPayment.Name = "BtnPayment";
-            this.BtnPayment.Size = new System.Drawing.Size(190, 50);
-            this.BtnPayment.TabIndex = 1;
-            this.BtnPayment.Text = "Payment";
-            this.BtnPayment.UseVisualStyleBackColor = true;
             // 
             // Operation
             // 
