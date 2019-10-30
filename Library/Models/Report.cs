@@ -4,10 +4,10 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Library.Models
 {
-    class Payment
+    class Report
     {
         public int Id { get; set; }
-        public int UserId { get; set; }
+        public int ClientId { get; set; }
         [Required]
         public int BookId { get; set; }
         [Required]

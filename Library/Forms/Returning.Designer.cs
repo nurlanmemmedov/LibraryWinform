@@ -38,6 +38,8 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TxtPayment = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DgvOrders)).BeginInit();
             this.SuspendLayout();
             // 
@@ -115,11 +117,29 @@
             this.Column7.HeaderText = "Returned";
             this.Column7.Name = "Column7";
             // 
+            // TxtPayment
+            // 
+            this.TxtPayment.Location = new System.Drawing.Point(325, 380);
+            this.TxtPayment.Name = "TxtPayment";
+            this.TxtPayment.Size = new System.Drawing.Size(173, 20);
+            this.TxtPayment.TabIndex = 4;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(325, 361);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(48, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Payment";
+            // 
             // Returning
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(735, 440);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.TxtPayment);
             this.Controls.Add(this.LblReturningBook);
             this.Controls.Add(this.TxtReturningBook);
             this.Controls.Add(this.BtnReturn);
@@ -143,5 +163,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.TextBox TxtPayment;
+        private System.Windows.Forms.Label label1;
     }
 }

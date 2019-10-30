@@ -35,6 +35,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.BtnPayment = new System.Windows.Forms.Button();
             this.BtnSearch = new System.Windows.Forms.Button();
+            this.BtnFollow = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -51,9 +52,9 @@
             // 
             // BtnClientsCrud
             // 
-            this.BtnClientsCrud.Location = new System.Drawing.Point(29, 174);
+            this.BtnClientsCrud.Location = new System.Drawing.Point(29, 167);
             this.BtnClientsCrud.Name = "BtnClientsCrud";
-            this.BtnClientsCrud.Size = new System.Drawing.Size(177, 36);
+            this.BtnClientsCrud.Size = new System.Drawing.Size(177, 50);
             this.BtnClientsCrud.TabIndex = 2;
             this.BtnClientsCrud.Text = "Clients CRUD";
             this.BtnClientsCrud.UseVisualStyleBackColor = true;
@@ -61,9 +62,9 @@
             // 
             // BtnBooksCrud
             // 
-            this.BtnBooksCrud.Location = new System.Drawing.Point(29, 102);
+            this.BtnBooksCrud.Location = new System.Drawing.Point(29, 95);
             this.BtnBooksCrud.Name = "BtnBooksCrud";
-            this.BtnBooksCrud.Size = new System.Drawing.Size(177, 36);
+            this.BtnBooksCrud.Size = new System.Drawing.Size(177, 50);
             this.BtnBooksCrud.TabIndex = 1;
             this.BtnBooksCrud.Text = "Books CRUD";
             this.BtnBooksCrud.UseVisualStyleBackColor = true;
@@ -71,9 +72,9 @@
             // 
             // BtnManagerCrud
             // 
-            this.BtnManagerCrud.Location = new System.Drawing.Point(29, 33);
+            this.BtnManagerCrud.Location = new System.Drawing.Point(29, 19);
             this.BtnManagerCrud.Name = "BtnManagerCrud";
-            this.BtnManagerCrud.Size = new System.Drawing.Size(177, 36);
+            this.BtnManagerCrud.Size = new System.Drawing.Size(177, 50);
             this.BtnManagerCrud.TabIndex = 0;
             this.BtnManagerCrud.Text = "Managers CRUD";
             this.BtnManagerCrud.UseVisualStyleBackColor = true;
@@ -81,16 +82,17 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.BtnFollow);
             this.panel2.Controls.Add(this.BtnPayment);
             this.panel2.Controls.Add(this.BtnSearch);
-            this.panel2.Location = new System.Drawing.Point(45, 71);
+            this.panel2.Location = new System.Drawing.Point(45, 37);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(225, 174);
+            this.panel2.Size = new System.Drawing.Size(225, 247);
             this.panel2.TabIndex = 1;
             // 
             // BtnPayment
             // 
-            this.BtnPayment.Location = new System.Drawing.Point(15, 95);
+            this.BtnPayment.Location = new System.Drawing.Point(15, 167);
             this.BtnPayment.Name = "BtnPayment";
             this.BtnPayment.Size = new System.Drawing.Size(190, 50);
             this.BtnPayment.TabIndex = 1;
@@ -106,6 +108,16 @@
             this.BtnSearch.Text = "Search";
             this.BtnSearch.UseVisualStyleBackColor = true;
             this.BtnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
+            // 
+            // BtnFollow
+            // 
+            this.BtnFollow.Location = new System.Drawing.Point(15, 95);
+            this.BtnFollow.Name = "BtnFollow";
+            this.BtnFollow.Size = new System.Drawing.Size(190, 50);
+            this.BtnFollow.TabIndex = 2;
+            this.BtnFollow.Text = "Follow The Orders";
+            this.BtnFollow.UseVisualStyleBackColor = true;
+            this.BtnFollow.Click += new System.EventHandler(this.BtnFollow_Click);
             // 
             // Operation
             // 
@@ -131,5 +143,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button BtnSearch;
         private System.Windows.Forms.Button BtnPayment;
+        private System.Windows.Forms.Button BtnFollow;
     }
 }

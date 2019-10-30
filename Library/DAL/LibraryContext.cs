@@ -18,7 +18,7 @@ namespace Library.DAL
         public DbSet<Admin> Admins { get; set; }
         public DbSet<Manager> Managers { get; set; }
         public DbSet<Client> Clients { get; set; }
-        public DbSet<Payment> Payments { get; set; }
+        public DbSet<Report> Payments { get; set; }
         public DbSet<Order> Orders { get; set; }
 
 

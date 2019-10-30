@@ -49,5 +49,13 @@ namespace Library.Forms
             clientCrud.Show();
             clientCrud.FormClosed += (s, args) => this.Close();
         }
+
+        private void BtnFollow_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Follow follow = new Follow();
+            follow.Show();
+            follow.FormClosed += (s, args) => this.Close();
+        }
     }
 }

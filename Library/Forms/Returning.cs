@@ -48,6 +48,15 @@ namespace Library.Forms
             _SelectedOrder = _orderService.Find(id);
 
             TxtReturningBook.Text = _SelectedOrder.Book.Title;
+            if ((DateTime.Now - _SelectedOrder.ReturnDate).Days > 0)
+            {
+                decimal a = (_SelectedOrder.Cost + ((DateTime.Now - _SelectedOrder.ReturnDate).Days) * (_SelectedOrder.Cost * 5 / 1000));
+                TxtPayment.Text = a.ToString();
+            }
+            else
+            {
+                TxtPayment.Text = _SelectedOrder.Cost.ToString();
+            }
         }
 
         private void BtnReturn_Click(object sender, EventArgs e)
