@@ -18,7 +18,6 @@ namespace Library.Models
         [Required]
         [MaxLength(100)]
         public string Author { get; set; }
-
         [Required]
         [Column(TypeName = "money")]
         public decimal Price { get; set; }

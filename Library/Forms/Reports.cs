@@ -15,25 +15,43 @@ namespace Library.Forms
 {
     public partial class Reports : Form
     {
-        private readonly ReportService _reportService;
+        private readonly OrderService _orderService;
         public Reports()
         {
             InitializeComponent();
-            _reportService = new ReportService();
-            FillReports();
+            _orderService = new OrderService();
             CmbRange.SelectedIndex = 12;
+        }
+        private void Reset()
+        {
+            DgvReports.Rows.Clear();
         }
         private void FillReports()
         {
-            foreach (Report item in _reportService.Reports())
+            foreach (Order item in _orderService.Orders())
             {
-                DgvReports.Rows.Add(item.Id, item.Client.Fullname, item.Book.Title, item.Pay);
+                if (item.Returned == true)
+                {
+                    DgvReports.Rows.Add(item.Id, item.Client.Fullname, item.Book.Title, item.Cost);
+                }
             }
         }
-
         private void CmbRange_SelectedIndexChanged(object sender, EventArgs e)
         {
-          
+
+            Reset();
+            if (CmbRange.SelectedIndex == 12)
+            {
+                FillReports();
+                return;
+            }
+            foreach (Order item in _orderService.Orders())
+            {
+                if (item.Returned == true && item.OrderDate.Month == CmbRange.SelectedIndex+1)
+                {
+                    DgvReports.Rows.Add(item.Id, item.Client.Fullname, item.Book.Title, item.Cost);
+                }
+            }
         }
         private void ExportToExcel()
         {
@@ -45,17 +63,16 @@ namespace Library.Forms
                 worksheet.Cell("C1").Value = "Pay";
 
                 int rowstart = 2;
-                foreach (var item in _reportService.Reports())
+                foreach (DataGridViewRow row in DgvReports.Rows)
                 {
-                    worksheet.Cell(rowstart, 1).Value = item.Client.Fullname;
-                    worksheet.Cell(rowstart, 2).Value = item.Book.Title;
-                    worksheet.Cell(rowstart, 3).Value = item.Pay;
+                    worksheet.Cell(rowstart, 1).Value = row.Cells[1].Value;
+                    worksheet.Cell(rowstart, 2).Value = row.Cells[2].Value;
+                    worksheet.Cell(rowstart, 3).Value = row.Cells[3].Value;
                     rowstart++;
                 }
                 workbook.SaveAs(@"C:\Users\Code\Desktop\Report.xlsx");
             }
         }
-
         private void BtnExport_Click(object sender, EventArgs e)
         {
             ExportToExcel();

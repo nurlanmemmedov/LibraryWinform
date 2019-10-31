@@ -36,5 +36,10 @@ namespace Library.Services
             Order order = _libraryContext.Orders.Include("Book").FirstOrDefault(b=>b.Id==id);
             return order;
         }
+        public void Update(Order order)
+        {
+            _libraryContext.Entry(order).State = System.Data.Entity.EntityState.Modified;
+            _libraryContext.SaveChanges();
+        }
     }
 }

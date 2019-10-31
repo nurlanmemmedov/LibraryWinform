@@ -17,7 +17,7 @@ namespace Library.Forms
     {
         private readonly BookService _bookService;
         private readonly OrderService _orderService;
-        private readonly ReportService _reportService;
+        //private readonly ReportService _reportService;
         private Client _SelectedCli;
         private Order _SelectedOrder;
         public Returning(Client SelectedCli)
@@ -25,7 +25,7 @@ namespace Library.Forms
             InitializeComponent();
             _bookService = new BookService();
             _orderService = new OrderService();
-            _reportService = new ReportService();
+            //_reportService = new ReportService();
             this._SelectedCli = SelectedCli;
             _SelectedOrder = new Order();
             FillClientBooks();
@@ -57,8 +57,8 @@ namespace Library.Forms
             TxtReturningBook.Text = _SelectedOrder.Book.Title;
             if ((DateTime.Now - _SelectedOrder.ReturnDate).Days > 0)
             {
-                decimal a = (_SelectedOrder.Cost + ((DateTime.Now - _SelectedOrder.ReturnDate).Days) * (_SelectedOrder.Cost * 5 / 1000));
-                TxtPayment.Text = a.ToString();
+                decimal Payment = (_SelectedOrder.Cost + ((DateTime.Now - _SelectedOrder.ReturnDate).Days) * (_SelectedOrder.Cost * 5 / 1000));
+                TxtPayment.Text = Payment.ToString();
             }
             else
             {
@@ -68,16 +68,11 @@ namespace Library.Forms
 
         private void BtnReturn_Click(object sender, EventArgs e)
         {
-            _orderService.Delete(_SelectedOrder);
+            _SelectedOrder.Returned = true;
+            _SelectedOrder.Cost = Convert.ToDecimal(TxtPayment.Text);
+            _orderService.Update(_SelectedOrder);
             DgvOrders.Rows.Clear();
             FillClientBooks();
-            Report report = new Report()
-            {
-                ClientId = _SelectedOrder.ClientId,
-                BookId = _SelectedOrder.BookId,
-                Pay = Convert.ToDecimal(TxtPayment.Text)
-            };
-            _reportService.Add(report);
             Reset();
         }
     }

@@ -24,7 +24,6 @@ namespace Library.Models
         public decimal Cost { get; set; }
         [Required]
         public bool Returned { get; set; }
-
         [Required]
         public int BookId { get; set; }
         public Book Book { get; set; }
