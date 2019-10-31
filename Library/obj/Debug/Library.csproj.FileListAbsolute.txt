@@ -32,3 +32,12 @@ C:\Users\Code\Desktop\LibraryWinform\Library\obj\Debug\Library.Forms.Follow.reso
 C:\Users\Code\Desktop\LibraryWinform\Library\obj\Debug\Library.Forms.Reports.resources
 C:\Users\Code\Desktop\LibraryWinform\Library\obj\Debug\Library.Migrations.PaymentsTableNameChanged.resources
 C:\Users\Code\Desktop\LibraryWinform\Library\obj\Debug\Library.Migrations.ForeignKeyBugFixed.resources
+C:\Users\Code\Desktop\LibraryWinform\Library\bin\Debug\ClosedXML.dll
+C:\Users\Code\Desktop\LibraryWinform\Library\bin\Debug\DocumentFormat.OpenXml.dll
+C:\Users\Code\Desktop\LibraryWinform\Library\bin\Debug\ExcelNumberFormat.dll
+C:\Users\Code\Desktop\LibraryWinform\Library\bin\Debug\FastMember.dll
+C:\Users\Code\Desktop\LibraryWinform\Library\bin\Debug\System.IO.Packaging.dll
+C:\Users\Code\Desktop\LibraryWinform\Library\bin\Debug\ClosedXML.pdb
+C:\Users\Code\Desktop\LibraryWinform\Library\bin\Debug\ClosedXML.xml
+C:\Users\Code\Desktop\LibraryWinform\Library\bin\Debug\DocumentFormat.OpenXml.xml
+C:\Users\Code\Desktop\LibraryWinform\Library\bin\Debug\ExcelNumberFormat.xml

@@ -105,6 +105,7 @@
             this.BtnExport.TabIndex = 2;
             this.BtnExport.Text = "Export to Excel";
             this.BtnExport.UseVisualStyleBackColor = true;
+            this.BtnExport.Click += new System.EventHandler(this.BtnExport_Click);
             // 
             // LblRange
             // 
