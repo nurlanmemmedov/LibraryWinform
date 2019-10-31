@@ -33,9 +33,9 @@
             this.BtnBooksCrud = new System.Windows.Forms.Button();
             this.BtnManagerCrud = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.BtnFollow = new System.Windows.Forms.Button();
             this.BtnPayment = new System.Windows.Forms.Button();
             this.BtnSearch = new System.Windows.Forms.Button();
-            this.BtnFollow = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -90,6 +90,16 @@
             this.panel2.Size = new System.Drawing.Size(225, 247);
             this.panel2.TabIndex = 1;
             // 
+            // BtnFollow
+            // 
+            this.BtnFollow.Location = new System.Drawing.Point(15, 95);
+            this.BtnFollow.Name = "BtnFollow";
+            this.BtnFollow.Size = new System.Drawing.Size(190, 50);
+            this.BtnFollow.TabIndex = 2;
+            this.BtnFollow.Text = "Follow The Orders";
+            this.BtnFollow.UseVisualStyleBackColor = true;
+            this.BtnFollow.Click += new System.EventHandler(this.BtnFollow_Click);
+            // 
             // BtnPayment
             // 
             this.BtnPayment.Location = new System.Drawing.Point(15, 167);
@@ -98,6 +108,7 @@
             this.BtnPayment.TabIndex = 1;
             this.BtnPayment.Text = "Payment";
             this.BtnPayment.UseVisualStyleBackColor = true;
+            this.BtnPayment.Click += new System.EventHandler(this.BtnPayment_Click);
             // 
             // BtnSearch
             // 
@@ -108,16 +119,6 @@
             this.BtnSearch.Text = "Search";
             this.BtnSearch.UseVisualStyleBackColor = true;
             this.BtnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
-            // 
-            // BtnFollow
-            // 
-            this.BtnFollow.Location = new System.Drawing.Point(15, 95);
-            this.BtnFollow.Name = "BtnFollow";
-            this.BtnFollow.Size = new System.Drawing.Size(190, 50);
-            this.BtnFollow.TabIndex = 2;
-            this.BtnFollow.Text = "Follow The Orders";
-            this.BtnFollow.UseVisualStyleBackColor = true;
-            this.BtnFollow.Click += new System.EventHandler(this.BtnFollow_Click);
             // 
             // Operation
             // 

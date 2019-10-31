@@ -57,5 +57,13 @@ namespace Library.Forms
             follow.Show();
             follow.FormClosed += (s, args) => this.Close();
         }
+
+        private void BtnPayment_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Reports report = new Reports();
+            report.Show();
+            report.FormClosed += (s, args) => this.Close();
+        }
     }
 }

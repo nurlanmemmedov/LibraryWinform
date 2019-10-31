@@ -13,7 +13,7 @@ namespace Library.Models
         [Required]
         [Column(TypeName = "money")]
         public decimal Pay { get; set; }
-        public Client User { get; set; }
+        public Client Client { get; set; }
         public Book Book { get; set; }
     }
 }

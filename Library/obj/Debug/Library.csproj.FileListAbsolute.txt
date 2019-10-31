@@ -30,3 +30,5 @@ C:\Users\Code\Desktop\LibraryWinform\Library\obj\Debug\Library.Migrations.Attrib
 C:\Users\Code\Desktop\LibraryWinform\Library\obj\Debug\Library.Migrations.AttributesDeleted.resources
 C:\Users\Code\Desktop\LibraryWinform\Library\obj\Debug\Library.Forms.Follow.resources
 C:\Users\Code\Desktop\LibraryWinform\Library\obj\Debug\Library.Forms.Reports.resources
+C:\Users\Code\Desktop\LibraryWinform\Library\obj\Debug\Library.Migrations.PaymentsTableNameChanged.resources
+C:\Users\Code\Desktop\LibraryWinform\Library\obj\Debug\Library.Migrations.ForeignKeyBugFixed.resources
