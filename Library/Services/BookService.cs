@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Library.DAL;
 using Library.Models;
+using System.Data.Entity;
 
 namespace Library.Services
 {

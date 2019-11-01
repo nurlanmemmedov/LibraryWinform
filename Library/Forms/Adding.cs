@@ -37,13 +37,16 @@ namespace Library.Forms
         private void FillAllBooksExceptClients()
         {
             foreach (Book item in _bookService.All())
-            { 
+            {
                 //foreach (Order orderItem in _orderService.Orders())
                 //{
-                    //if (item.Id != orderItem.BookId && orderItem.ClientId == _SelectedCli.Id)
-                    //{
-                        DgvAllBooksExceptClients.Rows.Add(item.Id, item.Title, item.Price, item.Author);
-                //    }
+                //if (item.Id != orderItem.BookId && orderItem.ClientId == _SelectedCli.Id)
+                //{
+                if (item.Count > 0)
+                {
+                    DgvAllBooksExceptClients.Rows.Add(item.Id, item.Title, item.Price, item.Author);
+                }
+                    //    }
                 //}
 
             }
@@ -81,6 +84,8 @@ namespace Library.Forms
                 Returned = false
             };
             _orderService.Add(order);
+            _SelectedBook.Count--;
+            _bookService.Update(_SelectedBook);
             DgvOrders.Rows.Clear();
             FillBasket();
             Reset();

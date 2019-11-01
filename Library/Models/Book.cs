@@ -11,13 +11,14 @@ namespace Library.Models
     public class Book
     {
         public int Id { get; set; }
-
         [Required]
         [MaxLength(50)]
         public string Title { get; set; }
         [Required]
         [MaxLength(100)]
         public string Author { get; set; }
+        [Required]
+        public int Count { get; set; }
         [Required]
         [Column(TypeName = "money")]
         public decimal Price { get; set; }

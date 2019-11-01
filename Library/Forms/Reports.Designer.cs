@@ -36,6 +36,8 @@
             this.CmbRange = new System.Windows.Forms.ComboBox();
             this.BtnExport = new System.Windows.Forms.Button();
             this.LblRange = new System.Windows.Forms.Label();
+            this.Txtİncome = new System.Windows.Forms.TextBox();
+            this.Lblİncome = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DgvReports)).BeginInit();
             this.SuspendLayout();
             // 
@@ -116,11 +118,28 @@
             this.LblRange.TabIndex = 3;
             this.LblRange.Text = "Choose a Range";
             // 
+            // Txtİncome
+            // 
+            this.Txtİncome.Location = new System.Drawing.Point(46, 414);
+            this.Txtİncome.Name = "Txtİncome";
+            this.Txtİncome.Size = new System.Drawing.Size(139, 20);
+            this.Txtİncome.TabIndex = 4;
+            // 
+            // Lblİncome
+            // 
+            this.Lblİncome.AutoSize = true;
+            this.Lblİncome.Location = new System.Drawing.Point(46, 395);
+            this.Lblİncome.Name = "Lblİncome";
+            this.Lblİncome.Size = new System.Drawing.Size(0, 13);
+            this.Lblİncome.TabIndex = 5;
+            // 
             // Reports
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(533, 452);
+            this.Controls.Add(this.Lblİncome);
+            this.Controls.Add(this.Txtİncome);
             this.Controls.Add(this.CmbRange);
             this.Controls.Add(this.LblRange);
             this.Controls.Add(this.BtnExport);
@@ -143,5 +162,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.TextBox Txtİncome;
+        private System.Windows.Forms.Label Lblİncome;
     }
 }

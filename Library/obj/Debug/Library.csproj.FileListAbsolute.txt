@@ -44,3 +44,4 @@ C:\Users\Code\Desktop\LibraryWinform\Library\bin\Debug\ExcelNumberFormat.xml
 C:\Users\Code\Desktop\LibraryWinform\Library\bin\Debug\System.IO.Packaging.xml
 C:\Users\Code\Desktop\LibraryWinform\Library\obj\Debug\Library.Migrations.ShortComingsFixed.resources
 C:\Users\Code\Desktop\LibraryWinform\Library\obj\Debug\Library.Migrations.ReportTableDeleted.resources
+C:\Users\Code\Desktop\LibraryWinform\Library\obj\Debug\Library.Migrations.CountColumnAddedToBookTable.resources

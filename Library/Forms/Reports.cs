@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Library.Models;
 using Library.Services;
@@ -22,9 +15,12 @@ namespace Library.Forms
             _orderService = new OrderService();
             CmbRange.SelectedIndex = 12;
         }
+        decimal Income = 0;
         private void Reset()
         {
             DgvReports.Rows.Clear();
+            Lblİncome.Text = string.Empty;
+            Income = 0;
         }
         private void FillReports()
         {
@@ -33,6 +29,7 @@ namespace Library.Forms
                 if (item.Returned == true)
                 {
                     DgvReports.Rows.Add(item.Id, item.Client.Fullname, item.Book.Title, item.Cost);
+                    Income += item.Cost;
                 }
             }
         }
@@ -43,6 +40,8 @@ namespace Library.Forms
             if (CmbRange.SelectedIndex == 12)
             {
                 FillReports();
+                Lblİncome.Text = "Total Income of Year";
+                Txtİncome.Text = Income.ToString();
                 return;
             }
             foreach (Order item in _orderService.Orders())
@@ -50,8 +49,11 @@ namespace Library.Forms
                 if (item.Returned == true && item.OrderDate.Month == CmbRange.SelectedIndex+1)
                 {
                     DgvReports.Rows.Add(item.Id, item.Client.Fullname, item.Book.Title, item.Cost);
+                    Income += item.Cost;
                 }
             }
+            Lblİncome.Text = "Total Income of" + " "+CmbRange.Text;
+            Txtİncome.Text = Income.ToString();
         }
         private void ExportToExcel()
         {
@@ -62,6 +64,10 @@ namespace Library.Forms
                 worksheet.Cell("B1").Value = "Book Name";
                 worksheet.Cell("C1").Value = "Pay";
 
+                worksheet.Column("A").Width = 30;
+                worksheet.Column("B").Width = 30;
+                worksheet.Column("C").Width = 15;
+
                 int rowstart = 2;
                 foreach (DataGridViewRow row in DgvReports.Rows)
                 {
@@ -70,7 +76,7 @@ namespace Library.Forms
                     worksheet.Cell(rowstart, 3).Value = row.Cells[3].Value;
                     rowstart++;
                 }
-                workbook.SaveAs(@"C:\Users\Code\Desktop\Report.xlsx");
+                workbook.SaveAs(@"C:\Users\Code\Desktop\"+CmbRange.Text+ "-Report.xlsx");
             }
         }
         private void BtnExport_Click(object sender, EventArgs e)

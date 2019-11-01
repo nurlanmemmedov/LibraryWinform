@@ -36,6 +36,7 @@
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LblPrice = new System.Windows.Forms.Label();
             this.LblTitle = new System.Windows.Forms.Label();
             this.BtnAdd = new System.Windows.Forms.Button();
@@ -43,6 +44,8 @@
             this.TxtTitle = new System.Windows.Forms.TextBox();
             this.LblAuthor = new System.Windows.Forms.Label();
             this.TxtAuthor = new System.Windows.Forms.TextBox();
+            this.LblCount = new System.Windows.Forms.Label();
+            this.TxtCount = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.DgvBooks)).BeginInit();
             this.SuspendLayout();
             // 
@@ -87,7 +90,8 @@
             this.Column1,
             this.Column2,
             this.Column3,
-            this.Column4});
+            this.Column4,
+            this.Column5});
             this.DgvBooks.Location = new System.Drawing.Point(294, 38);
             this.DgvBooks.Name = "DgvBooks";
             this.DgvBooks.Size = new System.Drawing.Size(359, 302);
@@ -115,10 +119,15 @@
             this.Column4.HeaderText = "Author";
             this.Column4.Name = "Column4";
             // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Count";
+            this.Column5.Name = "Column5";
+            // 
             // LblPrice
             // 
             this.LblPrice.AutoSize = true;
-            this.LblPrice.Location = new System.Drawing.Point(35, 115);
+            this.LblPrice.Location = new System.Drawing.Point(35, 103);
             this.LblPrice.Name = "LblPrice";
             this.LblPrice.Size = new System.Drawing.Size(31, 13);
             this.LblPrice.TabIndex = 18;
@@ -145,7 +154,7 @@
             // 
             // TxtPrice
             // 
-            this.TxtPrice.Location = new System.Drawing.Point(35, 137);
+            this.TxtPrice.Location = new System.Drawing.Point(35, 125);
             this.TxtPrice.Name = "TxtPrice";
             this.TxtPrice.Size = new System.Drawing.Size(227, 20);
             this.TxtPrice.TabIndex = 14;
@@ -160,7 +169,7 @@
             // LblAuthor
             // 
             this.LblAuthor.AutoSize = true;
-            this.LblAuthor.Location = new System.Drawing.Point(35, 198);
+            this.LblAuthor.Location = new System.Drawing.Point(35, 161);
             this.LblAuthor.Name = "LblAuthor";
             this.LblAuthor.Size = new System.Drawing.Size(38, 13);
             this.LblAuthor.TabIndex = 23;
@@ -168,16 +177,34 @@
             // 
             // TxtAuthor
             // 
-            this.TxtAuthor.Location = new System.Drawing.Point(35, 220);
+            this.TxtAuthor.Location = new System.Drawing.Point(35, 183);
             this.TxtAuthor.Name = "TxtAuthor";
             this.TxtAuthor.Size = new System.Drawing.Size(227, 20);
             this.TxtAuthor.TabIndex = 22;
+            // 
+            // LblCount
+            // 
+            this.LblCount.AutoSize = true;
+            this.LblCount.Location = new System.Drawing.Point(35, 223);
+            this.LblCount.Name = "LblCount";
+            this.LblCount.Size = new System.Drawing.Size(35, 13);
+            this.LblCount.TabIndex = 25;
+            this.LblCount.Text = "Count";
+            // 
+            // TxtCount
+            // 
+            this.TxtCount.Location = new System.Drawing.Point(35, 245);
+            this.TxtCount.Name = "TxtCount";
+            this.TxtCount.Size = new System.Drawing.Size(227, 20);
+            this.TxtCount.TabIndex = 24;
             // 
             // BookCrud
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(684, 365);
+            this.Controls.Add(this.LblCount);
+            this.Controls.Add(this.TxtCount);
             this.Controls.Add(this.LblAuthor);
             this.Controls.Add(this.TxtAuthor);
             this.Controls.Add(this.BtnCancel);
@@ -214,5 +241,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.Label LblAuthor;
         private System.Windows.Forms.TextBox TxtAuthor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.Label LblCount;
+        private System.Windows.Forms.TextBox TxtCount;
     }
 }

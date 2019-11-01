@@ -17,7 +17,6 @@ namespace Library.Forms
     {
         private readonly BookService _bookService;
         private readonly OrderService _orderService;
-        //private readonly ReportService _reportService;
         private Client _SelectedCli;
         private Order _SelectedOrder;
         public Returning(Client SelectedCli)
@@ -25,7 +24,6 @@ namespace Library.Forms
             InitializeComponent();
             _bookService = new BookService();
             _orderService = new OrderService();
-            //_reportService = new ReportService();
             this._SelectedCli = SelectedCli;
             _SelectedOrder = new Order();
             FillClientBooks();
@@ -53,7 +51,6 @@ namespace Library.Forms
         {
             int id = Convert.ToInt32(DgvOrders.Rows[e.RowIndex].Cells[0].Value);
             _SelectedOrder = _orderService.Find(id);
-
             TxtReturningBook.Text = _SelectedOrder.Book.Title;
             if ((DateTime.Now - _SelectedOrder.ReturnDate).Days > 0)
             {
@@ -70,6 +67,7 @@ namespace Library.Forms
         {
             _SelectedOrder.Returned = true;
             _SelectedOrder.Cost = Convert.ToDecimal(TxtPayment.Text);
+            _SelectedOrder.Book.Count++;
             _orderService.Update(_SelectedOrder);
             DgvOrders.Rows.Clear();
             FillClientBooks();
