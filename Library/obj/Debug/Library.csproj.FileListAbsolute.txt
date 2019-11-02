@@ -48,3 +48,4 @@ C:\Users\Code\Desktop\LibraryWinform\Library\obj\Debug\Library.csproj.CopyComple
 C:\Users\Code\Desktop\LibraryWinform\Library\obj\Debug\Library.exe
 C:\Users\Code\Desktop\LibraryWinform\Library\obj\Debug\Library.pdb
 C:\Users\Code\Desktop\LibraryWinform\Library\obj\Debug\Library.csprojAssemblyReference.cache
+C:\Users\Code\Desktop\LibraryWinform\Library\obj\Debug\Library.Migrations.AdminTableDeletedIsAdminColumnAddedToManager.resources

@@ -39,5 +39,20 @@ namespace Library.Services
             Manager manager =  _libraryContext.Managers.Find(id);
             return manager;
         }
+        public int Login(string username, string password)
+        {
+            Manager manager = null;
+            int Id = -1;
+            manager = _libraryContext.Managers.FirstOrDefault(a => a.Username == username && a.Password == password);
+            if (manager != null)
+            {
+                Id = manager.Id;
+            }
+            else
+            {
+                Id = -1;
+            }
+            return Id;
+        }
     }
 }

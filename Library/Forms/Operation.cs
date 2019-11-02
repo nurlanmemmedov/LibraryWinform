@@ -14,10 +14,20 @@ namespace Library.Forms
 {
     public partial class Operation : Form
     {
-        public Operation()
+        private Manager Manager;
+        public Operation(Manager manager)
         {
             InitializeComponent();
+            this.Manager = manager;
+            if (!Manager.IsAdmin)
+            {
+                BtnBooksCrud.Visible = false;
+                BtnPayment.Visible = false;
+                BtnManagerCrud.Visible = false;
+                return;
+            }
         }
+       
         private void BtnSearch_Click(object sender, EventArgs e)
         {
             this.Hide();

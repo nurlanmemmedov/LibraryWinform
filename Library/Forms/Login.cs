@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using Library.Models;
 using Library.Services;
 
 
@@ -7,30 +8,31 @@ namespace Library.Forms
 {
     public partial class Login : Form
     {
-        private readonly AdminService _adminService;
+        private readonly ManagerService _managerService;
         public Login()
         {
             InitializeComponent();
-            _adminService = new AdminService();
+            _managerService = new ManagerService();
         }
-
-        private void BtnLogin_Click(object sender, EventArgs e)
+        private void BtnLogin_Click_1(object sender, EventArgs e)
         {
-            if(TxtUsername.Text ==string.Empty || TxtPassword.Text == string.Empty)
+            if (TxtUsername.Text == string.Empty || TxtPassword.Text == string.Empty)
             {
                 MessageBox.Show("Username and password should not be empty");
                 return;
             }
-           if( _adminService.Login(TxtUsername.Text, TxtPassword.Text)==-1)
+            int Id = _managerService.Login(TxtUsername.Text, TxtPassword.Text);
+            if (Id == -1)
             {
-                MessageBox.Show("this Admin was not found");
+                MessageBox.Show("Username or Password are False");
                 return;
             }
-
             this.Hide();
-            Operation operation = new Operation();
+            Manager manager = _managerService.Find(Id);
+            Operation operation = new Operation(manager);
             operation.Show();
             operation.FormClosed += (s, args) => this.Close();
         }
+
     }
 }
