@@ -191,6 +191,18 @@
     <Compile Include="Migrations\201910311834055_CountColumnAddedToBookTable.designer.cs">
       <DependentUpon>201910311834055_CountColumnAddedToBookTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201911020728285_ReturningDateAndMustReturnDateColumnsAddedToOrder.cs" />
+    <Compile Include="Migrations\201911020728285_ReturningDateAndMustReturnDateColumnsAddedToOrder.designer.cs">
+      <DependentUpon>201911020728285_ReturningDateAndMustReturnDateColumnsAddedToOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911020815283_MakedReturningDateNullableTrue.cs" />
+    <Compile Include="Migrations\201911020815283_MakedReturningDateNullableTrue.designer.cs">
+      <DependentUpon>201911020815283_MakedReturningDateNullableTrue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911020835484_ChangedDateTimeFormat.cs" />
+    <Compile Include="Migrations\201911020835484_ChangedDateTimeFormat.designer.cs">
+      <DependentUpon>201911020835484_ChangedDateTimeFormat.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\Book.cs" />
@@ -272,6 +284,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201910311834055_CountColumnAddedToBookTable.resx">
       <DependentUpon>201910311834055_CountColumnAddedToBookTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911020728285_ReturningDateAndMustReturnDateColumnsAddedToOrder.resx">
+      <DependentUpon>201911020728285_ReturningDateAndMustReturnDateColumnsAddedToOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911020815283_MakedReturningDateNullableTrue.resx">
+      <DependentUpon>201911020815283_MakedReturningDateNullableTrue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911020835484_ChangedDateTimeFormat.resx">
+      <DependentUpon>201911020835484_ChangedDateTimeFormat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

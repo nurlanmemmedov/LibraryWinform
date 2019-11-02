@@ -41,37 +41,45 @@ namespace Library.Forms
                 {
                     if (orderItem.ClientId == _SelectedCli.Id && item.Id == orderItem.BookId)
                     {
-                        DgvOrders.Rows.Add(orderItem.Id, orderItem.Book.Title, orderItem.OrderDate, orderItem.ReturnDate, orderItem.Cost, orderItem.Returned);
+                        DgvOrders.Rows.Add(orderItem.Id, orderItem.Book.Title, orderItem.OrderDate, orderItem.MustReturnAt, orderItem.Cost, orderItem.Returned);
                     }
                 }
             }
         }
 
-        private void DgvOrders_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+
+        private void DgvOrders_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            int id = Convert.ToInt32(DgvOrders.Rows[e.RowIndex].Cells[0].Value);
+        int id = Convert.ToInt32(DgvOrders.Rows[e.RowIndex].Cells[0].Value);
             _SelectedOrder = _orderService.Find(id);
-            TxtReturningBook.Text = _SelectedOrder.Book.Title;
-            if ((DateTime.Now - _SelectedOrder.ReturnDate).Days > 0)
+            if (_SelectedOrder.Returned == false)
             {
-                decimal Payment = (_SelectedOrder.Cost + ((DateTime.Now - _SelectedOrder.ReturnDate).Days) * (_SelectedOrder.Cost * 5 / 1000));
-                TxtPayment.Text = Payment.ToString();
+                TxtReturningBook.Text = _SelectedOrder.Book.Title;
+                if ((DateTime.Now - _SelectedOrder.MustReturnAt).Days > 0)
+                {
+                    decimal Payment = (_SelectedOrder.Cost + ((DateTime.Now - _SelectedOrder.MustReturnAt).Days) * (_SelectedOrder.Cost * 5 / 1000));
+                    TxtPayment.Text = Payment.ToString();
+                }
+                else
+                {
+                    TxtPayment.Text = _SelectedOrder.Cost.ToString();
+                }
+                return;
             }
-            else
-            {
-                TxtPayment.Text = _SelectedOrder.Cost.ToString();
-            }
+            MessageBox.Show("This Book Is already Returned");
         }
 
         private void BtnReturn_Click(object sender, EventArgs e)
         {
             _SelectedOrder.Returned = true;
-            _SelectedOrder.Cost = Convert.ToDecimal(TxtPayment.Text);
             _SelectedOrder.Book.Count++;
+            _SelectedOrder.ReturningDate = DateTime.Now;
             _orderService.Update(_SelectedOrder);
+
             DgvOrders.Rows.Clear();
             FillClientBooks();
             Reset();
         }
+
     }
 }

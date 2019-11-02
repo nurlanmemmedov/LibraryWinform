@@ -37,31 +37,6 @@ namespace Library.Forms
                 DgvClientsSearch.Rows.Add(item.Id, item.Fullname, item.Phone);
             }
         }
-
-        private void BtnSearch_Click(object sender, EventArgs e)
-        {
-            DgvClientsSearch.Rows.Clear();
-            if (string.IsNullOrEmpty(Txtname.Text) && string.IsNullOrEmpty(TxtPhone.Text))
-            {
-                BtnCancelSearch.Hide();
-                FillClients();
-                MessageBox.Show("you must enter at least phone, name or company for searching");
-            }
-            else
-            {
-                foreach (Client item in _clientService.Clients())
-                {
-                    if ((item.Fullname.ToLower().Contains(Txtname.Text.ToLower()) 
-                        || Txtname.Text == string.Empty) && (item.Phone.ToLower().Contains(TxtPhone.Text.ToLower()) 
-                        || TxtPhone.Text == string.Empty) )
-                    {
-                        DgvClientsSearch.Rows.Add(item.Id, item.Fullname, item.Phone);
-                    }
-                }
-                BtnCancelSearch.Show();
-            }
-        }
-
         private void BtnCancelSearch_Click(object sender, EventArgs e)
         {
             Reset();
@@ -82,12 +57,34 @@ namespace Library.Forms
             returning.FormClosed += (s, args) => this.Close();
             returning.Show();
         }
-        private void DgvClientsSearch_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+
+        private void DgvClientsSearch_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             BtnAdd.Show();
             BtnReturn.Show();
             int index = Convert.ToInt32(DgvClientsSearch.Rows[e.RowIndex].Cells[0].Value);
             selectedClient = _clientService.Find(index);
         }
+
+        private void TxtPhone_TextChanged(object sender, EventArgs e)
+        {
+            if ((TxtPhone.Text == string.Empty && Txtname.Text == string.Empty))
+            {
+                Reset();
+                return;
+            }
+            DgvClientsSearch.Rows.Clear();
+            foreach (Client item in _clientService.Clients())
+            {
+                if ((item.Fullname.ToLower().Contains(Txtname.Text.ToLower())
+                    || Txtname.Text == string.Empty) && (item.Phone.ToLower().Contains(TxtPhone.Text.ToLower())
+                    || TxtPhone.Text == string.Empty))
+                {
+                    DgvClientsSearch.Rows.Add(item.Id, item.Fullname, item.Phone);
+                }
+            }
+            BtnCancelSearch.Show();
+        }
+
     }
 }

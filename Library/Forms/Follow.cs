@@ -33,40 +33,39 @@ namespace Library.Forms
             BtnToday.ForeColor = Color.White;
             foreach (Order item in _orderService.Orders())
             {
-                if ((item.ReturnDate - DateTime.Now).Days == 0)
+                if ((item.MustReturnAt - DateTime.Now).Days == 0 && item.Returned == false)
                 {
                     DgvFollowings.Rows.Add(item.Client.Fullname, item.Client.Phone, item.Book.Title);
                 }
             }
         }
-
-        private void BtnToday_MouseClick(object sender, MouseEventArgs e)
+        private void BtnToday_Click(object sender, EventArgs e)
         {
             Init();
         }
 
-        private void BtnTomorrow_MouseClick(object sender, MouseEventArgs e)
+        private void BtnTomorrow_Click(object sender, EventArgs e)
         {
             Reset();
             BtnTomorrow.BackColor = Color.Maroon;
             BtnTomorrow.ForeColor = Color.White;
             foreach (Order item in _orderService.Orders())
             {
-                if ((item.ReturnDate - DateTime.Now).Days == 1)
+                if ((item.MustReturnAt - DateTime.Now).Days == 1 && item.Returned == false)
                 {
                     DgvFollowings.Rows.Add(item.Client.Fullname, item.Client.Phone, item.Book.Title);
                 }
             }
         }
 
-        private void BtnLate_MouseClick(object sender, MouseEventArgs e)
+        private void BtnLate_Click(object sender, EventArgs e)
         {
             Reset();
             BtnLate.BackColor = Color.Maroon;
             BtnLate.ForeColor = Color.White;
             foreach (Order item in _orderService.Orders())
             {
-                if ((item.ReturnDate - DateTime.Now).Days < 0)
+                if ((item.MustReturnAt - DateTime.Now).Days < 0 && item.Returned == false)
                 {
                     DgvFollowings.Rows.Add(item.Client.Fullname, item.Client.Phone, item.Book.Title);
                 }

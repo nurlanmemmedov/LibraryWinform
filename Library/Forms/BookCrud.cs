@@ -28,7 +28,7 @@ namespace Library.Forms
             TxtTitle.Text = string.Empty;
             TxtPrice.Text = string.Empty;
             TxtAuthor.Text = string.Empty;
-            TxtCount.Text = string.Empty;
+            NmrcCount.Text = string.Empty;
             BtnAdd.Show();
             BtnDelete.Hide();
             BtnUpdate.Hide();
@@ -44,7 +44,7 @@ namespace Library.Forms
 
         private void BtnAdd_Click(object sender, EventArgs e)
         {
-            if (TxtTitle.Text == string.Empty || TxtPrice.Text == string.Empty || TxtAuthor.Text == string.Empty || TxtCount.Text == string.Empty)
+            if (TxtTitle.Text == string.Empty || TxtPrice.Text == string.Empty || TxtAuthor.Text == string.Empty || NmrcCount.Text == string.Empty)
             {
                 MessageBox.Show("Books information can't be null");
                 return;
@@ -54,16 +54,16 @@ namespace Library.Forms
                 Title = TxtTitle.Text,
                 Price = Convert.ToDecimal(TxtPrice.Text),
                 Author = TxtAuthor.Text,
-                Count = Convert.ToInt32(TxtCount.Text)
+                Count = Convert.ToInt32(NmrcCount.Text)
             };
             _bookService.Add(book);
             DgvBooks.Rows.Clear();
             FillBooks();
             Reset();
         }
-        private void DgvBooks_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void DgvBooks_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            BtnAdd.Hide();
+        BtnAdd.Hide();
             BtnUpdate.Show();
             BtnDelete.Show();
             BtnCancel.Show();
@@ -72,8 +72,7 @@ namespace Library.Forms
             TxtTitle.Text = _selectedBook.Title;
             TxtPrice.Text = _selectedBook.Price.ToString();
             TxtAuthor.Text = _selectedBook.Author;
-            TxtCount.Text = _selectedBook.Count.ToString();
-
+            NmrcCount.Text = _selectedBook.Count.ToString();
         }
 
         private void BtnCancel_Click(object sender, EventArgs e)
@@ -95,7 +94,7 @@ namespace Library.Forms
         }
         private void BtnUpdate_Click(object sender, EventArgs e)
         {
-            if (TxtTitle.Text == string.Empty || TxtPrice.Text == string.Empty || TxtAuthor.Text == string.Empty || TxtCount.Text == string.Empty)
+            if (TxtTitle.Text == string.Empty || TxtPrice.Text == string.Empty || TxtAuthor.Text == string.Empty || NmrcCount.Text == string.Empty)
             {
                 MessageBox.Show("Books information can't be null");
                 return;
@@ -103,13 +102,14 @@ namespace Library.Forms
             _selectedBook.Title = TxtTitle.Text;
             _selectedBook.Price = Convert.ToDecimal(TxtPrice.Text);
             _selectedBook.Author = TxtAuthor.Text;
-            _selectedBook.Count = Convert.ToInt32(TxtCount.Text);
+            _selectedBook.Count = Convert.ToInt32(NmrcCount.Text);
             _bookService.Update(_selectedBook);
             DgvBooks.Rows.Clear();
             FillBooks();
             Reset();
             MessageBox.Show("book is updated");
         }
+
 
     }
 }

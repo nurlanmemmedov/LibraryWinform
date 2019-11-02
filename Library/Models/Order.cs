@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Library.DAL;
-using Library.Models;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -18,7 +12,8 @@ namespace Library.Models
         [Required]
         public DateTime OrderDate { get; set; }
         [Required]
-        public DateTime ReturnDate { get; set; }
+        public DateTime MustReturnAt { get; set; }
+        public DateTime? ReturningDate { get; set; }
         [Required]
         [Column(TypeName = "money")]
         public decimal Cost { get; set; }

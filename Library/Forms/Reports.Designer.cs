@@ -38,20 +38,27 @@
             this.LblRange = new System.Windows.Forms.Label();
             this.Txtİncome = new System.Windows.Forms.TextBox();
             this.Lblİncome = new System.Windows.Forms.Label();
+            this.FbdChooseArea = new System.Windows.Forms.FolderBrowserDialog();
             ((System.ComponentModel.ISupportInitialize)(this.DgvReports)).BeginInit();
             this.SuspendLayout();
             // 
             // DgvReports
             // 
+            this.DgvReports.AllowUserToAddRows = false;
+            this.DgvReports.AllowUserToDeleteRows = false;
+            this.DgvReports.AllowUserToResizeRows = false;
             this.DgvReports.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DgvReports.BackgroundColor = System.Drawing.Color.White;
             this.DgvReports.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvReports.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
             this.Column3,
             this.Column4});
+            this.DgvReports.GridColor = System.Drawing.Color.Black;
             this.DgvReports.Location = new System.Drawing.Point(46, 90);
             this.DgvReports.Name = "DgvReports";
+            this.DgvReports.ReadOnly = true;
             this.DgvReports.Size = new System.Drawing.Size(442, 281);
             this.DgvReports.TabIndex = 0;
             // 
@@ -59,22 +66,26 @@
             // 
             this.Column1.HeaderText = "Id";
             this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             this.Column1.Visible = false;
             // 
             // Column2
             // 
             this.Column2.HeaderText = "Client Name";
             this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
             // 
             // Column3
             // 
             this.Column3.HeaderText = "Book Title";
             this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
             // 
             // Column4
             // 
             this.Column4.HeaderText = "Pay";
             this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
             // 
             // CmbRange
             // 
@@ -101,12 +112,17 @@
             // 
             // BtnExport
             // 
+            this.BtnExport.BackColor = System.Drawing.Color.ForestGreen;
+            this.BtnExport.FlatAppearance.BorderSize = 0;
+            this.BtnExport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnExport.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.BtnExport.ForeColor = System.Drawing.Color.White;
             this.BtnExport.Location = new System.Drawing.Point(350, 398);
             this.BtnExport.Name = "BtnExport";
             this.BtnExport.Size = new System.Drawing.Size(138, 36);
             this.BtnExport.TabIndex = 2;
             this.BtnExport.Text = "Export to Excel";
-            this.BtnExport.UseVisualStyleBackColor = true;
+            this.BtnExport.UseVisualStyleBackColor = false;
             this.BtnExport.Click += new System.EventHandler(this.BtnExport_Click);
             // 
             // LblRange
@@ -122,6 +138,7 @@
             // 
             this.Txtİncome.Location = new System.Drawing.Point(46, 414);
             this.Txtİncome.Name = "Txtİncome";
+            this.Txtİncome.ReadOnly = true;
             this.Txtİncome.Size = new System.Drawing.Size(139, 20);
             this.Txtİncome.TabIndex = 4;
             // 
@@ -137,7 +154,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(533, 452);
+            this.BackColor = System.Drawing.Color.Linen;
+            this.ClientSize = new System.Drawing.Size(535, 456);
             this.Controls.Add(this.Lblİncome);
             this.Controls.Add(this.Txtİncome);
             this.Controls.Add(this.CmbRange);
@@ -164,5 +182,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.TextBox Txtİncome;
         private System.Windows.Forms.Label Lblİncome;
+        private System.Windows.Forms.FolderBrowserDialog FbdChooseArea;
     }
 }

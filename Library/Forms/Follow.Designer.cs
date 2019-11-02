@@ -60,9 +60,9 @@
             this.BtnLate.Name = "BtnLate";
             this.BtnLate.Size = new System.Drawing.Size(227, 46);
             this.BtnLate.TabIndex = 2;
-            this.BtnLate.Text = "Will Be Late";
+            this.BtnLate.Text = "Were Lated";
             this.BtnLate.UseVisualStyleBackColor = false;
-            this.BtnLate.MouseClick += new System.Windows.Forms.MouseEventHandler(this.BtnLate_MouseClick);
+            this.BtnLate.Click += new System.EventHandler(this.BtnLate_Click);
             // 
             // BtnTomorrow
             // 
@@ -75,7 +75,7 @@
             this.BtnTomorrow.TabIndex = 1;
             this.BtnTomorrow.Text = "Will Be Return Tomorrow";
             this.BtnTomorrow.UseVisualStyleBackColor = false;
-            this.BtnTomorrow.MouseClick += new System.Windows.Forms.MouseEventHandler(this.BtnTomorrow_MouseClick);
+            this.BtnTomorrow.Click += new System.EventHandler(this.BtnTomorrow_Click);
             // 
             // BtnToday
             // 
@@ -88,18 +88,24 @@
             this.BtnToday.TabIndex = 0;
             this.BtnToday.Text = "Will Be Return Today";
             this.BtnToday.UseVisualStyleBackColor = false;
-            this.BtnToday.MouseClick += new System.Windows.Forms.MouseEventHandler(this.BtnToday_MouseClick);
+            this.BtnToday.Click += new System.EventHandler(this.BtnToday_Click);
             // 
             // DgvFollowings
             // 
+            this.DgvFollowings.AllowUserToAddRows = false;
+            this.DgvFollowings.AllowUserToDeleteRows = false;
+            this.DgvFollowings.AllowUserToResizeRows = false;
             this.DgvFollowings.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DgvFollowings.BackgroundColor = System.Drawing.Color.White;
             this.DgvFollowings.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvFollowings.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
             this.Column3});
+            this.DgvFollowings.GridColor = System.Drawing.Color.Black;
             this.DgvFollowings.Location = new System.Drawing.Point(41, 119);
             this.DgvFollowings.Name = "DgvFollowings";
+            this.DgvFollowings.ReadOnly = true;
             this.DgvFollowings.Size = new System.Drawing.Size(698, 301);
             this.DgvFollowings.TabIndex = 1;
             // 
@@ -107,21 +113,25 @@
             // 
             this.Column1.HeaderText = "Client Name";
             this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             // 
             // Column2
             // 
             this.Column2.HeaderText = "Client Phone";
             this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
             // 
             // Column3
             // 
             this.Column3.HeaderText = "Books Name";
             this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
             // 
             // Follow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Linen;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.DgvFollowings);
             this.Controls.Add(this.panel1);

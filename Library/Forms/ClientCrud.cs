@@ -41,12 +41,36 @@ namespace Library.Forms
                 DgvClients.Rows.Add(item.Id, item.Fullname, item.Phone);
             }
         }
+        public bool isDigit(string str)
+        {
+            foreach (Char item in str)
+            {
+                if (item < '0' || item > '9')
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
         private void BtnAdd_Click(object sender, EventArgs e)
         {
             if (TxtFullname.Text == string.Empty || TxtPhone.Text == string.Empty)
             {
                 MessageBox.Show("Clients information can't be null");
                 return;
+            }
+            if (!isDigit(TxtPhone.Text))
+            {
+                MessageBox.Show("the phone can only contain digits");
+                return;
+            }
+            foreach (Client item in _clientService.Clients())
+            {
+                if(item.Fullname == TxtFullname.Text && item.Phone == TxtPhone.Text)
+                {
+                    MessageBox.Show("such client is already exists");
+                    return;
+                }
             }
             Client client = new Client()
             {
@@ -66,6 +90,19 @@ namespace Library.Forms
             {
                 MessageBox.Show("clients information can't be null");
                 return;
+            }
+            if (!isDigit(TxtPhone.Text))
+            {
+                MessageBox.Show("the phone can only contain digits");
+                return;
+            }
+            foreach (Client item in _clientService.Clients())
+            {
+                if (item.Fullname == TxtFullname.Text && item.Phone == TxtPhone.Text)
+                {
+                    MessageBox.Show("such client is already exists");
+                    return;
+                }
             }
             _selectedClient.Fullname = TxtFullname.Text;
             _selectedClient.Phone = TxtPhone.Text;

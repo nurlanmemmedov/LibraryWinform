@@ -17,7 +17,7 @@ namespace Library.Services
         }
         public int Login(string username, string password)
         {
-            Admin admin = null;
+            Admin admin = new Admin();
             int index = -1;
             admin = _libraryContext.Admins.FirstOrDefault(a=>a.Username == username&&a.Password == password);
             if(admin != null)

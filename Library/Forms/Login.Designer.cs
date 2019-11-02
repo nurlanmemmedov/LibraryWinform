@@ -52,12 +52,16 @@
             // 
             // BtnLogin
             // 
-            this.BtnLogin.Location = new System.Drawing.Point(22, 165);
+            this.BtnLogin.BackColor = System.Drawing.Color.RoyalBlue;
+            this.BtnLogin.FlatAppearance.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.BtnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnLogin.ForeColor = System.Drawing.Color.White;
+            this.BtnLogin.Location = new System.Drawing.Point(22, 178);
             this.BtnLogin.Name = "BtnLogin";
-            this.BtnLogin.Size = new System.Drawing.Size(198, 23);
+            this.BtnLogin.Size = new System.Drawing.Size(198, 32);
             this.BtnLogin.TabIndex = 2;
             this.BtnLogin.Text = "Login";
-            this.BtnLogin.UseVisualStyleBackColor = true;
+            this.BtnLogin.UseVisualStyleBackColor = false;
             this.BtnLogin.Click += new System.EventHandler(this.BtnLogin_Click);
             // 
             // LblPassword
@@ -82,7 +86,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(243, 216);
+            this.BackColor = System.Drawing.Color.Linen;
+            this.ClientSize = new System.Drawing.Size(243, 229);
             this.Controls.Add(this.LblUsername);
             this.Controls.Add(this.LblPassword);
             this.Controls.Add(this.BtnLogin);

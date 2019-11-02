@@ -1,15 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Library.Services;
 using Library.Models;
-using Library.Forms;
 
 namespace Library.Forms
 {
@@ -38,17 +30,10 @@ namespace Library.Forms
         {
             foreach (Book item in _bookService.All())
             {
-                //foreach (Order orderItem in _orderService.Orders())
-                //{
-                //if (item.Id != orderItem.BookId && orderItem.ClientId == _SelectedCli.Id)
-                //{
                 if (item.Count > 0)
                 {
-                    DgvAllBooksExceptClients.Rows.Add(item.Id, item.Title, item.Price, item.Author);
+                    DgvAllBooks.Rows.Add(item.Id, item.Title, item.Price, item.Author);
                 }
-                    //    }
-                //}
-
             }
         }
         private void FillBasket()
@@ -59,27 +44,26 @@ namespace Library.Forms
                 {
                     if (orderItem.ClientId == _SelectedCli.Id && item.Id == orderItem.BookId)
                     {
-                        DgvOrders.Rows.Add(orderItem.Id, orderItem.Book.Title, orderItem.OrderDate,orderItem.ReturnDate,orderItem.Cost,orderItem.Returned);
+                        DgvOrders.Rows.Add(orderItem.Id, orderItem.Book.Title, orderItem.OrderDate,orderItem.MustReturnAt,orderItem.Cost,orderItem.Returned);
                     }
                 }
             }
         }
 
-        private void DgvAllBooksExceptClients_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void DgvAllBooks_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            int Id = Convert.ToInt32(DgvAllBooksExceptClients.Rows[e.RowIndex].Cells[0].Value);
+        int Id = Convert.ToInt32(DgvAllBooks.Rows[e.RowIndex].Cells[0].Value);
             _SelectedBook = _bookService.Find(Id);
             TxtOrderingBook.Text = _SelectedBook.Title;
         }
-
-        private void BtnAdd_Click(object sender, EventArgs e)
+        public void AddOrder()
         {
             Order order = new Order()
             {
                 ClientId = _SelectedCli.Id,
                 BookId = _SelectedBook.Id,
                 OrderDate = DateTime.Now,
-                ReturnDate = DtpReturn.Value,
+                MustReturnAt = DtpReturn.Value,
                 Cost = _SelectedBook.Price,
                 Returned = false
             };
@@ -89,6 +73,28 @@ namespace Library.Forms
             DgvOrders.Rows.Clear();
             FillBasket();
             Reset();
+        }
+        private void BtnAdd_Click(object sender, EventArgs e)
+        {
+            if (DtpReturn.Value < DateTime.Now)
+            {
+                MessageBox.Show("Return date cannot be less than order date, please select correctly");
+                return;
+            }
+            foreach (Order item in _orderService.Orders())
+            {
+                if(item.ClientId == _SelectedCli.Id && item.BookId == _SelectedBook.Id && item.Returned == false)
+                {
+                    DialogResult result = MessageBox.Show("this customer has such an order, do you want to give one more ?", "Exits Order", MessageBoxButtons.YesNo);
+                    if(result == DialogResult.Yes)
+                    {
+                        AddOrder();
+                    }
+                    Reset();
+                    return;
+                }
+            }
+            AddOrder();
         }
 
     }

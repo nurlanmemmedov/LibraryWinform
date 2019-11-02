@@ -60,10 +60,9 @@ namespace Library.Forms
             FillManagers();
             Reset();
         }
-
-        private void DgvManagers_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void DgvManagers_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            BtnAdd.Hide();
+        BtnAdd.Hide();
             BtnUpdate.Show();
             BtnDelete.Show();
             BtnCancel.Show();
@@ -108,5 +107,7 @@ namespace Library.Forms
             Reset();
             MessageBox.Show("manager is updated");
         }
+
+ 
     }
 }
