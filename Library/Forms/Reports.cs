@@ -16,7 +16,7 @@ namespace Library.Forms
             _orderService = new OrderService();
             CmbRange.SelectedIndex = 12;
         }
-        decimal Income = 0;
+        decimal? Income = 0;
         private void Reset()
         {
             DgvReports.Rows.Clear();
@@ -32,7 +32,7 @@ namespace Library.Forms
                     Decimal? penal = (item.ReturningDate - item.MustReturnAt)?.Days * (item.Cost * 5 / 1000);
 
                     DgvReports.Rows.Add(item.Id, item.Client.Fullname, item.Book.Title, item.Cost + penal);
-                    Income += item.Cost;
+                    Income += item.Cost + penal ;
                 }
             }
         }
@@ -49,10 +49,11 @@ namespace Library.Forms
             }
             foreach (Order item in _orderService.Orders())
             {
-                if (item.Returned == true && item.OrderDate.Month == CmbRange.SelectedIndex + 1)
+                if (item.Returned == true && item.OrderDate.Month == CmbRange.SelectedIndex + 1 && item.ReturningDate > item.MustReturnAt)
                 {
-                    DgvReports.Rows.Add(item.Id, item.Client.Fullname, item.Book.Title, item.Cost);
-                    Income += item.Cost;
+                        Decimal? penal = (item.ReturningDate - item.MustReturnAt)?.Days * (item.Cost * 5 / 1000);
+                        DgvReports.Rows.Add(item.Id, item.Client.Fullname, item.Book.Title, item.Cost + penal);
+                        Income += item.Cost + penal;
                 }
             }
             Lblİncome.Text = "Total Income of" + " " + CmbRange.Text;

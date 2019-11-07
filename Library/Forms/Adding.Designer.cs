@@ -49,14 +49,14 @@
             this.LblOrderingBook = new System.Windows.Forms.Label();
             this.LblReturnedTime = new System.Windows.Forms.Label();
             this.PnlHeader = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.PnlBasketHeader = new System.Windows.Forms.Panel();
             this.CmbClient = new System.Windows.Forms.ComboBox();
             this.LblClient = new System.Windows.Forms.Label();
             this.BtnNewClient = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DgvAllBooks)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvOrders)).BeginInit();
             this.PnlHeader.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.PnlBasketHeader.SuspendLayout();
             this.SuspendLayout();
             // 
             // DgvAllBooks
@@ -239,14 +239,14 @@
             this.PnlHeader.Size = new System.Drawing.Size(284, 31);
             this.PnlHeader.TabIndex = 11;
             // 
-            // panel1
+            // PnlBasketHeader
             // 
-            this.panel1.BackColor = System.Drawing.Color.AntiqueWhite;
-            this.panel1.Controls.Add(this.LblBasket);
-            this.panel1.Location = new System.Drawing.Point(341, 40);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(602, 31);
-            this.panel1.TabIndex = 12;
+            this.PnlBasketHeader.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.PnlBasketHeader.Controls.Add(this.LblBasket);
+            this.PnlBasketHeader.Location = new System.Drawing.Point(341, 40);
+            this.PnlBasketHeader.Name = "PnlBasketHeader";
+            this.PnlBasketHeader.Size = new System.Drawing.Size(602, 31);
+            this.PnlBasketHeader.TabIndex = 12;
             // 
             // CmbClient
             // 
@@ -289,7 +289,7 @@
             this.Controls.Add(this.BtnNewClient);
             this.Controls.Add(this.LblClient);
             this.Controls.Add(this.CmbClient);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.PnlBasketHeader);
             this.Controls.Add(this.PnlHeader);
             this.Controls.Add(this.LblReturnedTime);
             this.Controls.Add(this.LblOrderingBook);
@@ -306,8 +306,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.DgvOrders)).EndInit();
             this.PnlHeader.ResumeLayout(false);
             this.PnlHeader.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.PnlBasketHeader.ResumeLayout(false);
+            this.PnlBasketHeader.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -335,7 +335,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.Panel PnlHeader;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel PnlBasketHeader;
         private System.Windows.Forms.ComboBox CmbClient;
         private System.Windows.Forms.Label LblClient;
         private System.Windows.Forms.Button BtnNewClient;

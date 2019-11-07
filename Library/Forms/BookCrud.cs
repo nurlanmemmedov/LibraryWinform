@@ -15,6 +15,7 @@ namespace Library.Forms
     public partial class BookCrud : Form
     {
         private readonly BookService _bookService;
+        private int _SelectedIndex;
         private Book _selectedBook;
         public BookCrud()
         {
@@ -33,6 +34,12 @@ namespace Library.Forms
             BtnDelete.Hide();
             BtnUpdate.Hide();
             BtnCancel.Hide();
+        }
+        private void ResetSearch()
+        {
+            TxtNameSearch.Text = string.Empty;
+            TxtAuthorSearch.Text = string.Empty;
+            BtnCancelSearch.Hide();
         }
         private void FillBooks()
         {
@@ -57,17 +64,18 @@ namespace Library.Forms
                 Count = Convert.ToInt32(NmrcCount.Text)
             };
             _bookService.Add(book);
-            DgvBooks.Rows.Clear();
-            FillBooks();
+            DgvBooks.Rows.Add(book.Id, book.Title, book.Price, book.Author, book.Count);
+            ResetSearch();
             Reset();
         }
         private void DgvBooks_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-        BtnAdd.Hide();
+            BtnAdd.Hide();
             BtnUpdate.Show();
             BtnDelete.Show();
             BtnCancel.Show();
             int Id = Convert.ToInt32(DgvBooks.Rows[e.RowIndex].Cells[0].Value);
+            _SelectedIndex = e.RowIndex;
             _selectedBook = _bookService.Find(Id);
             TxtTitle.Text = _selectedBook.Title;
             TxtPrice.Text = _selectedBook.Price.ToString();
@@ -86,8 +94,8 @@ namespace Library.Forms
             if (result == DialogResult.Yes)
             {
                 _bookService.Delete(_selectedBook);
-                DgvBooks.Rows.Clear();
-                FillBooks();
+                DgvBooks.Rows.RemoveAt(_SelectedIndex);
+                ResetSearch();
                 Reset();
             }
             MessageBox.Show("book is deleted");
@@ -104,12 +112,43 @@ namespace Library.Forms
             _selectedBook.Author = TxtAuthor.Text;
             _selectedBook.Count = Convert.ToInt32(NmrcCount.Text);
             _bookService.Update(_selectedBook);
-            DgvBooks.Rows.Clear();
-            FillBooks();
+            DgvBooks.Rows[_SelectedIndex].Cells[0].Value = _selectedBook.Id;
+            DgvBooks.Rows[_SelectedIndex].Cells[1].Value = TxtTitle.Text;
+            DgvBooks.Rows[_SelectedIndex].Cells[2].Value = TxtPrice.Text;
+            DgvBooks.Rows[_SelectedIndex].Cells[3].Value = TxtAuthor.Text;
+            DgvBooks.Rows[_SelectedIndex].Cells[4].Value = NmrcCount.Text;
+            ResetSearch();
             Reset();
             MessageBox.Show("book is updated");
         }
 
+        private void TxtNameSearch_TextChanged(object sender, EventArgs e)
+        {
+            if ((TxtAuthorSearch.Text == string.Empty && TxtNameSearch.Text == string.Empty))
+            {
+                DgvBooks.Rows.Clear();
+                FillBooks();
+                ResetSearch();
+                return;
+            }
+            DgvBooks.Rows.Clear();
+            foreach (Book item in _bookService.All())
+            {
+                if ((item.Title.ToLower().Contains(TxtNameSearch.Text.ToLower())
+                    || TxtNameSearch.Text == string.Empty) && (item.Author.ToLower().Contains(TxtAuthorSearch.Text.ToLower())
+                    || TxtAuthorSearch.Text == string.Empty))
+                {
+                    DgvBooks.Rows.Add(item.Id, item.Title, item.Price, item.Author, item.Count);
+                }
+            }
+            BtnCancelSearch.Show();
+        }
 
+        private void BtnCancelSearch_Click(object sender, EventArgs e)
+        {
+            DgvBooks.Rows.Clear();
+            FillBooks();
+            ResetSearch();
+        }
     }
 }

@@ -39,23 +39,22 @@ namespace Library.Forms
         }
         private void BtnCancelSearch_Click(object sender, EventArgs e)
         {
+            DgvClientsSearch.Rows.Clear();
             Reset();
         }
 
         private void BtnAdd_Click(object sender, EventArgs e)
         {
-            this.Hide();
             Adding adding = new Adding(selectedClient);
+            adding.ShowDialog();
             adding.FormClosed += (s, args) => this.Close();
-            adding.Show();
         }
 
         private void BtnReturn_Click(object sender, EventArgs e)
         {
-            this.Hide();
             Returning returning = new Returning(selectedClient);
+            returning.ShowDialog();
             returning.FormClosed += (s, args) => this.Close();
-            returning.Show();
         }
 
         private void DgvClientsSearch_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -70,6 +69,7 @@ namespace Library.Forms
         {
             if ((TxtPhone.Text == string.Empty && Txtname.Text == string.Empty))
             {
+                DgvClientsSearch.Rows.Clear();
                 Reset();
                 return;
             }

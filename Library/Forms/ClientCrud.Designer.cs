@@ -121,7 +121,7 @@
             this.DgvClients.ReadOnly = true;
             this.DgvClients.Size = new System.Drawing.Size(523, 302);
             this.DgvClients.TabIndex = 24;
-            this.DgvClients.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DgvClients_RowHeaderMouseDoubleClick);
+            this.DgvClients.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DgvClients_RowHeaderMouseClick);
             // 
             // Column1
             // 
@@ -203,9 +203,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(3, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(203, 13);
+            this.label1.Size = new System.Drawing.Size(166, 13);
             this.label1.TabIndex = 9;
-            this.label1.Text = "Double Click To Update Or Delete Clients";
+            this.label1.Text = "Click To Update Or Delete Clients";
             // 
             // PnlSearch
             // 

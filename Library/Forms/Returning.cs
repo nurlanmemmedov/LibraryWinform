@@ -67,6 +67,8 @@ namespace Library.Forms
                 return;
             }
             MessageBox.Show("This Book Is already Returned");
+            TxtPayment.Text = string.Empty;
+            TxtReturningBook.Text = string.Empty;
         }
 
         private void BtnReturn_Click(object sender, EventArgs e)

@@ -208,6 +208,10 @@
     <Compile Include="Migrations\201911021605223_AdminTableDeletedIsAdminColumnAddedToManager.designer.cs">
       <DependentUpon>201911021605223_AdminTableDeletedIsAdminColumnAddedToManager.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201911071344107_AttributesCompleted.cs" />
+    <Compile Include="Migrations\201911071344107_AttributesCompleted.designer.cs">
+      <DependentUpon>201911071344107_AttributesCompleted.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Book.cs" />
     <Compile Include="Models\Manager.cs" />
@@ -299,6 +303,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201911021605223_AdminTableDeletedIsAdminColumnAddedToManager.resx">
       <DependentUpon>201911021605223_AdminTableDeletedIsAdminColumnAddedToManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911071344107_AttributesCompleted.resx">
+      <DependentUpon>201911071344107_AttributesCompleted.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

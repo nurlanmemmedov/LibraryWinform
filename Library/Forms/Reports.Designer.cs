@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Reports));
             this.DgvReports = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -162,7 +163,9 @@
             this.Controls.Add(this.LblRange);
             this.Controls.Add(this.BtnExport);
             this.Controls.Add(this.DgvReports);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Reports";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reports";
             ((System.ComponentModel.ISupportInitialize)(this.DgvReports)).EndInit();
             this.ResumeLayout(false);

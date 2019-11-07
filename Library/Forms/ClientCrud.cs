@@ -16,6 +16,7 @@ namespace Library.Forms
     {
         private readonly ClientService _clientService;
         private Client _selectedClient;
+        private int _selectedIndex;
         public ClientCrud()
         {
             _clientService = new ClientService();
@@ -36,7 +37,6 @@ namespace Library.Forms
         }
         private void ResetSearch()
         {
-            FillClients();
             TxtPhoneSearch.Text = string.Empty;
             TxtNameSearch.Text = string.Empty;
             BtnCancelSearch.Hide();
@@ -86,8 +86,7 @@ namespace Library.Forms
 
             };
             _clientService.Add(client);
-            DgvClients.Rows.Clear();
-            FillClients();
+            DgvClients.Rows.Add(client.Id, client.Fullname, client.Phone);
             ResetSearch();
             Reset();
         }
@@ -115,8 +114,9 @@ namespace Library.Forms
             _selectedClient.Fullname = TxtFullname.Text;
             _selectedClient.Phone = TxtPhone.Text;
             _clientService.Update(_selectedClient);
-            DgvClients.Rows.Clear();
-            FillClients();
+            DgvClients.Rows[_selectedIndex].Cells[0].Value = _selectedClient.Id;
+            DgvClients.Rows[_selectedIndex].Cells[1].Value = TxtFullname.Text;
+            DgvClients.Rows[_selectedIndex].Cells[2].Value = TxtPhone.Text;
             ResetSearch();
             Reset();
             MessageBox.Show("client is updated");
@@ -128,8 +128,7 @@ namespace Library.Forms
             if (result == DialogResult.Yes)
             {
                 _clientService.Delete(_selectedClient);
-                DgvClients.Rows.Clear();
-                FillClients();
+                DgvClients.Rows.RemoveAt(_selectedIndex);
                 ResetSearch();
                 Reset();
             }
@@ -141,13 +140,14 @@ namespace Library.Forms
             Reset();
         }
 
-        private void DgvClients_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void DgvClients_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            BtnAdd.Hide();
+        BtnAdd.Hide();
             BtnUpdate.Show();
             BtnDelete.Show();
             BtnCancel.Show();
             int Id = Convert.ToInt32(DgvClients.Rows[e.RowIndex].Cells[0].Value);
+            _selectedIndex = e.RowIndex;
             _selectedClient = _clientService.Find(Id);
             TxtFullname.Text = _selectedClient.Fullname;
             TxtPhone.Text = _selectedClient.Phone;
@@ -157,6 +157,8 @@ namespace Library.Forms
         {
             if ((TxtPhoneSearch.Text == string.Empty && TxtNameSearch.Text == string.Empty))
             {
+                DgvClients.Rows.Clear();
+                FillClients();
                 ResetSearch();
                 return;
             }
@@ -175,7 +177,11 @@ namespace Library.Forms
 
         private void BtnCancelSearch_Click(object sender, EventArgs e)
         {
+            DgvClients.Rows.Clear();
+            FillClients();
             ResetSearch();
         }
+
+       
     }
 }

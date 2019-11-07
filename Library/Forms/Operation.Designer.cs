@@ -439,6 +439,7 @@
             this.BtnNotReturned.Size = new System.Drawing.Size(276, 144);
             this.BtnNotReturned.TabIndex = 14;
             this.BtnNotReturned.UseVisualStyleBackColor = false;
+            this.BtnNotReturned.Click += new System.EventHandler(this.BtnFollow_Click);
             // 
             // PnlIcon
             // 
@@ -502,6 +503,7 @@
             this.BtnMembers.Size = new System.Drawing.Size(276, 144);
             this.BtnMembers.TabIndex = 18;
             this.BtnMembers.UseVisualStyleBackColor = false;
+            this.BtnMembers.Click += new System.EventHandler(this.BtnClientsCrud_Click);
             // 
             // BtnManagers
             // 
@@ -518,6 +520,7 @@
             this.BtnManagers.Size = new System.Drawing.Size(276, 144);
             this.BtnManagers.TabIndex = 18;
             this.BtnManagers.UseVisualStyleBackColor = false;
+            this.BtnManagers.Click += new System.EventHandler(this.BtnManagerCrud_Click_1);
             // 
             // panel1
             // 

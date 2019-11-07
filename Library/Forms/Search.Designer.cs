@@ -42,8 +42,11 @@
             this.BtnReturn = new System.Windows.Forms.Button();
             this.LblSelect = new System.Windows.Forms.Label();
             this.PnlHeader = new System.Windows.Forms.Panel();
+            this.PnlSearch = new System.Windows.Forms.Panel();
+            this.LblHeader = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DgvClientsSearch)).BeginInit();
             this.PnlHeader.SuspendLayout();
+            this.PnlSearch.SuspendLayout();
             this.SuspendLayout();
             // 
             // DgvClientsSearch
@@ -59,10 +62,10 @@
             this.Column2,
             this.Column3});
             this.DgvClientsSearch.GridColor = System.Drawing.Color.Black;
-            this.DgvClientsSearch.Location = new System.Drawing.Point(47, 128);
+            this.DgvClientsSearch.Location = new System.Drawing.Point(37, 172);
             this.DgvClientsSearch.Name = "DgvClientsSearch";
             this.DgvClientsSearch.ReadOnly = true;
-            this.DgvClientsSearch.Size = new System.Drawing.Size(602, 303);
+            this.DgvClientsSearch.Size = new System.Drawing.Size(602, 345);
             this.DgvClientsSearch.TabIndex = 0;
             this.DgvClientsSearch.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DgvClientsSearch_RowHeaderMouseClick);
             // 
@@ -88,7 +91,7 @@
             // LblName
             // 
             this.LblName.AutoSize = true;
-            this.LblName.Location = new System.Drawing.Point(44, 26);
+            this.LblName.Location = new System.Drawing.Point(37, 39);
             this.LblName.Name = "LblName";
             this.LblName.Size = new System.Drawing.Size(126, 13);
             this.LblName.TabIndex = 1;
@@ -96,7 +99,7 @@
             // 
             // Txtname
             // 
-            this.Txtname.Location = new System.Drawing.Point(47, 57);
+            this.Txtname.Location = new System.Drawing.Point(40, 64);
             this.Txtname.Name = "Txtname";
             this.Txtname.Size = new System.Drawing.Size(164, 20);
             this.Txtname.TabIndex = 2;
@@ -104,7 +107,7 @@
             // 
             // TxtPhone
             // 
-            this.TxtPhone.Location = new System.Drawing.Point(268, 57);
+            this.TxtPhone.Location = new System.Drawing.Point(261, 64);
             this.TxtPhone.Name = "TxtPhone";
             this.TxtPhone.Size = new System.Drawing.Size(164, 20);
             this.TxtPhone.TabIndex = 4;
@@ -113,7 +116,8 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(265, 26);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(258, 39);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(152, 13);
             this.label2.TabIndex = 3;
@@ -126,7 +130,7 @@
             this.BtnCancelSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnCancelSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.BtnCancelSearch.ForeColor = System.Drawing.Color.White;
-            this.BtnCancelSearch.Location = new System.Drawing.Point(550, 48);
+            this.BtnCancelSearch.Location = new System.Drawing.Point(527, 55);
             this.BtnCancelSearch.Name = "BtnCancelSearch";
             this.BtnCancelSearch.Size = new System.Drawing.Size(99, 29);
             this.BtnCancelSearch.TabIndex = 6;
@@ -142,7 +146,7 @@
             this.BtnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.BtnAdd.ForeColor = System.Drawing.Color.White;
-            this.BtnAdd.Location = new System.Drawing.Point(424, 445);
+            this.BtnAdd.Location = new System.Drawing.Point(415, 544);
             this.BtnAdd.Name = "BtnAdd";
             this.BtnAdd.Size = new System.Drawing.Size(106, 28);
             this.BtnAdd.TabIndex = 7;
@@ -158,7 +162,7 @@
             this.BtnReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnReturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.BtnReturn.ForeColor = System.Drawing.Color.White;
-            this.BtnReturn.Location = new System.Drawing.Point(550, 444);
+            this.BtnReturn.Location = new System.Drawing.Point(541, 543);
             this.BtnReturn.Name = "BtnReturn";
             this.BtnReturn.Size = new System.Drawing.Size(99, 29);
             this.BtnReturn.TabIndex = 8;
@@ -180,25 +184,48 @@
             // 
             this.PnlHeader.BackColor = System.Drawing.Color.AntiqueWhite;
             this.PnlHeader.Controls.Add(this.LblSelect);
-            this.PnlHeader.Location = new System.Drawing.Point(47, 97);
+            this.PnlHeader.Location = new System.Drawing.Point(36, 141);
             this.PnlHeader.Name = "PnlHeader";
             this.PnlHeader.Size = new System.Drawing.Size(602, 31);
             this.PnlHeader.TabIndex = 10;
+            // 
+            // PnlSearch
+            // 
+            this.PnlSearch.BackColor = System.Drawing.Color.DarkOrange;
+            this.PnlSearch.Controls.Add(this.LblHeader);
+            this.PnlSearch.Controls.Add(this.LblName);
+            this.PnlSearch.Controls.Add(this.Txtname);
+            this.PnlSearch.Controls.Add(this.label2);
+            this.PnlSearch.Controls.Add(this.BtnCancelSearch);
+            this.PnlSearch.Controls.Add(this.TxtPhone);
+            this.PnlSearch.ForeColor = System.Drawing.Color.White;
+            this.PnlSearch.Location = new System.Drawing.Point(12, 12);
+            this.PnlSearch.Name = "PnlSearch";
+            this.PnlSearch.Size = new System.Drawing.Size(649, 100);
+            this.PnlSearch.TabIndex = 16;
+            // 
+            // LblHeader
+            // 
+            this.LblHeader.AutoSize = true;
+            this.LblHeader.BackColor = System.Drawing.Color.DarkOrange;
+            this.LblHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.LblHeader.ForeColor = System.Drawing.Color.White;
+            this.LblHeader.Location = new System.Drawing.Point(0, 4);
+            this.LblHeader.Name = "LblHeader";
+            this.LblHeader.Size = new System.Drawing.Size(127, 20);
+            this.LblHeader.TabIndex = 25;
+            this.LblHeader.Text = "Search Manager";
             // 
             // Search
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Linen;
-            this.ClientSize = new System.Drawing.Size(692, 487);
+            this.ClientSize = new System.Drawing.Size(673, 593);
+            this.Controls.Add(this.PnlSearch);
             this.Controls.Add(this.PnlHeader);
             this.Controls.Add(this.BtnReturn);
             this.Controls.Add(this.BtnAdd);
-            this.Controls.Add(this.BtnCancelSearch);
-            this.Controls.Add(this.TxtPhone);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.Txtname);
-            this.Controls.Add(this.LblName);
             this.Controls.Add(this.DgvClientsSearch);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Search";
@@ -207,8 +234,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.DgvClientsSearch)).EndInit();
             this.PnlHeader.ResumeLayout(false);
             this.PnlHeader.PerformLayout();
+            this.PnlSearch.ResumeLayout(false);
+            this.PnlSearch.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -227,5 +255,7 @@
         private System.Windows.Forms.Button BtnReturn;
         private System.Windows.Forms.Label LblSelect;
         private System.Windows.Forms.Panel PnlHeader;
+        private System.Windows.Forms.Panel PnlSearch;
+        private System.Windows.Forms.Label LblHeader;
     }
 }

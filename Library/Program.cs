@@ -14,7 +14,7 @@ namespace Library
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ManagerCrud());
+            Application.Run(new Login());
         }
     }
 }

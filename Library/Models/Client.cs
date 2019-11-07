@@ -13,8 +13,10 @@ namespace Library.Models
     {
         public int Id { get; set; }
         [Required]
+        [MaxLength(100)]
         public string Fullname { get; set; }
         [Required]
+        [MaxLength(20)]
         public string Phone { get; set; }
         public List<Order> Orders { get; set; }
     }

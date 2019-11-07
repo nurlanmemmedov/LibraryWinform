@@ -300,6 +300,7 @@
             this.BtnCancelSearch.Text = "Cancel";
             this.BtnCancelSearch.UseVisualStyleBackColor = false;
             this.BtnCancelSearch.Visible = false;
+            this.BtnCancelSearch.Click += new System.EventHandler(this.BtnCancelSearch_Click);
             // 
             // TxtAuthorSearch
             // 
@@ -307,6 +308,7 @@
             this.TxtAuthorSearch.Name = "TxtAuthorSearch";
             this.TxtAuthorSearch.Size = new System.Drawing.Size(258, 20);
             this.TxtAuthorSearch.TabIndex = 19;
+            this.TxtAuthorSearch.TextChanged += new System.EventHandler(this.TxtNameSearch_TextChanged);
             // 
             // LblNameSearch
             // 
@@ -324,9 +326,9 @@
             this.LblPhoneNum.ForeColor = System.Drawing.Color.White;
             this.LblPhoneNum.Location = new System.Drawing.Point(314, 45);
             this.LblPhoneNum.Name = "LblPhoneNum";
-            this.LblPhoneNum.Size = new System.Drawing.Size(64, 13);
+            this.LblPhoneNum.Size = new System.Drawing.Size(93, 13);
             this.LblPhoneNum.TabIndex = 18;
-            this.LblPhoneNum.Text = "enter author";
+            this.LblPhoneNum.Text = "enter author name";
             // 
             // TxtNameSearch
             // 
@@ -334,6 +336,7 @@
             this.TxtNameSearch.Name = "TxtNameSearch";
             this.TxtNameSearch.Size = new System.Drawing.Size(232, 20);
             this.TxtNameSearch.TabIndex = 17;
+            this.TxtNameSearch.TextChanged += new System.EventHandler(this.TxtNameSearch_TextChanged);
             // 
             // BookCrud
             // 
