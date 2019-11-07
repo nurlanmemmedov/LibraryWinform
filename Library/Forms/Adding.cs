@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using Library.Services;
 using Library.Models;
+using Library.Helpers;
 
 namespace Library.Forms
 {
@@ -9,24 +10,30 @@ namespace Library.Forms
     {
         private readonly BookService _bookService;
         private readonly OrderService _orderService;
+        private readonly ClientService _clientService;
         private Client _SelectedCli;
         private Book _SelectedBook;
         public Adding(Client SelectedCli)
         {
             _bookService = new BookService();
             _orderService = new OrderService();
+            _clientService = new ClientService();
             this._SelectedCli = SelectedCli;
             _SelectedBook = new Book();
             InitializeComponent();
-            FillAllBooksExceptClients();
+            FillAllBooks();
             FillBasket();
+            FillClientsCombo();
         }
+
         private void Reset()
+
         {
             TxtOrderingBook.Text = string.Empty;
             DtpReturn.Value = DateTime.Now;
         }
-        private void FillAllBooksExceptClients()
+
+        private void FillAllBooks()
         {
             foreach (Book item in _bookService.All())
             {
@@ -36,15 +43,29 @@ namespace Library.Forms
                 }
             }
         }
+
+        private void FillClientsCombo()
+        {
+            foreach (Client item in _clientService.Clients())
+            {
+                CmbClient.Items.Add(new ComboItem(item.Id, item.Fullname));
+            }
+        }
+
         private void FillBasket()
         {
-            foreach (Book item in _bookService.All())
+            if (_SelectedCli != null)
             {
-                foreach (Order orderItem in _orderService.Orders())
+                CmbClient.SelectedItem = new ComboItem(_SelectedCli.Id, _SelectedCli.Fullname);
+                CmbClient.Text = _SelectedCli.Fullname;
+                foreach (Book item in _bookService.All())
                 {
-                    if (orderItem.ClientId == _SelectedCli.Id && item.Id == orderItem.BookId)
+                    foreach (Order orderItem in _orderService.Orders())
                     {
-                        DgvOrders.Rows.Add(orderItem.Id, orderItem.Book.Title, orderItem.OrderDate,orderItem.MustReturnAt,orderItem.Cost,orderItem.Returned);
+                        if (orderItem.ClientId == _SelectedCli.Id && item.Id == orderItem.BookId)
+                        {
+                            DgvOrders.Rows.Add(orderItem.Id, orderItem.Book.Title, orderItem.OrderDate, orderItem.MustReturnAt, orderItem.Cost, orderItem.Returned);
+                        }
                     }
                 }
             }
@@ -52,10 +73,16 @@ namespace Library.Forms
 
         private void DgvAllBooks_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-        int Id = Convert.ToInt32(DgvAllBooks.Rows[e.RowIndex].Cells[0].Value);
+            if (_SelectedCli == null)
+            {
+                MessageBox.Show("please select client");
+                return;
+            }
+            int Id = Convert.ToInt32(DgvAllBooks.Rows[e.RowIndex].Cells[0].Value);
             _SelectedBook = _bookService.Find(Id);
             TxtOrderingBook.Text = _SelectedBook.Title;
         }
+
         public void AddOrder()
         {
             Order order = new Order()
@@ -74,6 +101,7 @@ namespace Library.Forms
             FillBasket();
             Reset();
         }
+
         private void BtnAdd_Click(object sender, EventArgs e)
         {
             if (DtpReturn.Value < DateTime.Now)
@@ -83,10 +111,10 @@ namespace Library.Forms
             }
             foreach (Order item in _orderService.Orders())
             {
-                if(item.ClientId == _SelectedCli.Id && item.BookId == _SelectedBook.Id && item.Returned == false)
+                if (item.ClientId == _SelectedCli.Id && item.BookId == _SelectedBook.Id && item.Returned == false)
                 {
                     DialogResult result = MessageBox.Show("this customer has such an order, do you want to give one more ?", "Exits Order", MessageBoxButtons.YesNo);
-                    if(result == DialogResult.Yes)
+                    if (result == DialogResult.Yes)
                     {
                         AddOrder();
                     }
@@ -97,5 +125,20 @@ namespace Library.Forms
             AddOrder();
         }
 
+        private void CmbClient_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            _SelectedCli = _clientService.Find((CmbClient.SelectedItem as ComboItem).Id);
+            Reset();
+            DgvOrders.Rows.Clear();
+            FillBasket();
+        }
+
+        private void BtnNewClient_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ClientCrud clientCrud = new ClientCrud();
+            clientCrud.Show();
+            clientCrud.FormClosed += (s, args) => this.Close();
+        }
     }
 }

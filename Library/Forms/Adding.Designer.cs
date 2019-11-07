@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Adding));
             this.DgvAllBooks = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,6 +50,9 @@
             this.LblReturnedTime = new System.Windows.Forms.Label();
             this.PnlHeader = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.CmbClient = new System.Windows.Forms.ComboBox();
+            this.LblClient = new System.Windows.Forms.Label();
+            this.BtnNewClient = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DgvAllBooks)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvOrders)).BeginInit();
             this.PnlHeader.SuspendLayout();
@@ -80,22 +84,26 @@
             // 
             this.Column1.HeaderText = "Id";
             this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             this.Column1.Visible = false;
             // 
             // Column2
             // 
             this.Column2.HeaderText = "Title";
             this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
             // 
             // Column3
             // 
             this.Column3.HeaderText = "Price";
             this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
             // 
             // Column4
             // 
             this.Column4.HeaderText = "Author";
             this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
             // 
             // BtnAdd
             // 
@@ -114,9 +122,9 @@
             // 
             // DtpReturn
             // 
-            this.DtpReturn.Location = new System.Drawing.Point(344, 392);
+            this.DtpReturn.Location = new System.Drawing.Point(529, 395);
             this.DtpReturn.Name = "DtpReturn";
-            this.DtpReturn.Size = new System.Drawing.Size(200, 20);
+            this.DtpReturn.Size = new System.Drawing.Size(155, 20);
             this.DtpReturn.TabIndex = 3;
             // 
             // DgvOrders
@@ -145,32 +153,38 @@
             // 
             this.dataGridViewTextBoxColumn1.HeaderText = "Id";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             this.dataGridViewTextBoxColumn1.Visible = false;
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.HeaderText = "Book Name";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.HeaderText = "Order Date";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
             // Column5
             // 
             this.Column5.HeaderText = "Return Date";
             this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
             // 
             // Column6
             // 
             this.Column6.HeaderText = "Cost";
             this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
             // 
             // Column7
             // 
             this.Column7.HeaderText = "Returned";
             this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
             // 
             // LblAdd
             // 
@@ -192,16 +206,16 @@
             // 
             // TxtOrderingBook
             // 
-            this.TxtOrderingBook.Location = new System.Drawing.Point(32, 395);
+            this.TxtOrderingBook.Location = new System.Drawing.Point(330, 395);
             this.TxtOrderingBook.Name = "TxtOrderingBook";
             this.TxtOrderingBook.ReadOnly = true;
-            this.TxtOrderingBook.Size = new System.Drawing.Size(225, 20);
+            this.TxtOrderingBook.Size = new System.Drawing.Size(163, 20);
             this.TxtOrderingBook.TabIndex = 7;
             // 
             // LblOrderingBook
             // 
             this.LblOrderingBook.AutoSize = true;
-            this.LblOrderingBook.Location = new System.Drawing.Point(32, 370);
+            this.LblOrderingBook.Location = new System.Drawing.Point(327, 369);
             this.LblOrderingBook.Name = "LblOrderingBook";
             this.LblOrderingBook.Size = new System.Drawing.Size(91, 13);
             this.LblOrderingBook.TabIndex = 8;
@@ -210,7 +224,7 @@
             // LblReturnedTime
             // 
             this.LblReturnedTime.AutoSize = true;
-            this.LblReturnedTime.Location = new System.Drawing.Point(344, 369);
+            this.LblReturnedTime.Location = new System.Drawing.Point(528, 372);
             this.LblReturnedTime.Name = "LblReturnedTime";
             this.LblReturnedTime.Size = new System.Drawing.Size(79, 13);
             this.LblReturnedTime.TabIndex = 9;
@@ -234,12 +248,47 @@
             this.panel1.Size = new System.Drawing.Size(602, 31);
             this.panel1.TabIndex = 12;
             // 
+            // CmbClient
+            // 
+            this.CmbClient.FormattingEnabled = true;
+            this.CmbClient.Location = new System.Drawing.Point(133, 394);
+            this.CmbClient.Name = "CmbClient";
+            this.CmbClient.Size = new System.Drawing.Size(154, 21);
+            this.CmbClient.TabIndex = 13;
+            this.CmbClient.SelectedIndexChanged += new System.EventHandler(this.CmbClient_SelectedIndexChanged);
+            // 
+            // LblClient
+            // 
+            this.LblClient.AutoSize = true;
+            this.LblClient.Location = new System.Drawing.Point(131, 369);
+            this.LblClient.Name = "LblClient";
+            this.LblClient.Size = new System.Drawing.Size(72, 13);
+            this.LblClient.TabIndex = 14;
+            this.LblClient.Text = "Choose Client";
+            // 
+            // BtnNewClient
+            // 
+            this.BtnNewClient.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.BtnNewClient.FlatAppearance.BorderSize = 0;
+            this.BtnNewClient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnNewClient.ForeColor = System.Drawing.Color.White;
+            this.BtnNewClient.Location = new System.Drawing.Point(32, 381);
+            this.BtnNewClient.Name = "BtnNewClient";
+            this.BtnNewClient.Size = new System.Drawing.Size(69, 33);
+            this.BtnNewClient.TabIndex = 15;
+            this.BtnNewClient.Text = "New Client";
+            this.BtnNewClient.UseVisualStyleBackColor = false;
+            this.BtnNewClient.Click += new System.EventHandler(this.BtnNewClient_Click);
+            // 
             // Adding
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Linen;
             this.ClientSize = new System.Drawing.Size(869, 444);
+            this.Controls.Add(this.BtnNewClient);
+            this.Controls.Add(this.LblClient);
+            this.Controls.Add(this.CmbClient);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.PnlHeader);
             this.Controls.Add(this.LblReturnedTime);
@@ -249,7 +298,9 @@
             this.Controls.Add(this.DtpReturn);
             this.Controls.Add(this.BtnAdd);
             this.Controls.Add(this.DgvAllBooks);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Adding";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Adding";
             ((System.ComponentModel.ISupportInitialize)(this.DgvAllBooks)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvOrders)).EndInit();
@@ -285,5 +336,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.Panel PnlHeader;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ComboBox CmbClient;
+        private System.Windows.Forms.Label LblClient;
+        private System.Windows.Forms.Button BtnNewClient;
     }
 }

@@ -32,8 +32,15 @@ namespace Library.Forms
             BtnDelete.Hide();
             BtnUpdate.Hide();
             BtnCancel.Hide();
-        }
 
+        }
+        private void ResetSearch()
+        {
+            FillClients();
+            TxtPhoneSearch.Text = string.Empty;
+            TxtNameSearch.Text = string.Empty;
+            BtnCancelSearch.Hide();
+        }
         private void FillClients()
         {
             foreach (Client item in _clientService.Clients())
@@ -81,6 +88,7 @@ namespace Library.Forms
             _clientService.Add(client);
             DgvClients.Rows.Clear();
             FillClients();
+            ResetSearch();
             Reset();
         }
 
@@ -109,6 +117,7 @@ namespace Library.Forms
             _clientService.Update(_selectedClient);
             DgvClients.Rows.Clear();
             FillClients();
+            ResetSearch();
             Reset();
             MessageBox.Show("client is updated");
         }
@@ -121,6 +130,7 @@ namespace Library.Forms
                 _clientService.Delete(_selectedClient);
                 DgvClients.Rows.Clear();
                 FillClients();
+                ResetSearch();
                 Reset();
             }
             MessageBox.Show("client is deleted");
@@ -141,6 +151,31 @@ namespace Library.Forms
             _selectedClient = _clientService.Find(Id);
             TxtFullname.Text = _selectedClient.Fullname;
             TxtPhone.Text = _selectedClient.Phone;
+        }
+
+        private void TxtNameSearch_TextChanged(object sender, EventArgs e)
+        {
+            if ((TxtPhoneSearch.Text == string.Empty && TxtNameSearch.Text == string.Empty))
+            {
+                ResetSearch();
+                return;
+            }
+            DgvClients.Rows.Clear();
+            foreach (Client item in _clientService.Clients())
+            {
+                if ((item.Fullname.ToLower().Contains(TxtNameSearch.Text.ToLower())
+                    || TxtNameSearch.Text == string.Empty) && (item.Phone.ToLower().Contains(TxtPhoneSearch.Text.ToLower())
+                    || TxtPhoneSearch.Text == string.Empty))
+                {
+                    DgvClients.Rows.Add(item.Id, item.Fullname, item.Phone);
+                }
+            }
+            BtnCancelSearch.Show();
+        }
+
+        private void BtnCancelSearch_Click(object sender, EventArgs e)
+        {
+            ResetSearch();
         }
     }
 }

@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManagerCrud));
             this.DgvManagers = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TxtName = new System.Windows.Forms.TextBox();
             this.TxtSurname = new System.Windows.Forms.TextBox();
             this.TxtPhone = new System.Windows.Forms.TextBox();
@@ -45,8 +47,22 @@
             this.BtnCancel = new System.Windows.Forms.Button();
             this.PnlHeader = new System.Windows.Forms.Panel();
             this.LblSelect = new System.Windows.Forms.Label();
+            this.LblPosition = new System.Windows.Forms.Label();
+            this.CmbPosition = new System.Windows.Forms.ComboBox();
+            this.PnlSearch = new System.Windows.Forms.Panel();
+            this.LblSelectPosition = new System.Windows.Forms.Label();
+            this.CmbPositionSearch = new System.Windows.Forms.ComboBox();
+            this.LblSurnameSearch = new System.Windows.Forms.Label();
+            this.TxtSurnameSearch = new System.Windows.Forms.TextBox();
+            this.BtnCancelSearch = new System.Windows.Forms.Button();
+            this.TxtPhoneSearch = new System.Windows.Forms.TextBox();
+            this.LblNameSearch = new System.Windows.Forms.Label();
+            this.LblPhoneNum = new System.Windows.Forms.Label();
+            this.TxtNameSearch = new System.Windows.Forms.TextBox();
+            this.LblHeader = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DgvManagers)).BeginInit();
             this.PnlHeader.SuspendLayout();
+            this.PnlSearch.SuspendLayout();
             this.SuspendLayout();
             // 
             // DgvManagers
@@ -61,12 +77,13 @@
             this.Column1,
             this.Column2,
             this.Column3,
-            this.Column4});
+            this.Column4,
+            this.Column5});
             this.DgvManagers.GridColor = System.Drawing.Color.Black;
-            this.DgvManagers.Location = new System.Drawing.Point(302, 56);
+            this.DgvManagers.Location = new System.Drawing.Point(302, 180);
             this.DgvManagers.Name = "DgvManagers";
             this.DgvManagers.ReadOnly = true;
-            this.DgvManagers.Size = new System.Drawing.Size(359, 302);
+            this.DgvManagers.Size = new System.Drawing.Size(546, 302);
             this.DgvManagers.TabIndex = 0;
             this.DgvManagers.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DgvManagers_RowHeaderMouseClick);
             // 
@@ -95,23 +112,29 @@
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
             // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "İs Admin";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
             // TxtName
             // 
-            this.TxtName.Location = new System.Drawing.Point(40, 56);
+            this.TxtName.Location = new System.Drawing.Point(40, 246);
             this.TxtName.Name = "TxtName";
             this.TxtName.Size = new System.Drawing.Size(227, 20);
             this.TxtName.TabIndex = 1;
             // 
             // TxtSurname
             // 
-            this.TxtSurname.Location = new System.Drawing.Point(40, 145);
+            this.TxtSurname.Location = new System.Drawing.Point(40, 313);
             this.TxtSurname.Name = "TxtSurname";
             this.TxtSurname.Size = new System.Drawing.Size(227, 20);
             this.TxtSurname.TabIndex = 2;
             // 
             // TxtPhone
             // 
-            this.TxtPhone.Location = new System.Drawing.Point(40, 233);
+            this.TxtPhone.Location = new System.Drawing.Point(40, 378);
             this.TxtPhone.Name = "TxtPhone";
             this.TxtPhone.Size = new System.Drawing.Size(227, 20);
             this.TxtPhone.TabIndex = 3;
@@ -123,7 +146,7 @@
             this.BtnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.BtnAdd.ForeColor = System.Drawing.Color.White;
-            this.BtnAdd.Location = new System.Drawing.Point(40, 319);
+            this.BtnAdd.Location = new System.Drawing.Point(40, 443);
             this.BtnAdd.Name = "BtnAdd";
             this.BtnAdd.Size = new System.Drawing.Size(227, 39);
             this.BtnAdd.TabIndex = 4;
@@ -134,7 +157,7 @@
             // LblName
             // 
             this.LblName.AutoSize = true;
-            this.LblName.Location = new System.Drawing.Point(40, 30);
+            this.LblName.Location = new System.Drawing.Point(40, 220);
             this.LblName.Name = "LblName";
             this.LblName.Size = new System.Drawing.Size(35, 13);
             this.LblName.TabIndex = 5;
@@ -143,7 +166,7 @@
             // LblSurname
             // 
             this.LblSurname.AutoSize = true;
-            this.LblSurname.Location = new System.Drawing.Point(40, 117);
+            this.LblSurname.Location = new System.Drawing.Point(40, 285);
             this.LblSurname.Name = "LblSurname";
             this.LblSurname.Size = new System.Drawing.Size(49, 13);
             this.LblSurname.TabIndex = 6;
@@ -152,7 +175,7 @@
             // LblPhone
             // 
             this.LblPhone.AutoSize = true;
-            this.LblPhone.Location = new System.Drawing.Point(40, 211);
+            this.LblPhone.Location = new System.Drawing.Point(40, 356);
             this.LblPhone.Name = "LblPhone";
             this.LblPhone.Size = new System.Drawing.Size(38, 13);
             this.LblPhone.TabIndex = 7;
@@ -165,7 +188,7 @@
             this.BtnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.BtnUpdate.ForeColor = System.Drawing.Color.White;
-            this.BtnUpdate.Location = new System.Drawing.Point(40, 319);
+            this.BtnUpdate.Location = new System.Drawing.Point(40, 443);
             this.BtnUpdate.Name = "BtnUpdate";
             this.BtnUpdate.Size = new System.Drawing.Size(72, 39);
             this.BtnUpdate.TabIndex = 8;
@@ -181,7 +204,7 @@
             this.BtnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.BtnDelete.ForeColor = System.Drawing.Color.White;
-            this.BtnDelete.Location = new System.Drawing.Point(117, 319);
+            this.BtnDelete.Location = new System.Drawing.Point(117, 443);
             this.BtnDelete.Name = "BtnDelete";
             this.BtnDelete.Size = new System.Drawing.Size(72, 39);
             this.BtnDelete.TabIndex = 9;
@@ -197,7 +220,7 @@
             this.BtnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.BtnCancel.ForeColor = System.Drawing.Color.White;
-            this.BtnCancel.Location = new System.Drawing.Point(195, 319);
+            this.BtnCancel.Location = new System.Drawing.Point(195, 443);
             this.BtnCancel.Name = "BtnCancel";
             this.BtnCancel.Size = new System.Drawing.Size(72, 39);
             this.BtnCancel.TabIndex = 10;
@@ -210,9 +233,9 @@
             // 
             this.PnlHeader.BackColor = System.Drawing.Color.AntiqueWhite;
             this.PnlHeader.Controls.Add(this.LblSelect);
-            this.PnlHeader.Location = new System.Drawing.Point(302, 25);
+            this.PnlHeader.Location = new System.Drawing.Point(302, 149);
             this.PnlHeader.Name = "PnlHeader";
-            this.PnlHeader.Size = new System.Drawing.Size(359, 31);
+            this.PnlHeader.Size = new System.Drawing.Size(546, 31);
             this.PnlHeader.TabIndex = 11;
             // 
             // LblSelect
@@ -224,12 +247,157 @@
             this.LblSelect.TabIndex = 9;
             this.LblSelect.Text = "Click To Update Or Delete Managers";
             // 
+            // LblPosition
+            // 
+            this.LblPosition.AutoSize = true;
+            this.LblPosition.Location = new System.Drawing.Point(37, 154);
+            this.LblPosition.Name = "LblPosition";
+            this.LblPosition.Size = new System.Drawing.Size(44, 13);
+            this.LblPosition.TabIndex = 13;
+            this.LblPosition.Text = "Position";
+            // 
+            // CmbPosition
+            // 
+            this.CmbPosition.FormattingEnabled = true;
+            this.CmbPosition.Items.AddRange(new object[] {
+            "Admin",
+            "Ordinary Manager"});
+            this.CmbPosition.Location = new System.Drawing.Point(40, 180);
+            this.CmbPosition.Name = "CmbPosition";
+            this.CmbPosition.Size = new System.Drawing.Size(227, 21);
+            this.CmbPosition.TabIndex = 14;
+            // 
+            // PnlSearch
+            // 
+            this.PnlSearch.BackColor = System.Drawing.Color.DarkOrange;
+            this.PnlSearch.Controls.Add(this.LblHeader);
+            this.PnlSearch.Controls.Add(this.LblSelectPosition);
+            this.PnlSearch.Controls.Add(this.CmbPositionSearch);
+            this.PnlSearch.Controls.Add(this.LblSurnameSearch);
+            this.PnlSearch.Controls.Add(this.TxtSurnameSearch);
+            this.PnlSearch.Controls.Add(this.BtnCancelSearch);
+            this.PnlSearch.Controls.Add(this.TxtPhoneSearch);
+            this.PnlSearch.Controls.Add(this.LblNameSearch);
+            this.PnlSearch.Controls.Add(this.LblPhoneNum);
+            this.PnlSearch.Controls.Add(this.TxtNameSearch);
+            this.PnlSearch.Location = new System.Drawing.Point(12, 13);
+            this.PnlSearch.Name = "PnlSearch";
+            this.PnlSearch.Size = new System.Drawing.Size(836, 106);
+            this.PnlSearch.TabIndex = 15;
+            // 
+            // LblSelectPosition
+            // 
+            this.LblSelectPosition.AutoSize = true;
+            this.LblSelectPosition.ForeColor = System.Drawing.Color.White;
+            this.LblSelectPosition.Location = new System.Drawing.Point(25, 45);
+            this.LblSelectPosition.Name = "LblSelectPosition";
+            this.LblSelectPosition.Size = new System.Drawing.Size(77, 13);
+            this.LblSelectPosition.TabIndex = 24;
+            this.LblSelectPosition.Text = "Select Position";
+            // 
+            // CmbPositionSearch
+            // 
+            this.CmbPositionSearch.FormattingEnabled = true;
+            this.CmbPositionSearch.Items.AddRange(new object[] {
+            "Admin",
+            "Ordinary manager"});
+            this.CmbPositionSearch.Location = new System.Drawing.Point(28, 68);
+            this.CmbPositionSearch.Name = "CmbPositionSearch";
+            this.CmbPositionSearch.Size = new System.Drawing.Size(121, 21);
+            this.CmbPositionSearch.TabIndex = 23;
+            this.CmbPositionSearch.TextChanged += new System.EventHandler(this.TxtNameSearch_TextChanged);
+            // 
+            // LblSurnameSearch
+            // 
+            this.LblSurnameSearch.AutoSize = true;
+            this.LblSurnameSearch.ForeColor = System.Drawing.Color.White;
+            this.LblSurnameSearch.Location = new System.Drawing.Point(348, 45);
+            this.LblSurnameSearch.Name = "LblSurnameSearch";
+            this.LblSurnameSearch.Size = new System.Drawing.Size(140, 13);
+            this.LblSurnameSearch.TabIndex = 21;
+            this.LblSurnameSearch.Text = "Enter a surname of manager";
+            // 
+            // TxtSurnameSearch
+            // 
+            this.TxtSurnameSearch.Location = new System.Drawing.Point(351, 68);
+            this.TxtSurnameSearch.Name = "TxtSurnameSearch";
+            this.TxtSurnameSearch.Size = new System.Drawing.Size(137, 20);
+            this.TxtSurnameSearch.TabIndex = 22;
+            this.TxtSurnameSearch.TextChanged += new System.EventHandler(this.TxtNameSearch_TextChanged);
+            // 
+            // BtnCancelSearch
+            // 
+            this.BtnCancelSearch.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.BtnCancelSearch.FlatAppearance.BorderSize = 0;
+            this.BtnCancelSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnCancelSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.BtnCancelSearch.ForeColor = System.Drawing.Color.White;
+            this.BtnCancelSearch.Location = new System.Drawing.Point(718, 62);
+            this.BtnCancelSearch.Name = "BtnCancelSearch";
+            this.BtnCancelSearch.Size = new System.Drawing.Size(99, 29);
+            this.BtnCancelSearch.TabIndex = 20;
+            this.BtnCancelSearch.Text = "Cancel";
+            this.BtnCancelSearch.UseVisualStyleBackColor = false;
+            this.BtnCancelSearch.Visible = false;
+            this.BtnCancelSearch.Click += new System.EventHandler(this.BtnCancelSearch_Click);
+            // 
+            // TxtPhoneSearch
+            // 
+            this.TxtPhoneSearch.Location = new System.Drawing.Point(530, 68);
+            this.TxtPhoneSearch.Name = "TxtPhoneSearch";
+            this.TxtPhoneSearch.Size = new System.Drawing.Size(134, 20);
+            this.TxtPhoneSearch.TabIndex = 19;
+            this.TxtPhoneSearch.TextChanged += new System.EventHandler(this.TxtNameSearch_TextChanged);
+            // 
+            // LblNameSearch
+            // 
+            this.LblNameSearch.AutoSize = true;
+            this.LblNameSearch.ForeColor = System.Drawing.Color.White;
+            this.LblNameSearch.Location = new System.Drawing.Point(180, 45);
+            this.LblNameSearch.Name = "LblNameSearch";
+            this.LblNameSearch.Size = new System.Drawing.Size(126, 13);
+            this.LblNameSearch.TabIndex = 16;
+            this.LblNameSearch.Text = "Enter a name of manager";
+            // 
+            // LblPhoneNum
+            // 
+            this.LblPhoneNum.AutoSize = true;
+            this.LblPhoneNum.ForeColor = System.Drawing.Color.White;
+            this.LblPhoneNum.Location = new System.Drawing.Point(527, 45);
+            this.LblPhoneNum.Name = "LblPhoneNum";
+            this.LblPhoneNum.Size = new System.Drawing.Size(168, 13);
+            this.LblPhoneNum.TabIndex = 18;
+            this.LblPhoneNum.Text = "Enter a phone number of manager";
+            // 
+            // TxtNameSearch
+            // 
+            this.TxtNameSearch.Location = new System.Drawing.Point(183, 68);
+            this.TxtNameSearch.Name = "TxtNameSearch";
+            this.TxtNameSearch.Size = new System.Drawing.Size(125, 20);
+            this.TxtNameSearch.TabIndex = 17;
+            this.TxtNameSearch.TextChanged += new System.EventHandler(this.TxtNameSearch_TextChanged);
+            // 
+            // LblHeader
+            // 
+            this.LblHeader.AutoSize = true;
+            this.LblHeader.BackColor = System.Drawing.Color.DarkOrange;
+            this.LblHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.LblHeader.ForeColor = System.Drawing.Color.White;
+            this.LblHeader.Location = new System.Drawing.Point(0, 4);
+            this.LblHeader.Name = "LblHeader";
+            this.LblHeader.Size = new System.Drawing.Size(127, 20);
+            this.LblHeader.TabIndex = 25;
+            this.LblHeader.Text = "Search Manager";
+            // 
             // ManagerCrud
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Linen;
-            this.ClientSize = new System.Drawing.Size(689, 392);
+            this.ClientSize = new System.Drawing.Size(860, 509);
+            this.Controls.Add(this.PnlSearch);
+            this.Controls.Add(this.CmbPosition);
+            this.Controls.Add(this.LblPosition);
             this.Controls.Add(this.PnlHeader);
             this.Controls.Add(this.BtnCancel);
             this.Controls.Add(this.BtnDelete);
@@ -242,11 +410,15 @@
             this.Controls.Add(this.TxtPhone);
             this.Controls.Add(this.TxtSurname);
             this.Controls.Add(this.TxtName);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ManagerCrud";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ManagerCrud";
             ((System.ComponentModel.ISupportInitialize)(this.DgvManagers)).EndInit();
             this.PnlHeader.ResumeLayout(false);
             this.PnlHeader.PerformLayout();
+            this.PnlSearch.ResumeLayout(false);
+            this.PnlSearch.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -271,5 +443,19 @@
         private System.Windows.Forms.Button BtnCancel;
         private System.Windows.Forms.Panel PnlHeader;
         private System.Windows.Forms.Label LblSelect;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.Label LblPosition;
+        private System.Windows.Forms.ComboBox CmbPosition;
+        private System.Windows.Forms.Panel PnlSearch;
+        private System.Windows.Forms.Button BtnCancelSearch;
+        private System.Windows.Forms.TextBox TxtPhoneSearch;
+        private System.Windows.Forms.Label LblNameSearch;
+        private System.Windows.Forms.Label LblPhoneNum;
+        private System.Windows.Forms.TextBox TxtNameSearch;
+        private System.Windows.Forms.Label LblSelectPosition;
+        private System.Windows.Forms.ComboBox CmbPositionSearch;
+        private System.Windows.Forms.Label LblSurnameSearch;
+        private System.Windows.Forms.TextBox TxtSurnameSearch;
+        private System.Windows.Forms.Label LblHeader;
     }
 }

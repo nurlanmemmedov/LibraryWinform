@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Search));
             this.DgvClientsSearch = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -199,7 +200,9 @@
             this.Controls.Add(this.Txtname);
             this.Controls.Add(this.LblName);
             this.Controls.Add(this.DgvClientsSearch);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Search";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Search";
             ((System.ComponentModel.ISupportInitialize)(this.DgvClientsSearch)).EndInit();
             this.PnlHeader.ResumeLayout(false);

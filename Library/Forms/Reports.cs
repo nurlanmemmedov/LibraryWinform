@@ -27,7 +27,7 @@ namespace Library.Forms
         {
             foreach (Order item in _orderService.Orders())
             {
-                if (item.ReturningDate != null)
+                if (item.ReturningDate != null && item.ReturningDate>item.MustReturnAt)
                 {
                     Decimal? penal = (item.ReturningDate - item.MustReturnAt)?.Days * (item.Cost * 5 / 1000);
 

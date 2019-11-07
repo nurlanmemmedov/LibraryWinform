@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BookCrud));
             this.BtnCancel = new System.Windows.Forms.Button();
             this.BtnDelete = new System.Windows.Forms.Button();
             this.BtnUpdate = new System.Windows.Forms.Button();
@@ -48,9 +49,17 @@
             this.LblSelect = new System.Windows.Forms.Label();
             this.NmrcCount = new System.Windows.Forms.NumericUpDown();
             this.TxtPrice = new System.Windows.Forms.TextBox();
+            this.PnlSearch = new System.Windows.Forms.Panel();
+            this.LblHeader = new System.Windows.Forms.Label();
+            this.BtnCancelSearch = new System.Windows.Forms.Button();
+            this.TxtAuthorSearch = new System.Windows.Forms.TextBox();
+            this.LblNameSearch = new System.Windows.Forms.Label();
+            this.LblPhoneNum = new System.Windows.Forms.Label();
+            this.TxtNameSearch = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.DgvBooks)).BeginInit();
             this.PnlHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NmrcCount)).BeginInit();
+            this.PnlSearch.SuspendLayout();
             this.SuspendLayout();
             // 
             // BtnCancel
@@ -60,7 +69,7 @@
             this.BtnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.BtnCancel.ForeColor = System.Drawing.Color.White;
-            this.BtnCancel.Location = new System.Drawing.Point(190, 325);
+            this.BtnCancel.Location = new System.Drawing.Point(204, 474);
             this.BtnCancel.Name = "BtnCancel";
             this.BtnCancel.Size = new System.Drawing.Size(72, 39);
             this.BtnCancel.TabIndex = 21;
@@ -76,7 +85,7 @@
             this.BtnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.BtnDelete.ForeColor = System.Drawing.Color.White;
-            this.BtnDelete.Location = new System.Drawing.Point(112, 325);
+            this.BtnDelete.Location = new System.Drawing.Point(126, 474);
             this.BtnDelete.Name = "BtnDelete";
             this.BtnDelete.Size = new System.Drawing.Size(72, 39);
             this.BtnDelete.TabIndex = 20;
@@ -92,7 +101,7 @@
             this.BtnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.BtnUpdate.ForeColor = System.Drawing.Color.White;
-            this.BtnUpdate.Location = new System.Drawing.Point(35, 325);
+            this.BtnUpdate.Location = new System.Drawing.Point(49, 474);
             this.BtnUpdate.Name = "BtnUpdate";
             this.BtnUpdate.Size = new System.Drawing.Size(72, 39);
             this.BtnUpdate.TabIndex = 19;
@@ -116,10 +125,10 @@
             this.Column4,
             this.Column5});
             this.DgvBooks.GridColor = System.Drawing.Color.Black;
-            this.DgvBooks.Location = new System.Drawing.Point(294, 62);
+            this.DgvBooks.Location = new System.Drawing.Point(308, 211);
             this.DgvBooks.Name = "DgvBooks";
             this.DgvBooks.ReadOnly = true;
-            this.DgvBooks.Size = new System.Drawing.Size(359, 302);
+            this.DgvBooks.Size = new System.Drawing.Size(548, 302);
             this.DgvBooks.TabIndex = 11;
             this.DgvBooks.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DgvBooks_RowHeaderMouseClick);
             // 
@@ -157,7 +166,7 @@
             // LblPrice
             // 
             this.LblPrice.AutoSize = true;
-            this.LblPrice.Location = new System.Drawing.Point(35, 106);
+            this.LblPrice.Location = new System.Drawing.Point(49, 255);
             this.LblPrice.Name = "LblPrice";
             this.LblPrice.Size = new System.Drawing.Size(31, 13);
             this.LblPrice.TabIndex = 18;
@@ -166,7 +175,7 @@
             // LblTitle
             // 
             this.LblTitle.AutoSize = true;
-            this.LblTitle.Location = new System.Drawing.Point(35, 38);
+            this.LblTitle.Location = new System.Drawing.Point(49, 187);
             this.LblTitle.Name = "LblTitle";
             this.LblTitle.Size = new System.Drawing.Size(27, 13);
             this.LblTitle.TabIndex = 16;
@@ -179,7 +188,7 @@
             this.BtnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.BtnAdd.ForeColor = System.Drawing.Color.White;
-            this.BtnAdd.Location = new System.Drawing.Point(35, 325);
+            this.BtnAdd.Location = new System.Drawing.Point(49, 474);
             this.BtnAdd.Name = "BtnAdd";
             this.BtnAdd.Size = new System.Drawing.Size(227, 39);
             this.BtnAdd.TabIndex = 15;
@@ -189,7 +198,7 @@
             // 
             // TxtTitle
             // 
-            this.TxtTitle.Location = new System.Drawing.Point(35, 54);
+            this.TxtTitle.Location = new System.Drawing.Point(49, 203);
             this.TxtTitle.Name = "TxtTitle";
             this.TxtTitle.Size = new System.Drawing.Size(227, 20);
             this.TxtTitle.TabIndex = 12;
@@ -197,7 +206,7 @@
             // LblAuthor
             // 
             this.LblAuthor.AutoSize = true;
-            this.LblAuthor.Location = new System.Drawing.Point(35, 174);
+            this.LblAuthor.Location = new System.Drawing.Point(49, 323);
             this.LblAuthor.Name = "LblAuthor";
             this.LblAuthor.Size = new System.Drawing.Size(38, 13);
             this.LblAuthor.TabIndex = 23;
@@ -205,7 +214,7 @@
             // 
             // TxtAuthor
             // 
-            this.TxtAuthor.Location = new System.Drawing.Point(35, 190);
+            this.TxtAuthor.Location = new System.Drawing.Point(49, 339);
             this.TxtAuthor.Name = "TxtAuthor";
             this.TxtAuthor.Size = new System.Drawing.Size(227, 20);
             this.TxtAuthor.TabIndex = 22;
@@ -213,7 +222,7 @@
             // LblCount
             // 
             this.LblCount.AutoSize = true;
-            this.LblCount.Location = new System.Drawing.Point(35, 239);
+            this.LblCount.Location = new System.Drawing.Point(49, 388);
             this.LblCount.Name = "LblCount";
             this.LblCount.Size = new System.Drawing.Size(35, 13);
             this.LblCount.TabIndex = 25;
@@ -223,9 +232,9 @@
             // 
             this.PnlHeader.BackColor = System.Drawing.Color.AntiqueWhite;
             this.PnlHeader.Controls.Add(this.LblSelect);
-            this.PnlHeader.Location = new System.Drawing.Point(294, 31);
+            this.PnlHeader.Location = new System.Drawing.Point(308, 180);
             this.PnlHeader.Name = "PnlHeader";
-            this.PnlHeader.Size = new System.Drawing.Size(359, 31);
+            this.PnlHeader.Size = new System.Drawing.Size(548, 31);
             this.PnlHeader.TabIndex = 26;
             // 
             // LblSelect
@@ -239,24 +248,100 @@
             // 
             // NmrcCount
             // 
-            this.NmrcCount.Location = new System.Drawing.Point(38, 255);
+            this.NmrcCount.Location = new System.Drawing.Point(52, 404);
             this.NmrcCount.Name = "NmrcCount";
             this.NmrcCount.Size = new System.Drawing.Size(224, 20);
             this.NmrcCount.TabIndex = 28;
             // 
             // TxtPrice
             // 
-            this.TxtPrice.Location = new System.Drawing.Point(35, 122);
+            this.TxtPrice.Location = new System.Drawing.Point(49, 271);
             this.TxtPrice.Name = "TxtPrice";
             this.TxtPrice.Size = new System.Drawing.Size(227, 20);
             this.TxtPrice.TabIndex = 29;
+            // 
+            // PnlSearch
+            // 
+            this.PnlSearch.BackColor = System.Drawing.Color.DarkOrange;
+            this.PnlSearch.Controls.Add(this.LblHeader);
+            this.PnlSearch.Controls.Add(this.BtnCancelSearch);
+            this.PnlSearch.Controls.Add(this.TxtAuthorSearch);
+            this.PnlSearch.Controls.Add(this.LblNameSearch);
+            this.PnlSearch.Controls.Add(this.LblPhoneNum);
+            this.PnlSearch.Controls.Add(this.TxtNameSearch);
+            this.PnlSearch.Location = new System.Drawing.Point(20, 22);
+            this.PnlSearch.Name = "PnlSearch";
+            this.PnlSearch.Size = new System.Drawing.Size(853, 106);
+            this.PnlSearch.TabIndex = 36;
+            // 
+            // LblHeader
+            // 
+            this.LblHeader.AutoSize = true;
+            this.LblHeader.BackColor = System.Drawing.Color.DarkOrange;
+            this.LblHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.LblHeader.ForeColor = System.Drawing.Color.White;
+            this.LblHeader.Location = new System.Drawing.Point(0, 4);
+            this.LblHeader.Name = "LblHeader";
+            this.LblHeader.Size = new System.Drawing.Size(104, 20);
+            this.LblHeader.TabIndex = 25;
+            this.LblHeader.Text = "Search Client";
+            // 
+            // BtnCancelSearch
+            // 
+            this.BtnCancelSearch.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.BtnCancelSearch.FlatAppearance.BorderSize = 0;
+            this.BtnCancelSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnCancelSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.BtnCancelSearch.ForeColor = System.Drawing.Color.White;
+            this.BtnCancelSearch.Location = new System.Drawing.Point(737, 62);
+            this.BtnCancelSearch.Name = "BtnCancelSearch";
+            this.BtnCancelSearch.Size = new System.Drawing.Size(99, 29);
+            this.BtnCancelSearch.TabIndex = 20;
+            this.BtnCancelSearch.Text = "Cancel";
+            this.BtnCancelSearch.UseVisualStyleBackColor = false;
+            this.BtnCancelSearch.Visible = false;
+            // 
+            // TxtAuthorSearch
+            // 
+            this.TxtAuthorSearch.Location = new System.Drawing.Point(317, 68);
+            this.TxtAuthorSearch.Name = "TxtAuthorSearch";
+            this.TxtAuthorSearch.Size = new System.Drawing.Size(258, 20);
+            this.TxtAuthorSearch.TabIndex = 19;
+            // 
+            // LblNameSearch
+            // 
+            this.LblNameSearch.AutoSize = true;
+            this.LblNameSearch.ForeColor = System.Drawing.Color.White;
+            this.LblNameSearch.Location = new System.Drawing.Point(24, 45);
+            this.LblNameSearch.Name = "LblNameSearch";
+            this.LblNameSearch.Size = new System.Drawing.Size(99, 13);
+            this.LblNameSearch.TabIndex = 16;
+            this.LblNameSearch.Text = "Enter a title of book";
+            // 
+            // LblPhoneNum
+            // 
+            this.LblPhoneNum.AutoSize = true;
+            this.LblPhoneNum.ForeColor = System.Drawing.Color.White;
+            this.LblPhoneNum.Location = new System.Drawing.Point(314, 45);
+            this.LblPhoneNum.Name = "LblPhoneNum";
+            this.LblPhoneNum.Size = new System.Drawing.Size(64, 13);
+            this.LblPhoneNum.TabIndex = 18;
+            this.LblPhoneNum.Text = "enter author";
+            // 
+            // TxtNameSearch
+            // 
+            this.TxtNameSearch.Location = new System.Drawing.Point(27, 68);
+            this.TxtNameSearch.Name = "TxtNameSearch";
+            this.TxtNameSearch.Size = new System.Drawing.Size(232, 20);
+            this.TxtNameSearch.TabIndex = 17;
             // 
             // BookCrud
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Linen;
-            this.ClientSize = new System.Drawing.Size(684, 390);
+            this.ClientSize = new System.Drawing.Size(897, 552);
+            this.Controls.Add(this.PnlSearch);
             this.Controls.Add(this.TxtPrice);
             this.Controls.Add(this.NmrcCount);
             this.Controls.Add(this.PnlHeader);
@@ -271,12 +356,16 @@
             this.Controls.Add(this.LblTitle);
             this.Controls.Add(this.BtnAdd);
             this.Controls.Add(this.TxtTitle);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "BookCrud";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BookCrud";
             ((System.ComponentModel.ISupportInitialize)(this.DgvBooks)).EndInit();
             this.PnlHeader.ResumeLayout(false);
             this.PnlHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NmrcCount)).EndInit();
+            this.PnlSearch.ResumeLayout(false);
+            this.PnlSearch.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -304,5 +393,12 @@
         private System.Windows.Forms.Label LblSelect;
         private System.Windows.Forms.NumericUpDown NmrcCount;
         private System.Windows.Forms.TextBox TxtPrice;
+        private System.Windows.Forms.Panel PnlSearch;
+        private System.Windows.Forms.Label LblHeader;
+        private System.Windows.Forms.Button BtnCancelSearch;
+        private System.Windows.Forms.TextBox TxtAuthorSearch;
+        private System.Windows.Forms.Label LblNameSearch;
+        private System.Windows.Forms.Label LblPhoneNum;
+        private System.Windows.Forms.TextBox TxtNameSearch;
     }
 }

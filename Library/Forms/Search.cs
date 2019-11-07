@@ -85,6 +85,5 @@ namespace Library.Forms
             }
             BtnCancelSearch.Show();
         }
-
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Returning));
             this.BtnReturn = new System.Windows.Forms.Button();
             this.TxtReturningBook = new System.Windows.Forms.TextBox();
             this.LblReturningBook = new System.Windows.Forms.Label();
@@ -104,32 +105,38 @@
             // 
             this.Column1.HeaderText = "Id";
             this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             this.Column1.Visible = false;
             // 
             // Column2
             // 
             this.Column2.HeaderText = "Book Name";
             this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
             // 
             // Column4
             // 
             this.Column4.HeaderText = "Order Date";
             this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
             // 
             // Column5
             // 
             this.Column5.HeaderText = "Return Date";
             this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
             // 
             // Column6
             // 
             this.Column6.HeaderText = "Cost";
             this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
             // 
             // Column7
             // 
             this.Column7.HeaderText = "Returned";
             this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
             // 
             // TxtPayment
             // 
@@ -179,7 +186,9 @@
             this.Controls.Add(this.TxtReturningBook);
             this.Controls.Add(this.BtnReturn);
             this.Controls.Add(this.DgvOrders);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Returning";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Returning";
             ((System.ComponentModel.ISupportInitialize)(this.DgvOrders)).EndInit();
             this.PnlHeader.ResumeLayout(false);

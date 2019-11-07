@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Library.Services;
 using Library.Models;
@@ -28,36 +21,52 @@ namespace Library.Forms
             TxtName.Text = string.Empty;
             TxtSurname.Text = string.Empty;
             TxtPhone.Text = string.Empty;
+            CmbPosition.SelectedItem = null;
             BtnAdd.Show();
             BtnDelete.Hide();
             BtnUpdate.Hide();
             BtnCancel.Hide();
+
+        }
+        private void ResetSearch()
+        {
+            FillManagers();
+            TxtNameSearch.Text = string.Empty;
+            TxtSurnameSearch.Text = string.Empty;
+            TxtPhoneSearch.Text = string.Empty;
+            BtnCancelSearch.Hide();
         }
         private void FillManagers()
         {
             foreach (Manager item in _managerService.Managers())
             {
-                DgvManagers.Rows.Add(item.Id, item.Name, item.Surname, item.Phone);
+                DgvManagers.Rows.Add(item.Id, item.Name, item.Surname, item.Phone, item.IsAdmin);
             }
         }
 
         private void BtnAdd_Click(object sender, EventArgs e)
         {
-            if (TxtName.Text == string.Empty || TxtSurname.Text == string.Empty || TxtPhone.Text == string.Empty)
+            if (TxtName.Text == string.Empty || TxtSurname.Text == string.Empty || TxtPhone.Text == string.Empty || CmbPosition.Text == string.Empty)
             {
                 MessageBox.Show("Managers information can't be null");
                 return;
+            }
+            bool IsAdminOrNot = false;
+            if(CmbPosition.SelectedIndex == 0)
+            {
+                IsAdminOrNot = true;
             }
             Manager manager = new Manager()
             {
                 Name = TxtName.Text,
                 Surname = TxtSurname.Text,
-                Phone  =TxtPhone.Text
-                
+                Phone = TxtPhone.Text,
+                IsAdmin = IsAdminOrNot
             };
             _managerService.Add(manager);
             DgvManagers.Rows.Clear();
             FillManagers();
+            ResetSearch();
             Reset();
         }
         private void DgvManagers_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -71,6 +80,12 @@ namespace Library.Forms
             TxtName.Text = _selectedManager.Name;
             TxtSurname.Text = _selectedManager.Surname;
             TxtPhone.Text = _selectedManager.Phone;
+            if(_selectedManager.IsAdmin == true)
+            {
+                CmbPosition.SelectedIndex = 0;
+                return;
+            }
+            CmbPosition.SelectedIndex = 1;
         }
 
         private void BtnCancel_Click(object sender, EventArgs e)
@@ -86,6 +101,7 @@ namespace Library.Forms
                 _managerService.Delete(_selectedManager);
                 DgvManagers.Rows.Clear();
                 FillManagers();
+                ResetSearch();
                 Reset();
             }
             MessageBox.Show("manager is deleted");
@@ -101,13 +117,45 @@ namespace Library.Forms
             _selectedManager.Name = TxtName.Text;
             _selectedManager.Surname = TxtSurname.Text;
             _selectedManager.Phone = TxtPhone.Text;
+            if(CmbPosition.SelectedIndex == 0)
+            {
+                _selectedManager.IsAdmin = true;
+            }
+            else
+            {
+                _selectedManager.IsAdmin = false;
+            }
             _managerService.Update(_selectedManager);
             DgvManagers.Rows.Clear();
             FillManagers();
+            ResetSearch();
             Reset();
             MessageBox.Show("manager is updated");
         }
 
- 
+        private void TxtNameSearch_TextChanged(object sender, EventArgs e)
+        {
+            if ((TxtPhoneSearch.Text == string.Empty && TxtNameSearch.Text == string.Empty && CmbPositionSearch.SelectedIndex == null))
+            {
+                ResetSearch();
+                return;
+            }
+            DgvManagers.Rows.Clear();
+            foreach (Manager item in _managerService.Managers())
+            {
+                if ((item.Name.ToLower().Contains(TxtNameSearch.Text.ToLower())
+                    || TxtNameSearch.Text == string.Empty) &&(item.Surname.ToLower().Contains(TxtSurnameSearch.Text.ToLower()) || TxtSurnameSearch.Text == string.Empty)&& (item.Phone.ToLower().Contains(TxtPhoneSearch.Text.ToLower())
+                    || TxtPhoneSearch.Text == string.Empty))
+                {
+                    DgvManagers.Rows.Add(item.Id, item.Name, item.Surname, item.Phone, item.IsAdmin);
+                }
+            }
+            BtnCancelSearch.Show();
+        }
+
+        private void BtnCancelSearch_Click(object sender, EventArgs e)
+        {
+            ResetSearch();
+        }
     }
 }
