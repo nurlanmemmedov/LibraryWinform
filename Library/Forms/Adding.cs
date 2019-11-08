@@ -37,7 +37,7 @@ namespace Library.Forms
         {
             foreach (Book item in _bookService.All())
             {
-                if (item.Count > 0)
+                if (item.Count > 0 && item.isActive == true)
                 {
                     DgvAllBooks.Rows.Add(item.Id, item.Title, item.Price, item.Author);
                 }
@@ -48,7 +48,10 @@ namespace Library.Forms
         {
             foreach (Client item in _clientService.Clients())
             {
-                CmbClient.Items.Add(new ComboItem(item.Id, item.Fullname));
+                if (item.isActive == true)
+                {
+                    CmbClient.Items.Add(new ComboItem(item.Id, item.Fullname));
+                }
             }
         }
 
@@ -97,8 +100,7 @@ namespace Library.Forms
             _orderService.Add(order);
             _SelectedBook.Count--;
             _bookService.Update(_SelectedBook);
-            DgvOrders.Rows.Clear();
-            FillBasket();
+            DgvOrders.Rows.Add(_SelectedCli.Fullname, _SelectedBook.Title, DateTime.Now, DtpReturn.Value, _SelectedBook.Price, false);
             Reset();
         }
 

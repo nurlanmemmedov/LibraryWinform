@@ -42,7 +42,10 @@ namespace Library.Forms
         {
             foreach (Manager item in _managerService.Managers())
             {
-                DgvManagers.Rows.Add(item.Id, item.Name, item.Surname, item.Phone, item.IsAdmin);
+                if (item.isActive == true)
+                {
+                    DgvManagers.Rows.Add(item.Id, item.Name, item.Surname, item.Phone, item.IsAdmin);
+                }
             }
         }
 
@@ -101,15 +104,16 @@ namespace Library.Forms
 
         private void BtnDelete_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Are you sure you want to delete", "Delete manager", MessageBoxButtons.YesNo);
+            DialogResult result = MessageBox.Show("Are you sure you want to deactive", "Deactive manager", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
-                _managerService.Delete(_selectedManager);
+                _selectedManager.isActive = false;
+                _managerService.Update(_selectedManager);
                 DgvManagers.Rows.RemoveAt(_selectedIndex);
                 ResetSearch();
                 Reset();
             }
-            MessageBox.Show("manager is deleted");
+            MessageBox.Show("manager is deactived");
         }
 
         private void BtnUpdate_Click(object sender, EventArgs e)

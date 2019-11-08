@@ -109,8 +109,8 @@ namespace Library.Forms
 
         private void BtnReturn_Click(object sender, EventArgs e)
         {
-            Search search = new Search();
-            search.ShowDialog();
+            Returning returning = new Returning(null);
+            returning.ShowDialog();
         }
 
         private void BtnManagerCrud_Click_1(object sender, EventArgs e)

@@ -44,6 +44,8 @@
             this.PnlHeader = new System.Windows.Forms.Panel();
             this.PnlSearch = new System.Windows.Forms.Panel();
             this.LblHeader = new System.Windows.Forms.Label();
+            this.ChckPassive = new System.Windows.Forms.CheckBox();
+            this.ChckActive = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.DgvClientsSearch)).BeginInit();
             this.PnlHeader.SuspendLayout();
             this.PnlSearch.SuspendLayout();
@@ -216,12 +218,38 @@
             this.LblHeader.TabIndex = 25;
             this.LblHeader.Text = "Search Manager";
             // 
+            // ChckPassive
+            // 
+            this.ChckPassive.AutoSize = true;
+            this.ChckPassive.Location = new System.Drawing.Point(581, 122);
+            this.ChckPassive.Name = "ChckPassive";
+            this.ChckPassive.Size = new System.Drawing.Size(63, 17);
+            this.ChckPassive.TabIndex = 17;
+            this.ChckPassive.Text = "Passive";
+            this.ChckPassive.UseVisualStyleBackColor = true;
+            this.ChckPassive.CheckedChanged += new System.EventHandler(this.ChckPassive_CheckedChanged);
+            // 
+            // ChckActive
+            // 
+            this.ChckActive.AutoSize = true;
+            this.ChckActive.Checked = true;
+            this.ChckActive.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.ChckActive.Location = new System.Drawing.Point(510, 122);
+            this.ChckActive.Name = "ChckActive";
+            this.ChckActive.Size = new System.Drawing.Size(56, 17);
+            this.ChckActive.TabIndex = 18;
+            this.ChckActive.Text = "Active";
+            this.ChckActive.UseVisualStyleBackColor = true;
+            this.ChckActive.CheckedChanged += new System.EventHandler(this.ChckActive_CheckedChanged);
+            // 
             // Search
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Linen;
             this.ClientSize = new System.Drawing.Size(673, 593);
+            this.Controls.Add(this.ChckActive);
+            this.Controls.Add(this.ChckPassive);
             this.Controls.Add(this.PnlSearch);
             this.Controls.Add(this.PnlHeader);
             this.Controls.Add(this.BtnReturn);
@@ -237,6 +265,7 @@
             this.PnlSearch.ResumeLayout(false);
             this.PnlSearch.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -257,5 +286,7 @@
         private System.Windows.Forms.Panel PnlHeader;
         private System.Windows.Forms.Panel PnlSearch;
         private System.Windows.Forms.Label LblHeader;
+        private System.Windows.Forms.CheckBox ChckPassive;
+        private System.Windows.Forms.CheckBox ChckActive;
     }
 }

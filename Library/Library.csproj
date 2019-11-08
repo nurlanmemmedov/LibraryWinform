@@ -212,6 +212,10 @@
     <Compile Include="Migrations\201911071344107_AttributesCompleted.designer.cs">
       <DependentUpon>201911071344107_AttributesCompleted.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201911080548316_isActiveColumnAddedToTables.cs" />
+    <Compile Include="Migrations\201911080548316_isActiveColumnAddedToTables.designer.cs">
+      <DependentUpon>201911080548316_isActiveColumnAddedToTables.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Book.cs" />
     <Compile Include="Models\Manager.cs" />
@@ -306,6 +310,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201911071344107_AttributesCompleted.resx">
       <DependentUpon>201911071344107_AttributesCompleted.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911080548316_isActiveColumnAddedToTables.resx">
+      <DependentUpon>201911080548316_isActiveColumnAddedToTables.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

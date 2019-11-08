@@ -19,5 +19,7 @@ namespace Library.Models
         [MaxLength(20)]
         public string Phone { get; set; }
         public List<Order> Orders { get; set; }
+        [Required]
+        public bool isActive { get; set; }
     }
 }

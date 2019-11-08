@@ -25,7 +25,6 @@ namespace Library.Forms
         }
         private void Reset()
         {
-            FillClients();
             Txtname.Text = string.Empty;
             TxtPhone.Text = string.Empty;
             BtnCancelSearch.Hide();
@@ -34,12 +33,16 @@ namespace Library.Forms
         {
             foreach (Client item in _clientService.Clients())
             {
-                DgvClientsSearch.Rows.Add(item.Id, item.Fullname, item.Phone);
+                if (item.isActive == true)
+                {
+                    DgvClientsSearch.Rows.Add(item.Id, item.Fullname, item.Phone);
+                }
             }
         }
         private void BtnCancelSearch_Click(object sender, EventArgs e)
         {
             DgvClientsSearch.Rows.Clear();
+            FillClients();
             Reset();
         }
 
@@ -63,27 +66,116 @@ namespace Library.Forms
             BtnReturn.Show();
             int index = Convert.ToInt32(DgvClientsSearch.Rows[e.RowIndex].Cells[0].Value);
             selectedClient = _clientService.Find(index);
+            if(selectedClient.isActive == false)
+            {
+                BtnAdd.Hide();
+            }
         }
 
         private void TxtPhone_TextChanged(object sender, EventArgs e)
         {
-            if ((TxtPhone.Text == string.Empty && Txtname.Text == string.Empty))
+            if (ChckPassive.Checked)
             {
-                DgvClientsSearch.Rows.Clear();
-                Reset();
-                return;
-            }
-            DgvClientsSearch.Rows.Clear();
-            foreach (Client item in _clientService.Clients())
-            {
-                if ((item.Fullname.ToLower().Contains(Txtname.Text.ToLower())
-                    || Txtname.Text == string.Empty) && (item.Phone.ToLower().Contains(TxtPhone.Text.ToLower())
-                    || TxtPhone.Text == string.Empty))
+                if ((TxtPhone.Text == string.Empty && Txtname.Text == string.Empty))
                 {
-                    DgvClientsSearch.Rows.Add(item.Id, item.Fullname, item.Phone);
+                    DgvClientsSearch.Rows.Clear();
+                    foreach (Client item in _clientService.Clients())
+                    {
+
+                        if (item.isActive == false)
+                        {
+                            DgvClientsSearch.Rows.Add(item.Id, item.Fullname, item.Phone);
+                        }
+                    }
+                    Reset();
+                    return;
+                }
+                DgvClientsSearch.Rows.Clear();
+                foreach (Client item in _clientService.Clients())
+                {
+                    if ((item.Fullname.ToLower().Contains(Txtname.Text.ToLower())
+                        || Txtname.Text == string.Empty) && (item.Phone.ToLower().Contains(TxtPhone.Text.ToLower())
+                        || TxtPhone.Text == string.Empty) && item.isActive == false)
+                    {
+                        DgvClientsSearch.Rows.Add(item.Id, item.Fullname, item.Phone);
+                    }
+                }
+                BtnCancelSearch.Show();
+            }
+            else
+            {
+                if ((TxtPhone.Text == string.Empty && Txtname.Text == string.Empty))
+                {
+                    DgvClientsSearch.Rows.Clear();
+                    FillClients();
+                    Reset();
+                    return;
+                }
+                DgvClientsSearch.Rows.Clear();
+                foreach (Client item in _clientService.Clients())
+                {
+                    if ((item.Fullname.ToLower().Contains(Txtname.Text.ToLower())
+                        || Txtname.Text == string.Empty) && (item.Phone.ToLower().Contains(TxtPhone.Text.ToLower())
+                        || TxtPhone.Text == string.Empty) && item.isActive == true)
+                    {
+                        DgvClientsSearch.Rows.Add(item.Id, item.Fullname, item.Phone);
+                    }
+                }
+                BtnCancelSearch.Show();
+            }
+        }
+
+        private void ChckPassive_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ChckPassive.Checked)
+            {
+                ChckActive.Checked = false;
+                DgvClientsSearch.Rows.Clear();
+                foreach (Client item in _clientService.Clients())
+                {
+
+                    if (item.isActive == false)
+                    {
+                        DgvClientsSearch.Rows.Add(item.Id, item.Fullname, item.Phone);
+                    }
                 }
             }
-            BtnCancelSearch.Show();
+            else
+            {
+                ChckActive.Checked = true;
+                DgvClientsSearch.Rows.Clear();
+                FillClients();
+            }
+        }
+
+        private void ChckActive_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ChckActive.Checked)
+            {
+                ChckPassive.Checked = false;
+                DgvClientsSearch.Rows.Clear();
+                foreach (Client item in _clientService.Clients())
+                {
+
+                    if (item.isActive == true)
+                    {
+                        DgvClientsSearch.Rows.Add(item.Id, item.Fullname, item.Phone);
+                    }
+                }
+            }
+            else
+            {
+                ChckPassive.Checked = true;
+                DgvClientsSearch.Rows.Clear();
+                foreach (Client item in _clientService.Clients())
+                {
+
+                    if (item.isActive == false)
+                    {
+                        DgvClientsSearch.Rows.Add(item.Id, item.Fullname, item.Phone);
+                    }
+                }
+            }
         }
     }
 }

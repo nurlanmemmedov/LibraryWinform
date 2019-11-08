@@ -45,7 +45,10 @@ namespace Library.Forms
         {
             foreach (Book item in _bookService.All())
             {
-                DgvBooks.Rows.Add(item.Id, item.Title, item.Price, item.Author, item.Count);
+                if (item.isActive)
+                {
+                    DgvBooks.Rows.Add(item.Id, item.Title, item.Price, item.Author, item.Count);
+                }
             }
         }
 
@@ -90,15 +93,16 @@ namespace Library.Forms
 
         private void BtnDelete_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Are you sure you want to delete", "Delete book", MessageBoxButtons.YesNo);
+            DialogResult result = MessageBox.Show("Are you sure you want to deactive", "Deactive book", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
-                _bookService.Delete(_selectedBook);
+                _selectedBook.isActive = false;
+                _bookService.Update(_selectedBook);
                 DgvBooks.Rows.RemoveAt(_SelectedIndex);
                 ResetSearch();
                 Reset();
             }
-            MessageBox.Show("book is deleted");
+            MessageBox.Show("book is deactived");
         }
         private void BtnUpdate_Click(object sender, EventArgs e)
         {

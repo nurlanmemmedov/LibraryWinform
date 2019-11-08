@@ -43,6 +43,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.PnlHeader = new System.Windows.Forms.Panel();
             this.LblAdd = new System.Windows.Forms.Label();
+            this.CmbClient = new System.Windows.Forms.ComboBox();
+            this.LblClient = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DgvOrders)).BeginInit();
             this.PnlHeader.SuspendLayout();
             this.SuspendLayout();
@@ -54,7 +56,7 @@
             this.BtnReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnReturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.BtnReturn.ForeColor = System.Drawing.Color.White;
-            this.BtnReturn.Location = new System.Drawing.Point(534, 364);
+            this.BtnReturn.Location = new System.Drawing.Point(538, 407);
             this.BtnReturn.Name = "BtnReturn";
             this.BtnReturn.Size = new System.Drawing.Size(111, 40);
             this.BtnReturn.TabIndex = 1;
@@ -64,7 +66,7 @@
             // 
             // TxtReturningBook
             // 
-            this.TxtReturningBook.Location = new System.Drawing.Point(57, 384);
+            this.TxtReturningBook.Location = new System.Drawing.Point(61, 427);
             this.TxtReturningBook.Name = "TxtReturningBook";
             this.TxtReturningBook.ReadOnly = true;
             this.TxtReturningBook.Size = new System.Drawing.Size(205, 20);
@@ -73,7 +75,7 @@
             // LblReturningBook
             // 
             this.LblReturningBook.AutoSize = true;
-            this.LblReturningBook.Location = new System.Drawing.Point(57, 364);
+            this.LblReturningBook.Location = new System.Drawing.Point(61, 407);
             this.LblReturningBook.Name = "LblReturningBook";
             this.LblReturningBook.Size = new System.Drawing.Size(95, 13);
             this.LblReturningBook.TabIndex = 3;
@@ -94,7 +96,7 @@
             this.Column5,
             this.Column6,
             this.Column7});
-            this.DgvOrders.Location = new System.Drawing.Point(57, 61);
+            this.DgvOrders.Location = new System.Drawing.Point(61, 104);
             this.DgvOrders.Name = "DgvOrders";
             this.DgvOrders.ReadOnly = true;
             this.DgvOrders.Size = new System.Drawing.Size(588, 274);
@@ -140,7 +142,7 @@
             // 
             // TxtPayment
             // 
-            this.TxtPayment.Location = new System.Drawing.Point(310, 383);
+            this.TxtPayment.Location = new System.Drawing.Point(314, 426);
             this.TxtPayment.Name = "TxtPayment";
             this.TxtPayment.ReadOnly = true;
             this.TxtPayment.Size = new System.Drawing.Size(173, 20);
@@ -149,7 +151,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(310, 364);
+            this.label1.Location = new System.Drawing.Point(314, 407);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(48, 13);
             this.label1.TabIndex = 5;
@@ -159,7 +161,7 @@
             // 
             this.PnlHeader.BackColor = System.Drawing.Color.AntiqueWhite;
             this.PnlHeader.Controls.Add(this.LblAdd);
-            this.PnlHeader.Location = new System.Drawing.Point(57, 30);
+            this.PnlHeader.Location = new System.Drawing.Point(61, 73);
             this.PnlHeader.Name = "PnlHeader";
             this.PnlHeader.Size = new System.Drawing.Size(588, 31);
             this.PnlHeader.TabIndex = 12;
@@ -173,12 +175,32 @@
             this.LblAdd.TabIndex = 5;
             this.LblAdd.Text = "Click to Add Basket";
             // 
+            // CmbClient
+            // 
+            this.CmbClient.FormattingEnabled = true;
+            this.CmbClient.Location = new System.Drawing.Point(61, 33);
+            this.CmbClient.Name = "CmbClient";
+            this.CmbClient.Size = new System.Drawing.Size(176, 21);
+            this.CmbClient.TabIndex = 13;
+            this.CmbClient.SelectedIndexChanged += new System.EventHandler(this.CmbClient_SelectedIndexChanged);
+            // 
+            // LblClient
+            // 
+            this.LblClient.AutoSize = true;
+            this.LblClient.Location = new System.Drawing.Point(61, 13);
+            this.LblClient.Name = "LblClient";
+            this.LblClient.Size = new System.Drawing.Size(33, 13);
+            this.LblClient.TabIndex = 14;
+            this.LblClient.Text = "Client";
+            // 
             // Returning
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Linen;
-            this.ClientSize = new System.Drawing.Size(704, 440);
+            this.ClientSize = new System.Drawing.Size(704, 483);
+            this.Controls.Add(this.LblClient);
+            this.Controls.Add(this.CmbClient);
             this.Controls.Add(this.PnlHeader);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.TxtPayment);
@@ -213,5 +235,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel PnlHeader;
         private System.Windows.Forms.Label LblAdd;
+        private System.Windows.Forms.ComboBox CmbClient;
+        private System.Windows.Forms.Label LblClient;
     }
 }

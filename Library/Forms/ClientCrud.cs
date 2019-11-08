@@ -45,7 +45,10 @@ namespace Library.Forms
         {
             foreach (Client item in _clientService.Clients())
             {
-                DgvClients.Rows.Add(item.Id, item.Fullname, item.Phone);
+                if (item.isActive)
+                {
+                    DgvClients.Rows.Add(item.Id, item.Fullname, item.Phone);
+                }
             }
         }
         public bool isDigit(string str)
@@ -124,15 +127,16 @@ namespace Library.Forms
 
         private void BtnDelete_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Are you sure you want to delete", "Delete client", MessageBoxButtons.YesNo);
+            DialogResult result = MessageBox.Show("Are you sure you want to deactive", "Deactive client", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
-                _clientService.Delete(_selectedClient);
+                _selectedClient.isActive = false;
+                _clientService.Update(_selectedClient);
                 DgvClients.Rows.RemoveAt(_selectedIndex);
                 ResetSearch();
                 Reset();
             }
-            MessageBox.Show("client is deleted");
+            MessageBox.Show("client is deactived");
         }
 
         private void BtnCancel_Click(object sender, EventArgs e)

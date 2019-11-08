@@ -25,5 +25,7 @@ namespace Library.Models
         [Required]
         [MaxLength(20)]
         public string Phone { get; set; }
+        [Required]
+        public bool isActive { get; set; }
     }
 }
