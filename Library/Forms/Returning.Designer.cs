@@ -45,6 +45,7 @@
             this.LblAdd = new System.Windows.Forms.Label();
             this.CmbClient = new System.Windows.Forms.ComboBox();
             this.LblClient = new System.Windows.Forms.Label();
+            this.BtnCancel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DgvOrders)).BeginInit();
             this.PnlHeader.SuspendLayout();
             this.SuspendLayout();
@@ -56,9 +57,9 @@
             this.BtnReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnReturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.BtnReturn.ForeColor = System.Drawing.Color.White;
-            this.BtnReturn.Location = new System.Drawing.Point(538, 407);
+            this.BtnReturn.Location = new System.Drawing.Point(557, 407);
             this.BtnReturn.Name = "BtnReturn";
-            this.BtnReturn.Size = new System.Drawing.Size(111, 40);
+            this.BtnReturn.Size = new System.Drawing.Size(92, 40);
             this.BtnReturn.TabIndex = 1;
             this.BtnReturn.Text = "Return";
             this.BtnReturn.UseVisualStyleBackColor = false;
@@ -69,7 +70,7 @@
             this.TxtReturningBook.Location = new System.Drawing.Point(61, 427);
             this.TxtReturningBook.Name = "TxtReturningBook";
             this.TxtReturningBook.ReadOnly = true;
-            this.TxtReturningBook.Size = new System.Drawing.Size(205, 20);
+            this.TxtReturningBook.Size = new System.Drawing.Size(159, 20);
             this.TxtReturningBook.TabIndex = 2;
             // 
             // LblReturningBook
@@ -142,16 +143,16 @@
             // 
             // TxtPayment
             // 
-            this.TxtPayment.Location = new System.Drawing.Point(314, 426);
+            this.TxtPayment.Location = new System.Drawing.Point(248, 427);
             this.TxtPayment.Name = "TxtPayment";
             this.TxtPayment.ReadOnly = true;
-            this.TxtPayment.Size = new System.Drawing.Size(173, 20);
+            this.TxtPayment.Size = new System.Drawing.Size(156, 20);
             this.TxtPayment.TabIndex = 4;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(314, 407);
+            this.label1.Location = new System.Drawing.Point(248, 408);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(48, 13);
             this.label1.TabIndex = 5;
@@ -173,7 +174,7 @@
             this.LblAdd.Name = "LblAdd";
             this.LblAdd.Size = new System.Drawing.Size(100, 13);
             this.LblAdd.TabIndex = 5;
-            this.LblAdd.Text = "Click to Add Basket";
+            this.LblAdd.Text = "Click to return Book";
             // 
             // CmbClient
             // 
@@ -193,12 +194,29 @@
             this.LblClient.TabIndex = 14;
             this.LblClient.Text = "Client";
             // 
+            // BtnCancel
+            // 
+            this.BtnCancel.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.BtnCancel.FlatAppearance.BorderSize = 0;
+            this.BtnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.BtnCancel.ForeColor = System.Drawing.Color.White;
+            this.BtnCancel.Location = new System.Drawing.Point(547, 407);
+            this.BtnCancel.Name = "BtnCancel";
+            this.BtnCancel.Size = new System.Drawing.Size(102, 40);
+            this.BtnCancel.TabIndex = 15;
+            this.BtnCancel.Text = "Cancel Order";
+            this.BtnCancel.UseVisualStyleBackColor = false;
+            this.BtnCancel.Visible = false;
+            this.BtnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
+            // 
             // Returning
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Linen;
             this.ClientSize = new System.Drawing.Size(704, 483);
+            this.Controls.Add(this.BtnCancel);
             this.Controls.Add(this.LblClient);
             this.Controls.Add(this.CmbClient);
             this.Controls.Add(this.PnlHeader);
@@ -237,5 +255,6 @@
         private System.Windows.Forms.Label LblAdd;
         private System.Windows.Forms.ComboBox CmbClient;
         private System.Windows.Forms.Label LblClient;
+        private System.Windows.Forms.Button BtnCancel;
     }
 }

@@ -28,6 +28,31 @@ namespace Library.Forms
                 BtnBooksCrud.Visible = false;
                 BtnPayment.Visible = false;
                 BtnManagerCrud.Visible = false;
+                PcbManager.Visible = false;
+                PcbBooks.Visible = false;
+                BtnManagers.Visible = false;
+                LblManagerCount.Visible = false;
+                LblManagers.Visible = false;
+                BtnBooks.Visible = false;
+                LblBooks.Visible = false;
+                LblBookCount.Visible = false;
+                BtnReport.Visible = false;
+                LblReports.Visible = false;
+                LblReportCount.Visible = false;
+                BtnPayment.Visible = false;
+                PcbReport.Visible = false;
+                PnlBooks.Visible = false;
+                PnlManager.Visible = false;
+                PnlReports.Visible = false;
+                BtnTime.Location = new Point(691, 115);
+                PnlDate.Location = new Point(691, 115);
+                LblCurrentDate.Location = new Point(847, 125);
+                LblDate.Location = new Point(879, 184);
+                BtnLogout.Location = new Point(-2, 307);
+                PcbManager.Location = new Point(5, 311);
+                BtnClose.Location = new Point(-2, 369);
+                PcbClose.Location = new Point(6, 374);
+                PcbLogout.Location = new Point(5, 311);
                 return;
             }
             FillCounts();
@@ -41,7 +66,7 @@ namespace Library.Forms
             int BookCount = 0;
             foreach (Order item in _orderService.Orders())
             {
-                if(item.Returned == false)
+                if (item.Returned == false)
                 {
                     Count++;
                 }
@@ -67,7 +92,7 @@ namespace Library.Forms
             LblReportCount.Text = ReportCount.ToString();
             foreach (Book item in _bookService.All())
             {
-                    BookCount++;
+                BookCount++;
             }
             LblBookCount.Text = BookCount.ToString();
             LblDate.Text = DateTime.Now.ToString("yyyy,MM.dd");

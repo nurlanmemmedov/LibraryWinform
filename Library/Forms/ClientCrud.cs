@@ -30,7 +30,7 @@ namespace Library.Forms
             TxtFullname.Text = string.Empty;
             TxtPhone.Text = string.Empty;
             BtnAdd.Show();
-            BtnDelete.Hide();
+            BtnDeactive.Hide();
             BtnUpdate.Hide();
             BtnCancel.Hide();
 
@@ -76,7 +76,7 @@ namespace Library.Forms
             }
             foreach (Client item in _clientService.Clients())
             {
-                if(item.Fullname == TxtFullname.Text && item.Phone == TxtPhone.Text)
+                if (item.Fullname == TxtFullname.Text && item.Phone == TxtPhone.Text)
                 {
                     MessageBox.Show("such client is already exists");
                     return;
@@ -125,7 +125,8 @@ namespace Library.Forms
             MessageBox.Show("client is updated");
         }
 
-        private void BtnDelete_Click(object sender, EventArgs e)
+
+        private void BtnDeactive_Click_1(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Are you sure you want to deactive", "Deactive client", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
@@ -146,9 +147,9 @@ namespace Library.Forms
 
         private void DgvClients_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-        BtnAdd.Hide();
+            BtnAdd.Hide();
             BtnUpdate.Show();
-            BtnDelete.Show();
+            BtnDeactive.Show();
             BtnCancel.Show();
             int Id = Convert.ToInt32(DgvClients.Rows[e.RowIndex].Cells[0].Value);
             _selectedIndex = e.RowIndex;
@@ -171,7 +172,7 @@ namespace Library.Forms
             {
                 if ((item.Fullname.ToLower().Contains(TxtNameSearch.Text.ToLower())
                     || TxtNameSearch.Text == string.Empty) && (item.Phone.ToLower().Contains(TxtPhoneSearch.Text.ToLower())
-                    || TxtPhoneSearch.Text == string.Empty))
+                    || TxtPhoneSearch.Text == string.Empty) && item.isActive == true)
                 {
                     DgvClients.Rows.Add(item.Id, item.Fullname, item.Phone);
                 }
@@ -186,6 +187,5 @@ namespace Library.Forms
             ResetSearch();
         }
 
-       
     }
 }

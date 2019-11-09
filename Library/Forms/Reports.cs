@@ -27,12 +27,20 @@ namespace Library.Forms
         {
             foreach (Order item in _orderService.Orders())
             {
-                if (item.ReturningDate != null && item.ReturningDate>item.MustReturnAt)
+                if (item.ReturningDate != null)
                 {
-                    Decimal? penal = (item.ReturningDate - item.MustReturnAt)?.Days * (item.Cost * 5 / 1000);
+                    if (item.ReturningDate > item.MustReturnAt) {
+                        Decimal? penal = (item.ReturningDate - item.MustReturnAt)?.Days * (item.Cost * 5 / 1000);
 
-                    DgvReports.Rows.Add(item.Id, item.Client.Fullname, item.Book.Title, item.Cost + penal);
-                    Income += item.Cost + penal ;
+                        DgvReports.Rows.Add(item.Id, item.Client.Fullname, item.Book.Title, item.Cost + penal);
+                        Income += (item.Cost + penal);
+                    }
+                    else
+                    {
+                        DgvReports.Rows.Add(item.Id, item.Client.Fullname, item.Book.Title, item.Cost);
+                        Income += item.Cost;
+
+                    }
                 }
             }
         }

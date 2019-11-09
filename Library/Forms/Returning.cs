@@ -66,20 +66,29 @@ namespace Library.Forms
             if (_SelectedOrder.Returned == false)
             {
                 TxtReturningBook.Text = _SelectedOrder.Book.Title;
-                if ((DateTime.Now - _SelectedOrder.MustReturnAt).Days > 0)
+                if ((DateTime.Now - _SelectedOrder.OrderDate).Days < 1)
+                {
+                    BtnReturn.Hide();
+                    BtnCancel.Show();
+                }
+                else if ((DateTime.Now - _SelectedOrder.MustReturnAt).Days > 0)
                 {
                     decimal Payment = (_SelectedOrder.Cost + ((DateTime.Now - _SelectedOrder.MustReturnAt).Days) * (_SelectedOrder.Cost * 5 / 1000));
                     TxtPayment.Text = Payment.ToString();
+                    BtnReturn.Show();
+                    BtnCancel.Hide();
                 }
                 else
                 {
                     TxtPayment.Text = _SelectedOrder.Cost.ToString();
+                    BtnReturn.Show();
+                    BtnCancel.Hide();
                 }
                 return;
             }
-            MessageBox.Show("This Book Is already Returned");
-            TxtPayment.Text = string.Empty;
-            TxtReturningBook.Text = string.Empty;
+                MessageBox.Show("This Book Is already Returned");
+                TxtPayment.Text = string.Empty;
+                TxtReturningBook.Text = string.Empty;
         }
 
         private void BtnReturn_Click(object sender, EventArgs e)
@@ -89,9 +98,14 @@ namespace Library.Forms
             _SelectedOrder.ReturningDate = DateTime.Now;
             _orderService.Update(_SelectedOrder);
             DgvOrders.Rows[_selectedIndex].Cells[5].Value = true;
-            DgvOrders.Rows.Clear();
-            FillClientBooks();
             Reset();
+
+        }
+
+        private void BtnCancel_Click(object sender, EventArgs e)
+        {
+            _orderService.Delete(_SelectedOrder);
+            DgvOrders.Rows.RemoveAt(_selectedIndex);
         }
 
         private void CmbClient_SelectedIndexChanged(object sender, EventArgs e)
@@ -101,5 +115,7 @@ namespace Library.Forms
             DgvOrders.Rows.Clear();
             FillClientBooks();
         }
+
     }
 }
+

@@ -26,7 +26,7 @@ namespace Library.Forms
             TxtPassword.Text = string.Empty;
             CmbPosition.SelectedItem = null;
             BtnAdd.Show();
-            BtnDelete.Hide();
+            BtnDeactive.Hide();
             BtnUpdate.Hide();
             BtnCancel.Hide();
 
@@ -79,7 +79,7 @@ namespace Library.Forms
         {
         BtnAdd.Hide();
             BtnUpdate.Show();
-            BtnDelete.Show();
+            BtnDeactive.Show();
             BtnCancel.Show();
             int Id = Convert.ToInt32(DgvManagers.Rows[e.RowIndex].Cells[0].Value);
             _selectedManager = _managerService.Find(Id);
@@ -102,9 +102,9 @@ namespace Library.Forms
             Reset();
         }
 
-        private void BtnDelete_Click(object sender, EventArgs e)
+        private void BtnDeactive_Click_1(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Are you sure you want to deactive", "Deactive manager", MessageBoxButtons.YesNo);
+        DialogResult result = MessageBox.Show("Are you sure you want to deactive", "Deactive manager", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
                 _selectedManager.isActive = false;
@@ -168,7 +168,7 @@ namespace Library.Forms
             {
                 if ((item.Name.ToLower().Contains(TxtNameSearch.Text.ToLower())
                     || TxtNameSearch.Text == string.Empty) &&(item.Surname.ToLower().Contains(TxtSurnameSearch.Text.ToLower()) || TxtSurnameSearch.Text == string.Empty)&& (item.Phone.ToLower().Contains(TxtPhoneSearch.Text.ToLower())
-                    || TxtPhoneSearch.Text == string.Empty))
+                    || TxtPhoneSearch.Text == string.Empty)&& item.isActive == true)
                 {
                     DgvManagers.Rows.Add(item.Id, item.Name, item.Surname, item.Phone, item.IsAdmin);
                 }
@@ -183,5 +183,6 @@ namespace Library.Forms
             ResetSearch();
         }
 
+       
     }
 }

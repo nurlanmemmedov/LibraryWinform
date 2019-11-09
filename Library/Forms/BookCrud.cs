@@ -31,7 +31,7 @@ namespace Library.Forms
             TxtAuthor.Text = string.Empty;
             NmrcCount.Text = string.Empty;
             BtnAdd.Show();
-            BtnDelete.Hide();
+            BtnDeactive.Hide();
             BtnUpdate.Hide();
             BtnCancel.Hide();
         }
@@ -75,7 +75,7 @@ namespace Library.Forms
         {
             BtnAdd.Hide();
             BtnUpdate.Show();
-            BtnDelete.Show();
+            BtnDeactive.Show();
             BtnCancel.Show();
             int Id = Convert.ToInt32(DgvBooks.Rows[e.RowIndex].Cells[0].Value);
             _SelectedIndex = e.RowIndex;
@@ -91,7 +91,8 @@ namespace Library.Forms
             Reset();
         }
 
-        private void BtnDelete_Click(object sender, EventArgs e)
+
+        private void BtnDeactive_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Are you sure you want to deactive", "Deactive book", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
@@ -140,7 +141,7 @@ namespace Library.Forms
             {
                 if ((item.Title.ToLower().Contains(TxtNameSearch.Text.ToLower())
                     || TxtNameSearch.Text == string.Empty) && (item.Author.ToLower().Contains(TxtAuthorSearch.Text.ToLower())
-                    || TxtAuthorSearch.Text == string.Empty))
+                    || TxtAuthorSearch.Text == string.Empty)&& item.isActive == true)
                 {
                     DgvBooks.Rows.Add(item.Id, item.Title, item.Price, item.Author, item.Count);
                 }
@@ -154,5 +155,6 @@ namespace Library.Forms
             FillBooks();
             ResetSearch();
         }
+
     }
 }

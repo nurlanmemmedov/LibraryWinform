@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClientCrud));
             this.BtnCancel = new System.Windows.Forms.Button();
-            this.BtnDelete = new System.Windows.Forms.Button();
+            this.BtnDeactive = new System.Windows.Forms.Button();
             this.BtnUpdate = new System.Windows.Forms.Button();
             this.DgvClients = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -71,21 +71,21 @@
             this.BtnCancel.Visible = false;
             this.BtnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
             // 
-            // BtnDelete
+            // BtnDeactive
             // 
-            this.BtnDelete.BackColor = System.Drawing.Color.Brown;
-            this.BtnDelete.FlatAppearance.BorderSize = 0;
-            this.BtnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.BtnDelete.ForeColor = System.Drawing.Color.White;
-            this.BtnDelete.Location = new System.Drawing.Point(119, 443);
-            this.BtnDelete.Name = "BtnDelete";
-            this.BtnDelete.Size = new System.Drawing.Size(72, 39);
-            this.BtnDelete.TabIndex = 31;
-            this.BtnDelete.Text = "Deactive";
-            this.BtnDelete.UseVisualStyleBackColor = false;
-            this.BtnDelete.Visible = false;
-            this.BtnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
+            this.BtnDeactive.BackColor = System.Drawing.Color.Brown;
+            this.BtnDeactive.FlatAppearance.BorderSize = 0;
+            this.BtnDeactive.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnDeactive.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.BtnDeactive.ForeColor = System.Drawing.Color.White;
+            this.BtnDeactive.Location = new System.Drawing.Point(119, 443);
+            this.BtnDeactive.Name = "BtnDeactive";
+            this.BtnDeactive.Size = new System.Drawing.Size(72, 39);
+            this.BtnDeactive.TabIndex = 31;
+            this.BtnDeactive.Text = "Deactive";
+            this.BtnDeactive.UseVisualStyleBackColor = false;
+            this.BtnDeactive.Visible = false;
+            this.BtnDeactive.Click += new System.EventHandler(this.BtnDeactive_Click_1);
             // 
             // BtnUpdate
             // 
@@ -294,7 +294,7 @@
             this.Controls.Add(this.PnlSearch);
             this.Controls.Add(this.PnlHeader);
             this.Controls.Add(this.BtnCancel);
-            this.Controls.Add(this.BtnDelete);
+            this.Controls.Add(this.BtnDeactive);
             this.Controls.Add(this.BtnUpdate);
             this.Controls.Add(this.DgvClients);
             this.Controls.Add(this.LblPhone);
@@ -318,7 +318,7 @@
 
         #endregion
         private System.Windows.Forms.Button BtnCancel;
-        private System.Windows.Forms.Button BtnDelete;
+        private System.Windows.Forms.Button BtnDeactive;
         private System.Windows.Forms.Button BtnUpdate;
         private System.Windows.Forms.DataGridView DgvClients;
         private System.Windows.Forms.Label LblPhone;

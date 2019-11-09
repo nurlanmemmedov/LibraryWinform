@@ -36,13 +36,13 @@
             this.BtnFollow = new System.Windows.Forms.Button();
             this.BtnSearch = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox11 = new System.Windows.Forms.PictureBox();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.PcbReport = new System.Windows.Forms.PictureBox();
+            this.PcbClose = new System.Windows.Forms.PictureBox();
+            this.PcbLogout = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.PcbManager = new System.Windows.Forms.PictureBox();
+            this.PcbBooks = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.BtnPayment = new System.Windows.Forms.Button();
             this.BtnBooksCrud = new System.Windows.Forms.Button();
@@ -67,29 +67,29 @@
             this.LblManagerCount = new System.Windows.Forms.Label();
             this.BtnBooks = new System.Windows.Forms.Button();
             this.LblBooks = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.PnlBooks = new System.Windows.Forms.Panel();
+            this.PbBooks = new System.Windows.Forms.PictureBox();
             this.LblBookCount = new System.Windows.Forms.Label();
             this.BtnReport = new System.Windows.Forms.Button();
             this.LblReports = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.PnlReports = new System.Windows.Forms.Panel();
             this.PbReturn = new System.Windows.Forms.PictureBox();
             this.LblReportCount = new System.Windows.Forms.Label();
             this.BtnTime = new System.Windows.Forms.Button();
             this.LblCurrentDate = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.PnlDate = new System.Windows.Forms.Panel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.LblDate = new System.Windows.Forms.Label();
             this.PnlOperation = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.PbAdd)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PcbReport)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PcbClose)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PcbLogout)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PcbManager)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PcbBooks)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbReturnOrder)).BeginInit();
             this.PnlIcon.SuspendLayout();
@@ -98,11 +98,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.PnlManager.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PbManagers)).BeginInit();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.panel4.SuspendLayout();
+            this.PnlBooks.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PbBooks)).BeginInit();
+            this.PnlReports.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PbReturn)).BeginInit();
-            this.panel5.SuspendLayout();
+            this.PnlDate.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.PnlOperation.SuspendLayout();
             this.SuspendLayout();
@@ -119,7 +119,7 @@
             this.BtnClientsCrud.Name = "BtnClientsCrud";
             this.BtnClientsCrud.Size = new System.Drawing.Size(260, 50);
             this.BtnClientsCrud.TabIndex = 2;
-            this.BtnClientsCrud.Text = "Clients CRUD";
+            this.BtnClientsCrud.Text = "Edit Clients";
             this.BtnClientsCrud.UseVisualStyleBackColor = false;
             this.BtnClientsCrud.Click += new System.EventHandler(this.BtnClientsCrud_Click);
             // 
@@ -212,13 +212,13 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(27)))), ((int)(((byte)(61)))));
-            this.panel2.Controls.Add(this.pictureBox11);
-            this.panel2.Controls.Add(this.pictureBox10);
-            this.panel2.Controls.Add(this.pictureBox9);
+            this.panel2.Controls.Add(this.PcbReport);
+            this.panel2.Controls.Add(this.PcbClose);
+            this.panel2.Controls.Add(this.PcbLogout);
             this.panel2.Controls.Add(this.pictureBox8);
             this.panel2.Controls.Add(this.pictureBox7);
-            this.panel2.Controls.Add(this.pictureBox6);
-            this.panel2.Controls.Add(this.pictureBox5);
+            this.panel2.Controls.Add(this.PcbManager);
+            this.panel2.Controls.Add(this.PcbBooks);
             this.panel2.Controls.Add(this.pictureBox3);
             this.panel2.Controls.Add(this.BtnPayment);
             this.panel2.Controls.Add(this.BtnBooksCrud);
@@ -237,41 +237,41 @@
             this.panel2.Size = new System.Drawing.Size(257, 738);
             this.panel2.TabIndex = 3;
             // 
-            // pictureBox11
+            // PcbReport
             // 
-            this.pictureBox11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.pictureBox11.BackgroundImage = global::Library.Properties.Resources.thumbs_up_hand_symbol;
-            this.pictureBox11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox11.Enabled = false;
-            this.pictureBox11.Location = new System.Drawing.Point(7, 436);
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(43, 36);
-            this.pictureBox11.TabIndex = 27;
-            this.pictureBox11.TabStop = false;
+            this.PcbReport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.PcbReport.BackgroundImage = global::Library.Properties.Resources.thumbs_up_hand_symbol;
+            this.PcbReport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PcbReport.Enabled = false;
+            this.PcbReport.Location = new System.Drawing.Point(7, 436);
+            this.PcbReport.Name = "PcbReport";
+            this.PcbReport.Size = new System.Drawing.Size(43, 36);
+            this.PcbReport.TabIndex = 27;
+            this.PcbReport.TabStop = false;
             // 
-            // pictureBox10
+            // PcbClose
             // 
-            this.pictureBox10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.pictureBox10.BackgroundImage = global::Library.Properties.Resources.error;
-            this.pictureBox10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox10.Enabled = false;
-            this.pictureBox10.Location = new System.Drawing.Point(8, 558);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(41, 35);
-            this.pictureBox10.TabIndex = 43;
-            this.pictureBox10.TabStop = false;
+            this.PcbClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.PcbClose.BackgroundImage = global::Library.Properties.Resources.error;
+            this.PcbClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PcbClose.Enabled = false;
+            this.PcbClose.Location = new System.Drawing.Point(8, 558);
+            this.PcbClose.Name = "PcbClose";
+            this.PcbClose.Size = new System.Drawing.Size(41, 35);
+            this.PcbClose.TabIndex = 43;
+            this.PcbClose.TabStop = false;
             // 
-            // pictureBox9
+            // PcbLogout
             // 
-            this.pictureBox9.BackColor = System.Drawing.Color.Maroon;
-            this.pictureBox9.BackgroundImage = global::Library.Properties.Resources.logout;
-            this.pictureBox9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox9.Enabled = false;
-            this.pictureBox9.Location = new System.Drawing.Point(7, 497);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(43, 37);
-            this.pictureBox9.TabIndex = 42;
-            this.pictureBox9.TabStop = false;
+            this.PcbLogout.BackColor = System.Drawing.Color.Maroon;
+            this.PcbLogout.BackgroundImage = global::Library.Properties.Resources.logout;
+            this.PcbLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PcbLogout.Enabled = false;
+            this.PcbLogout.Location = new System.Drawing.Point(7, 497);
+            this.PcbLogout.Name = "PcbLogout";
+            this.PcbLogout.Size = new System.Drawing.Size(43, 37);
+            this.PcbLogout.TabIndex = 42;
+            this.PcbLogout.TabStop = false;
             // 
             // pictureBox8
             // 
@@ -297,29 +297,29 @@
             this.pictureBox7.TabIndex = 2;
             this.pictureBox7.TabStop = false;
             // 
-            // pictureBox6
+            // PcbManager
             // 
-            this.pictureBox6.BackColor = System.Drawing.Color.Maroon;
-            this.pictureBox6.BackgroundImage = global::Library.Properties.Resources.manager;
-            this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox6.Enabled = false;
-            this.pictureBox6.Location = new System.Drawing.Point(5, 311);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(44, 43);
-            this.pictureBox6.TabIndex = 2;
-            this.pictureBox6.TabStop = false;
+            this.PcbManager.BackColor = System.Drawing.Color.Maroon;
+            this.PcbManager.BackgroundImage = global::Library.Properties.Resources.manager;
+            this.PcbManager.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PcbManager.Enabled = false;
+            this.PcbManager.Location = new System.Drawing.Point(5, 311);
+            this.PcbManager.Name = "PcbManager";
+            this.PcbManager.Size = new System.Drawing.Size(44, 43);
+            this.PcbManager.TabIndex = 2;
+            this.PcbManager.TabStop = false;
             // 
-            // pictureBox5
+            // PcbBooks
             // 
-            this.pictureBox5.BackColor = System.Drawing.Color.Maroon;
-            this.pictureBox5.BackgroundImage = global::Library.Properties.Resources.books_stack_of_three;
-            this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox5.Enabled = false;
-            this.pictureBox5.Location = new System.Drawing.Point(6, 374);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(44, 45);
-            this.pictureBox5.TabIndex = 2;
-            this.pictureBox5.TabStop = false;
+            this.PcbBooks.BackColor = System.Drawing.Color.Maroon;
+            this.PcbBooks.BackgroundImage = global::Library.Properties.Resources.books_stack_of_three;
+            this.PcbBooks.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PcbBooks.Enabled = false;
+            this.PcbBooks.Location = new System.Drawing.Point(6, 374);
+            this.PcbBooks.Name = "PcbBooks";
+            this.PcbBooks.Size = new System.Drawing.Size(44, 45);
+            this.PcbBooks.TabIndex = 2;
+            this.PcbBooks.TabStop = false;
             // 
             // pictureBox3
             // 
@@ -361,7 +361,7 @@
             this.BtnBooksCrud.Name = "BtnBooksCrud";
             this.BtnBooksCrud.Size = new System.Drawing.Size(259, 50);
             this.BtnBooksCrud.TabIndex = 39;
-            this.BtnBooksCrud.Text = "Books CRUD";
+            this.BtnBooksCrud.Text = "Edit Books";
             this.BtnBooksCrud.UseVisualStyleBackColor = false;
             this.BtnBooksCrud.Click += new System.EventHandler(this.BtnBooksCrud_Click);
             // 
@@ -377,7 +377,7 @@
             this.BtnManagerCrud.Name = "BtnManagerCrud";
             this.BtnManagerCrud.Size = new System.Drawing.Size(262, 50);
             this.BtnManagerCrud.TabIndex = 38;
-            this.BtnManagerCrud.Text = "Managers CRUD";
+            this.BtnManagerCrud.Text = "Edit Managers";
             this.BtnManagerCrud.UseVisualStyleBackColor = false;
             this.BtnManagerCrud.Click += new System.EventHandler(this.BtnManagerCrud_Click_1);
             // 
@@ -515,7 +515,7 @@
             this.BtnManagers.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.BtnManagers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnManagers.ForeColor = System.Drawing.Color.Black;
-            this.BtnManagers.Location = new System.Drawing.Point(50, 304);
+            this.BtnManagers.Location = new System.Drawing.Point(50, 308);
             this.BtnManagers.Name = "BtnManagers";
             this.BtnManagers.Size = new System.Drawing.Size(276, 144);
             this.BtnManagers.TabIndex = 18;
@@ -550,7 +550,7 @@
             this.LblManagers.BackColor = System.Drawing.Color.White;
             this.LblManagers.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.LblManagers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(169)))), ((int)(((byte)(199)))));
-            this.LblManagers.Location = new System.Drawing.Point(206, 314);
+            this.LblManagers.Location = new System.Drawing.Point(206, 318);
             this.LblManagers.Name = "LblManagers";
             this.LblManagers.Size = new System.Drawing.Size(71, 15);
             this.LblManagers.TabIndex = 20;
@@ -561,7 +561,7 @@
             this.PnlManager.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(169)))), ((int)(((byte)(199)))));
             this.PnlManager.Controls.Add(this.PbManagers);
             this.PnlManager.Enabled = false;
-            this.PnlManager.Location = new System.Drawing.Point(50, 304);
+            this.PnlManager.Location = new System.Drawing.Point(50, 308);
             this.PnlManager.Name = "PnlManager";
             this.PnlManager.Size = new System.Drawing.Size(150, 142);
             this.PnlManager.TabIndex = 19;
@@ -608,7 +608,7 @@
             this.LblManagerCount.BackColor = System.Drawing.Color.White;
             this.LblManagerCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.LblManagerCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(169)))), ((int)(((byte)(199)))));
-            this.LblManagerCount.Location = new System.Drawing.Point(238, 373);
+            this.LblManagerCount.Location = new System.Drawing.Point(238, 377);
             this.LblManagerCount.Name = "LblManagerCount";
             this.LblManagerCount.Size = new System.Drawing.Size(76, 29);
             this.LblManagerCount.TabIndex = 21;
@@ -624,7 +624,7 @@
             this.BtnBooks.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.BtnBooks.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnBooks.ForeColor = System.Drawing.Color.Black;
-            this.BtnBooks.Location = new System.Drawing.Point(691, 115);
+            this.BtnBooks.Location = new System.Drawing.Point(373, 306);
             this.BtnBooks.Name = "BtnBooks";
             this.BtnBooks.Size = new System.Drawing.Size(276, 144);
             this.BtnBooks.TabIndex = 22;
@@ -637,33 +637,33 @@
             this.LblBooks.BackColor = System.Drawing.Color.White;
             this.LblBooks.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.LblBooks.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.LblBooks.Location = new System.Drawing.Point(847, 125);
+            this.LblBooks.Location = new System.Drawing.Point(529, 316);
             this.LblBooks.Name = "LblBooks";
             this.LblBooks.Size = new System.Drawing.Size(46, 15);
             this.LblBooks.TabIndex = 24;
             this.LblBooks.Text = "Books";
             // 
-            // panel3
+            // PnlBooks
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.panel3.Controls.Add(this.pictureBox2);
-            this.panel3.Enabled = false;
-            this.panel3.Location = new System.Drawing.Point(691, 115);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(150, 142);
-            this.panel3.TabIndex = 23;
+            this.PnlBooks.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.PnlBooks.Controls.Add(this.PbBooks);
+            this.PnlBooks.Enabled = false;
+            this.PnlBooks.Location = new System.Drawing.Point(373, 306);
+            this.PnlBooks.Name = "PnlBooks";
+            this.PnlBooks.Size = new System.Drawing.Size(150, 142);
+            this.PnlBooks.TabIndex = 23;
             // 
-            // pictureBox2
+            // PbBooks
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.pictureBox2.BackgroundImage = global::Library.Properties.Resources.books_stack_of_three;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Enabled = false;
-            this.pictureBox2.Location = new System.Drawing.Point(17, 14);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(112, 110);
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
+            this.PbBooks.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.PbBooks.BackgroundImage = global::Library.Properties.Resources.books_stack_of_three;
+            this.PbBooks.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PbBooks.Enabled = false;
+            this.PbBooks.Location = new System.Drawing.Point(17, 14);
+            this.PbBooks.Name = "PbBooks";
+            this.PbBooks.Size = new System.Drawing.Size(112, 110);
+            this.PbBooks.TabIndex = 1;
+            this.PbBooks.TabStop = false;
             // 
             // LblBookCount
             // 
@@ -671,7 +671,7 @@
             this.LblBookCount.BackColor = System.Drawing.Color.White;
             this.LblBookCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.LblBookCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.LblBookCount.Location = new System.Drawing.Point(879, 184);
+            this.LblBookCount.Location = new System.Drawing.Point(561, 375);
             this.LblBookCount.Name = "LblBookCount";
             this.LblBookCount.Size = new System.Drawing.Size(76, 29);
             this.LblBookCount.TabIndex = 25;
@@ -687,7 +687,7 @@
             this.BtnReport.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.BtnReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnReport.ForeColor = System.Drawing.Color.Black;
-            this.BtnReport.Location = new System.Drawing.Point(373, 306);
+            this.BtnReport.Location = new System.Drawing.Point(691, 115);
             this.BtnReport.Name = "BtnReport";
             this.BtnReport.Size = new System.Drawing.Size(276, 144);
             this.BtnReport.TabIndex = 28;
@@ -700,21 +700,21 @@
             this.LblReports.BackColor = System.Drawing.Color.White;
             this.LblReports.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.LblReports.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(219)))), ((int)(((byte)(33)))));
-            this.LblReports.Location = new System.Drawing.Point(529, 316);
+            this.LblReports.Location = new System.Drawing.Point(847, 125);
             this.LblReports.Name = "LblReports";
             this.LblReports.Size = new System.Drawing.Size(57, 15);
             this.LblReports.TabIndex = 30;
             this.LblReports.Text = "Reports";
             // 
-            // panel4
+            // PnlReports
             // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(219)))), ((int)(((byte)(33)))));
-            this.panel4.Controls.Add(this.PbReturn);
-            this.panel4.Enabled = false;
-            this.panel4.Location = new System.Drawing.Point(373, 306);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(150, 142);
-            this.panel4.TabIndex = 29;
+            this.PnlReports.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(219)))), ((int)(((byte)(33)))));
+            this.PnlReports.Controls.Add(this.PbReturn);
+            this.PnlReports.Enabled = false;
+            this.PnlReports.Location = new System.Drawing.Point(691, 115);
+            this.PnlReports.Name = "PnlReports";
+            this.PnlReports.Size = new System.Drawing.Size(150, 142);
+            this.PnlReports.TabIndex = 29;
             // 
             // PbReturn
             // 
@@ -734,7 +734,7 @@
             this.LblReportCount.BackColor = System.Drawing.Color.White;
             this.LblReportCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.LblReportCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(219)))), ((int)(((byte)(33)))));
-            this.LblReportCount.Location = new System.Drawing.Point(561, 375);
+            this.LblReportCount.Location = new System.Drawing.Point(879, 184);
             this.LblReportCount.Name = "LblReportCount";
             this.LblReportCount.Size = new System.Drawing.Size(76, 29);
             this.LblReportCount.TabIndex = 31;
@@ -768,15 +768,15 @@
             this.LblCurrentDate.TabIndex = 34;
             this.LblCurrentDate.Text = "Current Time";
             // 
-            // panel5
+            // PnlDate
             // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(111)))), ((int)(((byte)(0)))));
-            this.panel5.Controls.Add(this.pictureBox4);
-            this.panel5.Enabled = false;
-            this.panel5.Location = new System.Drawing.Point(691, 306);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(150, 142);
-            this.panel5.TabIndex = 33;
+            this.PnlDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(111)))), ((int)(((byte)(0)))));
+            this.PnlDate.Controls.Add(this.pictureBox4);
+            this.PnlDate.Enabled = false;
+            this.PnlDate.Location = new System.Drawing.Point(691, 306);
+            this.PnlDate.Name = "PnlDate";
+            this.PnlDate.Size = new System.Drawing.Size(150, 142);
+            this.PnlDate.TabIndex = 33;
             // 
             // pictureBox4
             // 
@@ -805,25 +805,25 @@
             // PnlOperation
             // 
             this.PnlOperation.BackColor = System.Drawing.Color.Linen;
+            this.PnlOperation.Controls.Add(this.LblManagerCount);
             this.PnlOperation.Controls.Add(this.LblDate);
-            this.PnlOperation.Controls.Add(this.panel5);
+            this.PnlOperation.Controls.Add(this.PnlManager);
+            this.PnlOperation.Controls.Add(this.LblManagers);
+            this.PnlOperation.Controls.Add(this.PnlDate);
+            this.PnlOperation.Controls.Add(this.BtnManagers);
             this.PnlOperation.Controls.Add(this.LblCurrentDate);
             this.PnlOperation.Controls.Add(this.BtnTime);
             this.PnlOperation.Controls.Add(this.LblReportCount);
-            this.PnlOperation.Controls.Add(this.panel4);
+            this.PnlOperation.Controls.Add(this.PnlReports);
             this.PnlOperation.Controls.Add(this.LblReports);
             this.PnlOperation.Controls.Add(this.BtnReport);
             this.PnlOperation.Controls.Add(this.LblBookCount);
-            this.PnlOperation.Controls.Add(this.panel3);
+            this.PnlOperation.Controls.Add(this.PnlBooks);
             this.PnlOperation.Controls.Add(this.LblBooks);
             this.PnlOperation.Controls.Add(this.BtnBooks);
-            this.PnlOperation.Controls.Add(this.LblManagerCount);
             this.PnlOperation.Controls.Add(this.LblMemberCount);
             this.PnlOperation.Controls.Add(this.LblMember);
-            this.PnlOperation.Controls.Add(this.PnlManager);
-            this.PnlOperation.Controls.Add(this.LblManagers);
             this.PnlOperation.Controls.Add(this.panel1);
-            this.PnlOperation.Controls.Add(this.BtnManagers);
             this.PnlOperation.Controls.Add(this.BtnMembers);
             this.PnlOperation.Controls.Add(this.LblCount);
             this.PnlOperation.Controls.Add(this.LblNot);
@@ -852,13 +852,13 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.PbAdd)).EndInit();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PcbReport)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PcbClose)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PcbLogout)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PcbManager)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PcbBooks)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbReturnOrder)).EndInit();
             this.PnlIcon.ResumeLayout(false);
@@ -867,11 +867,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.PnlManager.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PbManagers)).EndInit();
-            this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.panel4.ResumeLayout(false);
+            this.PnlBooks.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.PbBooks)).EndInit();
+            this.PnlReports.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PbReturn)).EndInit();
-            this.panel5.ResumeLayout(false);
+            this.PnlDate.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.PnlOperation.ResumeLayout(false);
             this.PnlOperation.PerformLayout();
@@ -893,14 +893,14 @@
         private System.Windows.Forms.Button BtnPayment;
         private System.Windows.Forms.Button BtnBooksCrud;
         private System.Windows.Forms.Button BtnManagerCrud;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox PcbManager;
+        private System.Windows.Forms.PictureBox PcbBooks;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox8;
-        private System.Windows.Forms.PictureBox pictureBox11;
-        private System.Windows.Forms.PictureBox pictureBox10;
-        private System.Windows.Forms.PictureBox pictureBox9;
+        private System.Windows.Forms.PictureBox PcbReport;
+        private System.Windows.Forms.PictureBox PcbClose;
+        private System.Windows.Forms.PictureBox PcbLogout;
         private System.Windows.Forms.Button BtnNotReturned;
         private System.Windows.Forms.Panel PnlIcon;
         private System.Windows.Forms.PictureBox PbNotReturned;
@@ -918,17 +918,17 @@
         private System.Windows.Forms.Label LblManagerCount;
         private System.Windows.Forms.Button BtnBooks;
         private System.Windows.Forms.Label LblBooks;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Panel PnlBooks;
+        private System.Windows.Forms.PictureBox PbBooks;
         private System.Windows.Forms.Label LblBookCount;
         private System.Windows.Forms.Button BtnReport;
         private System.Windows.Forms.Label LblReports;
-        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel PnlReports;
         private System.Windows.Forms.PictureBox PbReturn;
         private System.Windows.Forms.Label LblReportCount;
         private System.Windows.Forms.Button BtnTime;
         private System.Windows.Forms.Label LblCurrentDate;
-        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel PnlDate;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label LblDate;
         private System.Windows.Forms.Panel PnlOperation;
