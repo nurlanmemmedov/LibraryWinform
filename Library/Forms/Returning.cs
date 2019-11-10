@@ -14,7 +14,7 @@ namespace Library.Forms
         private int _selectedIndex;
         private Client _SelectedCli;
         private Order _SelectedOrder;
-        public Returning(Client SelectedCli)
+        public Returning(Client SelectedCli)//brings the selected client from the search form
         {
             InitializeComponent();
             _bookService = new BookService();
@@ -25,13 +25,13 @@ namespace Library.Forms
             FillClientBooks();
             FillClientsCombo();
         }
-        private void Reset()
+        private void Reset()//reset the all changes
         {
             TxtPayment.Text = string.Empty;
             TxtReturningBook.Text = string.Empty;
         }
 
-        private void FillClientBooks()
+        private void FillClientBooks()//fill all orders of selected client
         {
             if (_SelectedCli != null)
             {
@@ -50,7 +50,7 @@ namespace Library.Forms
             }
         }
 
-        private void FillClientsCombo()
+        private void FillClientsCombo()//fills the clients to Combobox
         {
             foreach (Client item in _clientService.Clients())
             {
@@ -58,11 +58,12 @@ namespace Library.Forms
             }
         }
 
-        private void DgvOrders_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void DgvOrders_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)//select the order to returning
         {
             int id = Convert.ToInt32(DgvOrders.Rows[e.RowIndex].Cells[0].Value);
             _selectedIndex = e.RowIndex;
             _SelectedOrder = _orderService.Find(id);
+            //actions done when order is not returned
             if (_SelectedOrder.Returned == false)
             {
                 TxtReturningBook.Text = _SelectedOrder.Book.Title;
@@ -91,24 +92,26 @@ namespace Library.Forms
                 TxtReturningBook.Text = string.Empty;
         }
 
-        private void BtnReturn_Click(object sender, EventArgs e)
+        private void BtnReturn_Click(object sender, EventArgs e)//reurn the order
         {
+            //update the order information
             _SelectedOrder.Returned = true;
             _SelectedOrder.Book.Count++;
             _SelectedOrder.ReturningDate = DateTime.Now;
             _orderService.Update(_SelectedOrder);
+            //update the selected order information on datagridview
             DgvOrders.Rows[_selectedIndex].Cells[5].Value = true;
             Reset();
 
         }
 
-        private void BtnCancel_Click(object sender, EventArgs e)
+        private void BtnCancel_Click(object sender, EventArgs e)//cancel the order if returning date is not greater than 1 day
         {
             _orderService.Delete(_SelectedOrder);
             DgvOrders.Rows.RemoveAt(_selectedIndex);
         }
 
-        private void CmbClient_SelectedIndexChanged(object sender, EventArgs e)
+        private void CmbClient_SelectedIndexChanged(object sender, EventArgs e)//selects client to return order
         {
             _SelectedCli = _clientService.Find((CmbClient.SelectedItem as ComboItem).Id);
             Reset();
@@ -116,6 +119,10 @@ namespace Library.Forms
             FillClientBooks();
         }
 
+        private void PbBack_Click(object sender, EventArgs e)//return the previous form
+        {
+            this.Hide();
+        }
     }
 }
 

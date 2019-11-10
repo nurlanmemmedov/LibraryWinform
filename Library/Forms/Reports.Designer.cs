@@ -40,7 +40,9 @@
             this.Txtİncome = new System.Windows.Forms.TextBox();
             this.Lblİncome = new System.Windows.Forms.Label();
             this.FbdChooseArea = new System.Windows.Forms.FolderBrowserDialog();
+            this.PbBack = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.DgvReports)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PbBack)).BeginInit();
             this.SuspendLayout();
             // 
             // DgvReports
@@ -57,7 +59,7 @@
             this.Column3,
             this.Column4});
             this.DgvReports.GridColor = System.Drawing.Color.Black;
-            this.DgvReports.Location = new System.Drawing.Point(46, 90);
+            this.DgvReports.Location = new System.Drawing.Point(46, 125);
             this.DgvReports.Name = "DgvReports";
             this.DgvReports.ReadOnly = true;
             this.DgvReports.Size = new System.Drawing.Size(442, 281);
@@ -105,7 +107,7 @@
             "Novomber",
             "December",
             "All"});
-            this.CmbRange.Location = new System.Drawing.Point(46, 45);
+            this.CmbRange.Location = new System.Drawing.Point(46, 80);
             this.CmbRange.Name = "CmbRange";
             this.CmbRange.Size = new System.Drawing.Size(174, 21);
             this.CmbRange.TabIndex = 1;
@@ -118,7 +120,7 @@
             this.BtnExport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnExport.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.BtnExport.ForeColor = System.Drawing.Color.White;
-            this.BtnExport.Location = new System.Drawing.Point(350, 398);
+            this.BtnExport.Location = new System.Drawing.Point(350, 433);
             this.BtnExport.Name = "BtnExport";
             this.BtnExport.Size = new System.Drawing.Size(138, 36);
             this.BtnExport.TabIndex = 2;
@@ -129,7 +131,7 @@
             // LblRange
             // 
             this.LblRange.AutoSize = true;
-            this.LblRange.Location = new System.Drawing.Point(43, 25);
+            this.LblRange.Location = new System.Drawing.Point(43, 60);
             this.LblRange.Name = "LblRange";
             this.LblRange.Size = new System.Drawing.Size(87, 13);
             this.LblRange.TabIndex = 3;
@@ -137,7 +139,7 @@
             // 
             // Txtİncome
             // 
-            this.Txtİncome.Location = new System.Drawing.Point(46, 414);
+            this.Txtİncome.Location = new System.Drawing.Point(46, 449);
             this.Txtİncome.Name = "Txtİncome";
             this.Txtİncome.ReadOnly = true;
             this.Txtİncome.Size = new System.Drawing.Size(139, 20);
@@ -146,17 +148,29 @@
             // Lblİncome
             // 
             this.Lblİncome.AutoSize = true;
-            this.Lblİncome.Location = new System.Drawing.Point(46, 395);
+            this.Lblİncome.Location = new System.Drawing.Point(46, 430);
             this.Lblİncome.Name = "Lblİncome";
             this.Lblİncome.Size = new System.Drawing.Size(0, 13);
             this.Lblİncome.TabIndex = 5;
+            // 
+            // PbBack
+            // 
+            this.PbBack.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PbBack.BackgroundImage")));
+            this.PbBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PbBack.Location = new System.Drawing.Point(5, 5);
+            this.PbBack.Name = "PbBack";
+            this.PbBack.Size = new System.Drawing.Size(50, 51);
+            this.PbBack.TabIndex = 17;
+            this.PbBack.TabStop = false;
+            this.PbBack.Click += new System.EventHandler(this.PbBack_Click_1);
             // 
             // Reports
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Linen;
-            this.ClientSize = new System.Drawing.Size(535, 456);
+            this.ClientSize = new System.Drawing.Size(535, 504);
+            this.Controls.Add(this.PbBack);
             this.Controls.Add(this.Lblİncome);
             this.Controls.Add(this.Txtİncome);
             this.Controls.Add(this.CmbRange);
@@ -168,6 +182,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reports";
             ((System.ComponentModel.ISupportInitialize)(this.DgvReports)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PbBack)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -186,5 +201,6 @@
         private System.Windows.Forms.TextBox Txtİncome;
         private System.Windows.Forms.Label Lblİncome;
         private System.Windows.Forms.FolderBrowserDialog FbdChooseArea;
+        private System.Windows.Forms.PictureBox PbBack;
     }
 }

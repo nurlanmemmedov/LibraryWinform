@@ -50,9 +50,11 @@
             this.LblNameSearch = new System.Windows.Forms.Label();
             this.LblPhoneNum = new System.Windows.Forms.Label();
             this.TxtNameSearch = new System.Windows.Forms.TextBox();
+            this.PbBack = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.DgvClients)).BeginInit();
             this.PnlHeader.SuspendLayout();
             this.PnlSearch.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PbBack)).BeginInit();
             this.SuspendLayout();
             // 
             // BtnCancel
@@ -62,7 +64,7 @@
             this.BtnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.BtnCancel.ForeColor = System.Drawing.Color.White;
-            this.BtnCancel.Location = new System.Drawing.Point(197, 443);
+            this.BtnCancel.Location = new System.Drawing.Point(219, 455);
             this.BtnCancel.Name = "BtnCancel";
             this.BtnCancel.Size = new System.Drawing.Size(72, 39);
             this.BtnCancel.TabIndex = 32;
@@ -78,7 +80,7 @@
             this.BtnDeactive.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnDeactive.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.BtnDeactive.ForeColor = System.Drawing.Color.White;
-            this.BtnDeactive.Location = new System.Drawing.Point(119, 443);
+            this.BtnDeactive.Location = new System.Drawing.Point(141, 455);
             this.BtnDeactive.Name = "BtnDeactive";
             this.BtnDeactive.Size = new System.Drawing.Size(72, 39);
             this.BtnDeactive.TabIndex = 31;
@@ -94,7 +96,7 @@
             this.BtnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.BtnUpdate.ForeColor = System.Drawing.Color.White;
-            this.BtnUpdate.Location = new System.Drawing.Point(42, 443);
+            this.BtnUpdate.Location = new System.Drawing.Point(64, 455);
             this.BtnUpdate.Name = "BtnUpdate";
             this.BtnUpdate.Size = new System.Drawing.Size(72, 39);
             this.BtnUpdate.TabIndex = 30;
@@ -116,7 +118,7 @@
             this.Column2,
             this.Column3});
             this.DgvClients.GridColor = System.Drawing.Color.Black;
-            this.DgvClients.Location = new System.Drawing.Point(306, 180);
+            this.DgvClients.Location = new System.Drawing.Point(328, 192);
             this.DgvClients.Name = "DgvClients";
             this.DgvClients.ReadOnly = true;
             this.DgvClients.Size = new System.Drawing.Size(523, 302);
@@ -145,7 +147,7 @@
             // LblPhone
             // 
             this.LblPhone.AutoSize = true;
-            this.LblPhone.Location = new System.Drawing.Point(39, 282);
+            this.LblPhone.Location = new System.Drawing.Point(61, 294);
             this.LblPhone.Name = "LblPhone";
             this.LblPhone.Size = new System.Drawing.Size(38, 13);
             this.LblPhone.TabIndex = 29;
@@ -154,7 +156,7 @@
             // LblFullname
             // 
             this.LblFullname.AutoSize = true;
-            this.LblFullname.Location = new System.Drawing.Point(39, 148);
+            this.LblFullname.Location = new System.Drawing.Point(61, 160);
             this.LblFullname.Name = "LblFullname";
             this.LblFullname.Size = new System.Drawing.Size(49, 13);
             this.LblFullname.TabIndex = 28;
@@ -167,7 +169,7 @@
             this.BtnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.BtnAdd.ForeColor = System.Drawing.Color.White;
-            this.BtnAdd.Location = new System.Drawing.Point(42, 443);
+            this.BtnAdd.Location = new System.Drawing.Point(64, 455);
             this.BtnAdd.Name = "BtnAdd";
             this.BtnAdd.Size = new System.Drawing.Size(227, 39);
             this.BtnAdd.TabIndex = 27;
@@ -177,14 +179,14 @@
             // 
             // TxtPhone
             // 
-            this.TxtPhone.Location = new System.Drawing.Point(39, 304);
+            this.TxtPhone.Location = new System.Drawing.Point(61, 316);
             this.TxtPhone.Name = "TxtPhone";
             this.TxtPhone.Size = new System.Drawing.Size(227, 20);
             this.TxtPhone.TabIndex = 26;
             // 
             // TxtFullname
             // 
-            this.TxtFullname.Location = new System.Drawing.Point(39, 174);
+            this.TxtFullname.Location = new System.Drawing.Point(61, 186);
             this.TxtFullname.Name = "TxtFullname";
             this.TxtFullname.Size = new System.Drawing.Size(227, 20);
             this.TxtFullname.TabIndex = 25;
@@ -193,7 +195,7 @@
             // 
             this.PnlHeader.BackColor = System.Drawing.Color.AntiqueWhite;
             this.PnlHeader.Controls.Add(this.label1);
-            this.PnlHeader.Location = new System.Drawing.Point(306, 150);
+            this.PnlHeader.Location = new System.Drawing.Point(328, 162);
             this.PnlHeader.Name = "PnlHeader";
             this.PnlHeader.Size = new System.Drawing.Size(523, 31);
             this.PnlHeader.TabIndex = 34;
@@ -216,9 +218,9 @@
             this.PnlSearch.Controls.Add(this.LblNameSearch);
             this.PnlSearch.Controls.Add(this.LblPhoneNum);
             this.PnlSearch.Controls.Add(this.TxtNameSearch);
-            this.PnlSearch.Location = new System.Drawing.Point(12, 12);
+            this.PnlSearch.Location = new System.Drawing.Point(62, 12);
             this.PnlSearch.Name = "PnlSearch";
-            this.PnlSearch.Size = new System.Drawing.Size(836, 106);
+            this.PnlSearch.Size = new System.Drawing.Size(786, 106);
             this.PnlSearch.TabIndex = 35;
             // 
             // LblHeader
@@ -227,7 +229,7 @@
             this.LblHeader.BackColor = System.Drawing.Color.DarkOrange;
             this.LblHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.LblHeader.ForeColor = System.Drawing.Color.White;
-            this.LblHeader.Location = new System.Drawing.Point(0, 4);
+            this.LblHeader.Location = new System.Drawing.Point(347, 0);
             this.LblHeader.Name = "LblHeader";
             this.LblHeader.Size = new System.Drawing.Size(104, 20);
             this.LblHeader.TabIndex = 25;
@@ -240,7 +242,7 @@
             this.BtnCancelSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnCancelSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.BtnCancelSearch.ForeColor = System.Drawing.Color.White;
-            this.BtnCancelSearch.Location = new System.Drawing.Point(718, 62);
+            this.BtnCancelSearch.Location = new System.Drawing.Point(662, 62);
             this.BtnCancelSearch.Name = "BtnCancelSearch";
             this.BtnCancelSearch.Size = new System.Drawing.Size(99, 29);
             this.BtnCancelSearch.TabIndex = 20;
@@ -285,12 +287,24 @@
             this.TxtNameSearch.TabIndex = 17;
             this.TxtNameSearch.TextChanged += new System.EventHandler(this.TxtNameSearch_TextChanged);
             // 
+            // PbBack
+            // 
+            this.PbBack.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PbBack.BackgroundImage")));
+            this.PbBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PbBack.Location = new System.Drawing.Point(6, 16);
+            this.PbBack.Name = "PbBack";
+            this.PbBack.Size = new System.Drawing.Size(50, 51);
+            this.PbBack.TabIndex = 26;
+            this.PbBack.TabStop = false;
+            this.PbBack.Click += new System.EventHandler(this.PbBack_Click);
+            // 
             // ClientCrud
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Linen;
-            this.ClientSize = new System.Drawing.Size(863, 504);
+            this.ClientSize = new System.Drawing.Size(882, 527);
+            this.Controls.Add(this.PbBack);
             this.Controls.Add(this.PnlSearch);
             this.Controls.Add(this.PnlHeader);
             this.Controls.Add(this.BtnCancel);
@@ -311,6 +325,7 @@
             this.PnlHeader.PerformLayout();
             this.PnlSearch.ResumeLayout(false);
             this.PnlSearch.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PbBack)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -338,5 +353,6 @@
         private System.Windows.Forms.Label LblNameSearch;
         private System.Windows.Forms.Label LblPhoneNum;
         private System.Windows.Forms.TextBox TxtNameSearch;
+        private System.Windows.Forms.PictureBox PbBack;
     }
 }

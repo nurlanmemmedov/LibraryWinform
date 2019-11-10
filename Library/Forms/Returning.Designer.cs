@@ -46,8 +46,10 @@
             this.CmbClient = new System.Windows.Forms.ComboBox();
             this.LblClient = new System.Windows.Forms.Label();
             this.BtnCancel = new System.Windows.Forms.Button();
+            this.PbBack = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.DgvOrders)).BeginInit();
             this.PnlHeader.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PbBack)).BeginInit();
             this.SuspendLayout();
             // 
             // BtnReturn
@@ -57,7 +59,7 @@
             this.BtnReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnReturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.BtnReturn.ForeColor = System.Drawing.Color.White;
-            this.BtnReturn.Location = new System.Drawing.Point(557, 407);
+            this.BtnReturn.Location = new System.Drawing.Point(546, 465);
             this.BtnReturn.Name = "BtnReturn";
             this.BtnReturn.Size = new System.Drawing.Size(92, 40);
             this.BtnReturn.TabIndex = 1;
@@ -67,7 +69,7 @@
             // 
             // TxtReturningBook
             // 
-            this.TxtReturningBook.Location = new System.Drawing.Point(61, 427);
+            this.TxtReturningBook.Location = new System.Drawing.Point(50, 485);
             this.TxtReturningBook.Name = "TxtReturningBook";
             this.TxtReturningBook.ReadOnly = true;
             this.TxtReturningBook.Size = new System.Drawing.Size(159, 20);
@@ -76,7 +78,7 @@
             // LblReturningBook
             // 
             this.LblReturningBook.AutoSize = true;
-            this.LblReturningBook.Location = new System.Drawing.Point(61, 407);
+            this.LblReturningBook.Location = new System.Drawing.Point(50, 465);
             this.LblReturningBook.Name = "LblReturningBook";
             this.LblReturningBook.Size = new System.Drawing.Size(95, 13);
             this.LblReturningBook.TabIndex = 3;
@@ -97,10 +99,10 @@
             this.Column5,
             this.Column6,
             this.Column7});
-            this.DgvOrders.Location = new System.Drawing.Point(61, 104);
+            this.DgvOrders.Location = new System.Drawing.Point(50, 134);
             this.DgvOrders.Name = "DgvOrders";
             this.DgvOrders.ReadOnly = true;
-            this.DgvOrders.Size = new System.Drawing.Size(588, 274);
+            this.DgvOrders.Size = new System.Drawing.Size(588, 298);
             this.DgvOrders.TabIndex = 0;
             this.DgvOrders.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DgvOrders_RowHeaderMouseClick);
             // 
@@ -143,7 +145,7 @@
             // 
             // TxtPayment
             // 
-            this.TxtPayment.Location = new System.Drawing.Point(248, 427);
+            this.TxtPayment.Location = new System.Drawing.Point(237, 485);
             this.TxtPayment.Name = "TxtPayment";
             this.TxtPayment.ReadOnly = true;
             this.TxtPayment.Size = new System.Drawing.Size(156, 20);
@@ -152,7 +154,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(248, 408);
+            this.label1.Location = new System.Drawing.Point(237, 466);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(48, 13);
             this.label1.TabIndex = 5;
@@ -162,7 +164,7 @@
             // 
             this.PnlHeader.BackColor = System.Drawing.Color.AntiqueWhite;
             this.PnlHeader.Controls.Add(this.LblAdd);
-            this.PnlHeader.Location = new System.Drawing.Point(61, 73);
+            this.PnlHeader.Location = new System.Drawing.Point(50, 103);
             this.PnlHeader.Name = "PnlHeader";
             this.PnlHeader.Size = new System.Drawing.Size(588, 31);
             this.PnlHeader.TabIndex = 12;
@@ -179,7 +181,7 @@
             // CmbClient
             // 
             this.CmbClient.FormattingEnabled = true;
-            this.CmbClient.Location = new System.Drawing.Point(61, 33);
+            this.CmbClient.Location = new System.Drawing.Point(462, 42);
             this.CmbClient.Name = "CmbClient";
             this.CmbClient.Size = new System.Drawing.Size(176, 21);
             this.CmbClient.TabIndex = 13;
@@ -188,7 +190,7 @@
             // LblClient
             // 
             this.LblClient.AutoSize = true;
-            this.LblClient.Location = new System.Drawing.Point(61, 13);
+            this.LblClient.Location = new System.Drawing.Point(462, 22);
             this.LblClient.Name = "LblClient";
             this.LblClient.Size = new System.Drawing.Size(33, 13);
             this.LblClient.TabIndex = 14;
@@ -201,7 +203,7 @@
             this.BtnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.BtnCancel.ForeColor = System.Drawing.Color.White;
-            this.BtnCancel.Location = new System.Drawing.Point(547, 407);
+            this.BtnCancel.Location = new System.Drawing.Point(536, 465);
             this.BtnCancel.Name = "BtnCancel";
             this.BtnCancel.Size = new System.Drawing.Size(102, 40);
             this.BtnCancel.TabIndex = 15;
@@ -210,12 +212,24 @@
             this.BtnCancel.Visible = false;
             this.BtnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
             // 
+            // PbBack
+            // 
+            this.PbBack.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PbBack.BackgroundImage")));
+            this.PbBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PbBack.Location = new System.Drawing.Point(12, 12);
+            this.PbBack.Name = "PbBack";
+            this.PbBack.Size = new System.Drawing.Size(50, 51);
+            this.PbBack.TabIndex = 20;
+            this.PbBack.TabStop = false;
+            this.PbBack.Click += new System.EventHandler(this.PbBack_Click);
+            // 
             // Returning
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Linen;
-            this.ClientSize = new System.Drawing.Size(704, 483);
+            this.ClientSize = new System.Drawing.Size(695, 580);
+            this.Controls.Add(this.PbBack);
             this.Controls.Add(this.BtnCancel);
             this.Controls.Add(this.LblClient);
             this.Controls.Add(this.CmbClient);
@@ -233,6 +247,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.DgvOrders)).EndInit();
             this.PnlHeader.ResumeLayout(false);
             this.PnlHeader.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PbBack)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -256,5 +271,6 @@
         private System.Windows.Forms.ComboBox CmbClient;
         private System.Windows.Forms.Label LblClient;
         private System.Windows.Forms.Button BtnCancel;
+        private System.Windows.Forms.PictureBox PbBack;
     }
 }

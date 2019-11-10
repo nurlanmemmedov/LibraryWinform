@@ -62,9 +62,13 @@
             this.LblUsername = new System.Windows.Forms.Label();
             this.TxtPassword = new System.Windows.Forms.TextBox();
             this.TxtUsername = new System.Windows.Forms.TextBox();
+            this.PbBack = new System.Windows.Forms.PictureBox();
+            this.TxtNewPassword = new System.Windows.Forms.TextBox();
+            this.LblComment = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DgvManagers)).BeginInit();
             this.PnlHeader.SuspendLayout();
             this.PnlSearch.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PbBack)).BeginInit();
             this.SuspendLayout();
             // 
             // DgvManagers
@@ -82,7 +86,7 @@
             this.Column4,
             this.Column5});
             this.DgvManagers.GridColor = System.Drawing.Color.Black;
-            this.DgvManagers.Location = new System.Drawing.Point(302, 180);
+            this.DgvManagers.Location = new System.Drawing.Point(318, 184);
             this.DgvManagers.Name = "DgvManagers";
             this.DgvManagers.ReadOnly = true;
             this.DgvManagers.Size = new System.Drawing.Size(546, 425);
@@ -122,21 +126,21 @@
             // 
             // TxtName
             // 
-            this.TxtName.Location = new System.Drawing.Point(40, 246);
+            this.TxtName.Location = new System.Drawing.Point(56, 250);
             this.TxtName.Name = "TxtName";
             this.TxtName.Size = new System.Drawing.Size(227, 20);
             this.TxtName.TabIndex = 1;
             // 
             // TxtSurname
             // 
-            this.TxtSurname.Location = new System.Drawing.Point(40, 313);
+            this.TxtSurname.Location = new System.Drawing.Point(56, 317);
             this.TxtSurname.Name = "TxtSurname";
             this.TxtSurname.Size = new System.Drawing.Size(227, 20);
             this.TxtSurname.TabIndex = 2;
             // 
             // TxtPhone
             // 
-            this.TxtPhone.Location = new System.Drawing.Point(40, 378);
+            this.TxtPhone.Location = new System.Drawing.Point(56, 382);
             this.TxtPhone.Name = "TxtPhone";
             this.TxtPhone.Size = new System.Drawing.Size(227, 20);
             this.TxtPhone.TabIndex = 3;
@@ -148,7 +152,7 @@
             this.BtnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.BtnAdd.ForeColor = System.Drawing.Color.White;
-            this.BtnAdd.Location = new System.Drawing.Point(40, 566);
+            this.BtnAdd.Location = new System.Drawing.Point(56, 570);
             this.BtnAdd.Name = "BtnAdd";
             this.BtnAdd.Size = new System.Drawing.Size(227, 39);
             this.BtnAdd.TabIndex = 4;
@@ -159,7 +163,7 @@
             // LblName
             // 
             this.LblName.AutoSize = true;
-            this.LblName.Location = new System.Drawing.Point(40, 220);
+            this.LblName.Location = new System.Drawing.Point(56, 224);
             this.LblName.Name = "LblName";
             this.LblName.Size = new System.Drawing.Size(35, 13);
             this.LblName.TabIndex = 5;
@@ -168,7 +172,7 @@
             // LblSurname
             // 
             this.LblSurname.AutoSize = true;
-            this.LblSurname.Location = new System.Drawing.Point(40, 285);
+            this.LblSurname.Location = new System.Drawing.Point(56, 289);
             this.LblSurname.Name = "LblSurname";
             this.LblSurname.Size = new System.Drawing.Size(49, 13);
             this.LblSurname.TabIndex = 6;
@@ -177,7 +181,7 @@
             // LblPhone
             // 
             this.LblPhone.AutoSize = true;
-            this.LblPhone.Location = new System.Drawing.Point(40, 356);
+            this.LblPhone.Location = new System.Drawing.Point(56, 360);
             this.LblPhone.Name = "LblPhone";
             this.LblPhone.Size = new System.Drawing.Size(38, 13);
             this.LblPhone.TabIndex = 7;
@@ -190,7 +194,7 @@
             this.BtnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.BtnUpdate.ForeColor = System.Drawing.Color.White;
-            this.BtnUpdate.Location = new System.Drawing.Point(40, 566);
+            this.BtnUpdate.Location = new System.Drawing.Point(56, 570);
             this.BtnUpdate.Name = "BtnUpdate";
             this.BtnUpdate.Size = new System.Drawing.Size(72, 39);
             this.BtnUpdate.TabIndex = 8;
@@ -206,7 +210,7 @@
             this.BtnDeactive.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnDeactive.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.BtnDeactive.ForeColor = System.Drawing.Color.White;
-            this.BtnDeactive.Location = new System.Drawing.Point(117, 566);
+            this.BtnDeactive.Location = new System.Drawing.Point(133, 570);
             this.BtnDeactive.Name = "BtnDeactive";
             this.BtnDeactive.Size = new System.Drawing.Size(72, 39);
             this.BtnDeactive.TabIndex = 9;
@@ -222,7 +226,7 @@
             this.BtnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.BtnCancel.ForeColor = System.Drawing.Color.White;
-            this.BtnCancel.Location = new System.Drawing.Point(195, 566);
+            this.BtnCancel.Location = new System.Drawing.Point(211, 570);
             this.BtnCancel.Name = "BtnCancel";
             this.BtnCancel.Size = new System.Drawing.Size(72, 39);
             this.BtnCancel.TabIndex = 10;
@@ -235,7 +239,7 @@
             // 
             this.PnlHeader.BackColor = System.Drawing.Color.AntiqueWhite;
             this.PnlHeader.Controls.Add(this.LblSelect);
-            this.PnlHeader.Location = new System.Drawing.Point(302, 149);
+            this.PnlHeader.Location = new System.Drawing.Point(318, 153);
             this.PnlHeader.Name = "PnlHeader";
             this.PnlHeader.Size = new System.Drawing.Size(546, 31);
             this.PnlHeader.TabIndex = 11;
@@ -252,7 +256,7 @@
             // LblPosition
             // 
             this.LblPosition.AutoSize = true;
-            this.LblPosition.Location = new System.Drawing.Point(37, 154);
+            this.LblPosition.Location = new System.Drawing.Point(53, 158);
             this.LblPosition.Name = "LblPosition";
             this.LblPosition.Size = new System.Drawing.Size(44, 13);
             this.LblPosition.TabIndex = 13;
@@ -264,7 +268,7 @@
             this.CmbPosition.Items.AddRange(new object[] {
             "Admin",
             "Ordinary Manager"});
-            this.CmbPosition.Location = new System.Drawing.Point(40, 180);
+            this.CmbPosition.Location = new System.Drawing.Point(56, 184);
             this.CmbPosition.Name = "CmbPosition";
             this.CmbPosition.Size = new System.Drawing.Size(227, 21);
             this.CmbPosition.TabIndex = 14;
@@ -280,9 +284,9 @@
             this.PnlSearch.Controls.Add(this.LblNameSearch);
             this.PnlSearch.Controls.Add(this.LblPhoneNum);
             this.PnlSearch.Controls.Add(this.TxtNameSearch);
-            this.PnlSearch.Location = new System.Drawing.Point(12, 13);
+            this.PnlSearch.Location = new System.Drawing.Point(54, 13);
             this.PnlSearch.Name = "PnlSearch";
-            this.PnlSearch.Size = new System.Drawing.Size(836, 106);
+            this.PnlSearch.Size = new System.Drawing.Size(810, 106);
             this.PnlSearch.TabIndex = 15;
             // 
             // LblHeader
@@ -291,7 +295,7 @@
             this.LblHeader.BackColor = System.Drawing.Color.DarkOrange;
             this.LblHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.LblHeader.ForeColor = System.Drawing.Color.White;
-            this.LblHeader.Location = new System.Drawing.Point(0, 4);
+            this.LblHeader.Location = new System.Drawing.Point(348, 0);
             this.LblHeader.Name = "LblHeader";
             this.LblHeader.Size = new System.Drawing.Size(127, 20);
             this.LblHeader.TabIndex = 25;
@@ -322,9 +326,9 @@
             this.BtnCancelSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnCancelSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.BtnCancelSearch.ForeColor = System.Drawing.Color.White;
-            this.BtnCancelSearch.Location = new System.Drawing.Point(718, 62);
+            this.BtnCancelSearch.Location = new System.Drawing.Point(708, 62);
             this.BtnCancelSearch.Name = "BtnCancelSearch";
-            this.BtnCancelSearch.Size = new System.Drawing.Size(99, 29);
+            this.BtnCancelSearch.Size = new System.Drawing.Size(87, 29);
             this.BtnCancelSearch.TabIndex = 20;
             this.BtnCancelSearch.Text = "Cancel";
             this.BtnCancelSearch.UseVisualStyleBackColor = false;
@@ -370,7 +374,7 @@
             // LblPassword
             // 
             this.LblPassword.AutoSize = true;
-            this.LblPassword.Location = new System.Drawing.Point(39, 486);
+            this.LblPassword.Location = new System.Drawing.Point(55, 490);
             this.LblPassword.Name = "LblPassword";
             this.LblPassword.Size = new System.Drawing.Size(53, 13);
             this.LblPassword.TabIndex = 19;
@@ -379,7 +383,7 @@
             // LblUsername
             // 
             this.LblUsername.AutoSize = true;
-            this.LblUsername.Location = new System.Drawing.Point(39, 415);
+            this.LblUsername.Location = new System.Drawing.Point(55, 419);
             this.LblUsername.Name = "LblUsername";
             this.LblUsername.Size = new System.Drawing.Size(53, 13);
             this.LblUsername.TabIndex = 18;
@@ -387,7 +391,7 @@
             // 
             // TxtPassword
             // 
-            this.TxtPassword.Location = new System.Drawing.Point(39, 508);
+            this.TxtPassword.Location = new System.Drawing.Point(55, 512);
             this.TxtPassword.Name = "TxtPassword";
             this.TxtPassword.PasswordChar = '*';
             this.TxtPassword.Size = new System.Drawing.Size(227, 20);
@@ -395,17 +399,51 @@
             // 
             // TxtUsername
             // 
-            this.TxtUsername.Location = new System.Drawing.Point(39, 443);
+            this.TxtUsername.Location = new System.Drawing.Point(55, 447);
             this.TxtUsername.Name = "TxtUsername";
             this.TxtUsername.Size = new System.Drawing.Size(227, 20);
             this.TxtUsername.TabIndex = 16;
+            // 
+            // PbBack
+            // 
+            this.PbBack.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PbBack.BackgroundImage")));
+            this.PbBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PbBack.Location = new System.Drawing.Point(6, 12);
+            this.PbBack.Name = "PbBack";
+            this.PbBack.Size = new System.Drawing.Size(42, 43);
+            this.PbBack.TabIndex = 20;
+            this.PbBack.TabStop = false;
+            this.PbBack.Click += new System.EventHandler(this.PbBack_Click);
+            // 
+            // TxtNewPassword
+            // 
+            this.TxtNewPassword.Location = new System.Drawing.Point(56, 512);
+            this.TxtNewPassword.Name = "TxtNewPassword";
+            this.TxtNewPassword.PasswordChar = '*';
+            this.TxtNewPassword.Size = new System.Drawing.Size(227, 20);
+            this.TxtNewPassword.TabIndex = 21;
+            this.TxtNewPassword.Visible = false;
+            // 
+            // LblComment
+            // 
+            this.LblComment.AutoSize = true;
+            this.LblComment.ForeColor = System.Drawing.Color.Maroon;
+            this.LblComment.Location = new System.Drawing.Point(54, 534);
+            this.LblComment.Name = "LblComment";
+            this.LblComment.Size = new System.Drawing.Size(220, 13);
+            this.LblComment.TabIndex = 22;
+            this.LblComment.Text = "if leave empty, password will be old password";
+            this.LblComment.Visible = false;
             // 
             // ManagerCrud
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Linen;
-            this.ClientSize = new System.Drawing.Size(860, 643);
+            this.ClientSize = new System.Drawing.Size(892, 643);
+            this.Controls.Add(this.LblComment);
+            this.Controls.Add(this.TxtNewPassword);
+            this.Controls.Add(this.PbBack);
             this.Controls.Add(this.LblPassword);
             this.Controls.Add(this.LblUsername);
             this.Controls.Add(this.TxtPassword);
@@ -434,6 +472,7 @@
             this.PnlHeader.PerformLayout();
             this.PnlSearch.ResumeLayout(false);
             this.PnlSearch.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PbBack)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -474,5 +513,8 @@
         private System.Windows.Forms.Label LblUsername;
         private System.Windows.Forms.TextBox TxtPassword;
         private System.Windows.Forms.TextBox TxtUsername;
+        private System.Windows.Forms.PictureBox PbBack;
+        private System.Windows.Forms.TextBox TxtNewPassword;
+        private System.Windows.Forms.Label LblComment;
     }
 }

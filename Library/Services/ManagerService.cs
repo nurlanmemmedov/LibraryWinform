@@ -15,31 +15,31 @@ namespace Library.Services
         {
             _libraryContext = new LibraryContext();
         }
-        public void Add(Manager manager)
+        public void Add(Manager manager)////adding given manager
         {
             _libraryContext.Managers.Add(manager);
             _libraryContext.SaveChanges();
         }
-        public void Delete(Manager manager)
+        public void Delete(Manager manager)//deleting given manager
         {
             _libraryContext.Managers.Remove(manager);
             _libraryContext.SaveChanges();
         }
-        public void Update(Manager manager)
+        public void Update(Manager manager)//updating given manager
         {
             _libraryContext.Entry(manager).State = System.Data.Entity.EntityState.Modified;
             _libraryContext.SaveChanges();
         }
-        public List<Manager> Managers()
+        public List<Manager> Managers()//brings the all managers
         {
             return _libraryContext.Managers.ToList();
         }
-        public Manager Find(int id)
+        public Manager Find(int id)//find the manager according to given id
         {
             Manager manager =  _libraryContext.Managers.Find(id);
             return manager;
         }
-        public int Login(string username, string password)
+        public int Login(string username, string password)//Login the user
         {
             Manager manager = null;
             int Id = -1;

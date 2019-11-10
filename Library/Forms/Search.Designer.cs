@@ -46,9 +46,11 @@
             this.LblHeader = new System.Windows.Forms.Label();
             this.ChckPassive = new System.Windows.Forms.CheckBox();
             this.ChckActive = new System.Windows.Forms.CheckBox();
+            this.PbBack = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.DgvClientsSearch)).BeginInit();
             this.PnlHeader.SuspendLayout();
             this.PnlSearch.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PbBack)).BeginInit();
             this.SuspendLayout();
             // 
             // DgvClientsSearch
@@ -64,10 +66,10 @@
             this.Column2,
             this.Column3});
             this.DgvClientsSearch.GridColor = System.Drawing.Color.Black;
-            this.DgvClientsSearch.Location = new System.Drawing.Point(37, 172);
+            this.DgvClientsSearch.Location = new System.Drawing.Point(68, 175);
             this.DgvClientsSearch.Name = "DgvClientsSearch";
             this.DgvClientsSearch.ReadOnly = true;
-            this.DgvClientsSearch.Size = new System.Drawing.Size(602, 345);
+            this.DgvClientsSearch.Size = new System.Drawing.Size(649, 317);
             this.DgvClientsSearch.TabIndex = 0;
             this.DgvClientsSearch.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DgvClientsSearch_RowHeaderMouseClick);
             // 
@@ -148,7 +150,7 @@
             this.BtnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.BtnAdd.ForeColor = System.Drawing.Color.White;
-            this.BtnAdd.Location = new System.Drawing.Point(415, 544);
+            this.BtnAdd.Location = new System.Drawing.Point(492, 513);
             this.BtnAdd.Name = "BtnAdd";
             this.BtnAdd.Size = new System.Drawing.Size(106, 28);
             this.BtnAdd.TabIndex = 7;
@@ -164,7 +166,7 @@
             this.BtnReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnReturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.BtnReturn.ForeColor = System.Drawing.Color.White;
-            this.BtnReturn.Location = new System.Drawing.Point(541, 543);
+            this.BtnReturn.Location = new System.Drawing.Point(618, 512);
             this.BtnReturn.Name = "BtnReturn";
             this.BtnReturn.Size = new System.Drawing.Size(99, 29);
             this.BtnReturn.TabIndex = 8;
@@ -186,9 +188,9 @@
             // 
             this.PnlHeader.BackColor = System.Drawing.Color.AntiqueWhite;
             this.PnlHeader.Controls.Add(this.LblSelect);
-            this.PnlHeader.Location = new System.Drawing.Point(36, 141);
+            this.PnlHeader.Location = new System.Drawing.Point(68, 144);
             this.PnlHeader.Name = "PnlHeader";
-            this.PnlHeader.Size = new System.Drawing.Size(602, 31);
+            this.PnlHeader.Size = new System.Drawing.Size(649, 31);
             this.PnlHeader.TabIndex = 10;
             // 
             // PnlSearch
@@ -201,7 +203,7 @@
             this.PnlSearch.Controls.Add(this.BtnCancelSearch);
             this.PnlSearch.Controls.Add(this.TxtPhone);
             this.PnlSearch.ForeColor = System.Drawing.Color.White;
-            this.PnlSearch.Location = new System.Drawing.Point(12, 12);
+            this.PnlSearch.Location = new System.Drawing.Point(68, 22);
             this.PnlSearch.Name = "PnlSearch";
             this.PnlSearch.Size = new System.Drawing.Size(649, 100);
             this.PnlSearch.TabIndex = 16;
@@ -212,7 +214,7 @@
             this.LblHeader.BackColor = System.Drawing.Color.DarkOrange;
             this.LblHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.LblHeader.ForeColor = System.Drawing.Color.White;
-            this.LblHeader.Location = new System.Drawing.Point(0, 4);
+            this.LblHeader.Location = new System.Drawing.Point(283, 0);
             this.LblHeader.Name = "LblHeader";
             this.LblHeader.Size = new System.Drawing.Size(127, 20);
             this.LblHeader.TabIndex = 25;
@@ -221,7 +223,7 @@
             // ChckPassive
             // 
             this.ChckPassive.AutoSize = true;
-            this.ChckPassive.Location = new System.Drawing.Point(581, 122);
+            this.ChckPassive.Location = new System.Drawing.Point(654, 128);
             this.ChckPassive.Name = "ChckPassive";
             this.ChckPassive.Size = new System.Drawing.Size(63, 17);
             this.ChckPassive.TabIndex = 17;
@@ -234,7 +236,7 @@
             this.ChckActive.AutoSize = true;
             this.ChckActive.Checked = true;
             this.ChckActive.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.ChckActive.Location = new System.Drawing.Point(510, 122);
+            this.ChckActive.Location = new System.Drawing.Point(583, 128);
             this.ChckActive.Name = "ChckActive";
             this.ChckActive.Size = new System.Drawing.Size(56, 17);
             this.ChckActive.TabIndex = 18;
@@ -242,12 +244,24 @@
             this.ChckActive.UseVisualStyleBackColor = true;
             this.ChckActive.CheckedChanged += new System.EventHandler(this.ChckActive_CheckedChanged);
             // 
+            // PbBack
+            // 
+            this.PbBack.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PbBack.BackgroundImage")));
+            this.PbBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PbBack.Location = new System.Drawing.Point(12, 22);
+            this.PbBack.Name = "PbBack";
+            this.PbBack.Size = new System.Drawing.Size(50, 51);
+            this.PbBack.TabIndex = 19;
+            this.PbBack.TabStop = false;
+            this.PbBack.Click += new System.EventHandler(this.PbBack_Click);
+            // 
             // Search
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Linen;
-            this.ClientSize = new System.Drawing.Size(673, 593);
+            this.ClientSize = new System.Drawing.Size(764, 559);
+            this.Controls.Add(this.PbBack);
             this.Controls.Add(this.ChckActive);
             this.Controls.Add(this.ChckPassive);
             this.Controls.Add(this.PnlSearch);
@@ -264,6 +278,7 @@
             this.PnlHeader.PerformLayout();
             this.PnlSearch.ResumeLayout(false);
             this.PnlSearch.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PbBack)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -288,5 +303,6 @@
         private System.Windows.Forms.Label LblHeader;
         private System.Windows.Forms.CheckBox ChckPassive;
         private System.Windows.Forms.CheckBox ChckActive;
+        private System.Windows.Forms.PictureBox PbBack;
     }
 }

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using Library.Models;
 
 namespace Library.DAL
@@ -14,6 +9,7 @@ namespace Library.DAL
         {
 
         }
+        //creating Tables in the database according to Models
         public DbSet<Book> Books { get; set; }
         public DbSet<Manager> Managers { get; set; }
         public DbSet<Client> Clients { get; set; }

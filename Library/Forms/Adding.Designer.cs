@@ -53,10 +53,12 @@
             this.CmbClient = new System.Windows.Forms.ComboBox();
             this.LblClient = new System.Windows.Forms.Label();
             this.BtnNewClient = new System.Windows.Forms.Button();
+            this.PbBack = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.DgvAllBooks)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvOrders)).BeginInit();
             this.PnlHeader.SuspendLayout();
             this.PnlBasketHeader.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PbBack)).BeginInit();
             this.SuspendLayout();
             // 
             // DgvAllBooks
@@ -73,10 +75,10 @@
             this.Column3,
             this.Column4});
             this.DgvAllBooks.GridColor = System.Drawing.Color.Black;
-            this.DgvAllBooks.Location = new System.Drawing.Point(32, 71);
+            this.DgvAllBooks.Location = new System.Drawing.Point(34, 119);
             this.DgvAllBooks.Name = "DgvAllBooks";
             this.DgvAllBooks.ReadOnly = true;
-            this.DgvAllBooks.Size = new System.Drawing.Size(284, 263);
+            this.DgvAllBooks.Size = new System.Drawing.Size(284, 324);
             this.DgvAllBooks.TabIndex = 0;
             this.DgvAllBooks.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DgvAllBooks_RowHeaderMouseClick);
             // 
@@ -112,7 +114,7 @@
             this.BtnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.BtnAdd.ForeColor = System.Drawing.Color.White;
-            this.BtnAdd.Location = new System.Drawing.Point(725, 381);
+            this.BtnAdd.Location = new System.Drawing.Point(727, 499);
             this.BtnAdd.Name = "BtnAdd";
             this.BtnAdd.Size = new System.Drawing.Size(110, 34);
             this.BtnAdd.TabIndex = 2;
@@ -122,7 +124,7 @@
             // 
             // DtpReturn
             // 
-            this.DtpReturn.Location = new System.Drawing.Point(529, 395);
+            this.DtpReturn.Location = new System.Drawing.Point(531, 513);
             this.DtpReturn.Name = "DtpReturn";
             this.DtpReturn.Size = new System.Drawing.Size(155, 20);
             this.DtpReturn.TabIndex = 3;
@@ -143,10 +145,10 @@
             this.Column6,
             this.Column7});
             this.DgvOrders.GridColor = System.Drawing.Color.Black;
-            this.DgvOrders.Location = new System.Drawing.Point(341, 71);
+            this.DgvOrders.Location = new System.Drawing.Point(343, 119);
             this.DgvOrders.Name = "DgvOrders";
             this.DgvOrders.ReadOnly = true;
-            this.DgvOrders.Size = new System.Drawing.Size(494, 263);
+            this.DgvOrders.Size = new System.Drawing.Size(494, 324);
             this.DgvOrders.TabIndex = 4;
             // 
             // dataGridViewTextBoxColumn1
@@ -206,7 +208,7 @@
             // 
             // TxtOrderingBook
             // 
-            this.TxtOrderingBook.Location = new System.Drawing.Point(330, 395);
+            this.TxtOrderingBook.Location = new System.Drawing.Point(332, 513);
             this.TxtOrderingBook.Name = "TxtOrderingBook";
             this.TxtOrderingBook.ReadOnly = true;
             this.TxtOrderingBook.Size = new System.Drawing.Size(163, 20);
@@ -215,7 +217,7 @@
             // LblOrderingBook
             // 
             this.LblOrderingBook.AutoSize = true;
-            this.LblOrderingBook.Location = new System.Drawing.Point(327, 369);
+            this.LblOrderingBook.Location = new System.Drawing.Point(329, 487);
             this.LblOrderingBook.Name = "LblOrderingBook";
             this.LblOrderingBook.Size = new System.Drawing.Size(91, 13);
             this.LblOrderingBook.TabIndex = 8;
@@ -224,7 +226,7 @@
             // LblReturnedTime
             // 
             this.LblReturnedTime.AutoSize = true;
-            this.LblReturnedTime.Location = new System.Drawing.Point(528, 372);
+            this.LblReturnedTime.Location = new System.Drawing.Point(530, 490);
             this.LblReturnedTime.Name = "LblReturnedTime";
             this.LblReturnedTime.Size = new System.Drawing.Size(79, 13);
             this.LblReturnedTime.TabIndex = 9;
@@ -234,7 +236,7 @@
             // 
             this.PnlHeader.BackColor = System.Drawing.Color.AntiqueWhite;
             this.PnlHeader.Controls.Add(this.LblAdd);
-            this.PnlHeader.Location = new System.Drawing.Point(32, 40);
+            this.PnlHeader.Location = new System.Drawing.Point(34, 88);
             this.PnlHeader.Name = "PnlHeader";
             this.PnlHeader.Size = new System.Drawing.Size(284, 31);
             this.PnlHeader.TabIndex = 11;
@@ -243,7 +245,7 @@
             // 
             this.PnlBasketHeader.BackColor = System.Drawing.Color.AntiqueWhite;
             this.PnlBasketHeader.Controls.Add(this.LblBasket);
-            this.PnlBasketHeader.Location = new System.Drawing.Point(341, 40);
+            this.PnlBasketHeader.Location = new System.Drawing.Point(343, 88);
             this.PnlBasketHeader.Name = "PnlBasketHeader";
             this.PnlBasketHeader.Size = new System.Drawing.Size(602, 31);
             this.PnlBasketHeader.TabIndex = 12;
@@ -251,7 +253,7 @@
             // CmbClient
             // 
             this.CmbClient.FormattingEnabled = true;
-            this.CmbClient.Location = new System.Drawing.Point(133, 394);
+            this.CmbClient.Location = new System.Drawing.Point(135, 512);
             this.CmbClient.Name = "CmbClient";
             this.CmbClient.Size = new System.Drawing.Size(154, 21);
             this.CmbClient.TabIndex = 13;
@@ -260,7 +262,7 @@
             // LblClient
             // 
             this.LblClient.AutoSize = true;
-            this.LblClient.Location = new System.Drawing.Point(131, 369);
+            this.LblClient.Location = new System.Drawing.Point(133, 487);
             this.LblClient.Name = "LblClient";
             this.LblClient.Size = new System.Drawing.Size(72, 13);
             this.LblClient.TabIndex = 14;
@@ -272,7 +274,7 @@
             this.BtnNewClient.FlatAppearance.BorderSize = 0;
             this.BtnNewClient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnNewClient.ForeColor = System.Drawing.Color.White;
-            this.BtnNewClient.Location = new System.Drawing.Point(32, 381);
+            this.BtnNewClient.Location = new System.Drawing.Point(34, 499);
             this.BtnNewClient.Name = "BtnNewClient";
             this.BtnNewClient.Size = new System.Drawing.Size(69, 33);
             this.BtnNewClient.TabIndex = 15;
@@ -280,12 +282,24 @@
             this.BtnNewClient.UseVisualStyleBackColor = false;
             this.BtnNewClient.Click += new System.EventHandler(this.BtnNewClient_Click);
             // 
+            // PbBack
+            // 
+            this.PbBack.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PbBack.BackgroundImage")));
+            this.PbBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PbBack.Location = new System.Drawing.Point(32, 12);
+            this.PbBack.Name = "PbBack";
+            this.PbBack.Size = new System.Drawing.Size(50, 51);
+            this.PbBack.TabIndex = 16;
+            this.PbBack.TabStop = false;
+            this.PbBack.Click += new System.EventHandler(this.PbBack_Click);
+            // 
             // Adding
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Linen;
-            this.ClientSize = new System.Drawing.Size(869, 444);
+            this.ClientSize = new System.Drawing.Size(869, 567);
+            this.Controls.Add(this.PbBack);
             this.Controls.Add(this.BtnNewClient);
             this.Controls.Add(this.LblClient);
             this.Controls.Add(this.CmbClient);
@@ -308,6 +322,7 @@
             this.PnlHeader.PerformLayout();
             this.PnlBasketHeader.ResumeLayout(false);
             this.PnlBasketHeader.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PbBack)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -339,5 +354,6 @@
         private System.Windows.Forms.ComboBox CmbClient;
         private System.Windows.Forms.Label LblClient;
         private System.Windows.Forms.Button BtnNewClient;
+        private System.Windows.Forms.PictureBox PbBack;
     }
 }

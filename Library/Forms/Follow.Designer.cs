@@ -33,12 +33,14 @@
             this.BtnLate = new System.Windows.Forms.Button();
             this.BtnTomorrow = new System.Windows.Forms.Button();
             this.BtnToday = new System.Windows.Forms.Button();
-            this.DgvFollowings = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DgvFollowings = new System.Windows.Forms.DataGridView();
+            this.PbBack = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvFollowings)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PbBack)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -47,7 +49,7 @@
             this.panel1.Controls.Add(this.BtnLate);
             this.panel1.Controls.Add(this.BtnTomorrow);
             this.panel1.Controls.Add(this.BtnToday);
-            this.panel1.Location = new System.Drawing.Point(41, 42);
+            this.panel1.Location = new System.Drawing.Point(41, 79);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(698, 54);
             this.panel1.TabIndex = 0;
@@ -91,6 +93,24 @@
             this.BtnToday.UseVisualStyleBackColor = false;
             this.BtnToday.Click += new System.EventHandler(this.BtnToday_Click);
             // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Books Name";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Client Phone";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Client Name";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
             // DgvFollowings
             // 
             this.DgvFollowings.AllowUserToAddRows = false;
@@ -104,36 +124,30 @@
             this.Column2,
             this.Column3});
             this.DgvFollowings.GridColor = System.Drawing.Color.Black;
-            this.DgvFollowings.Location = new System.Drawing.Point(41, 119);
+            this.DgvFollowings.Location = new System.Drawing.Point(41, 148);
             this.DgvFollowings.Name = "DgvFollowings";
             this.DgvFollowings.ReadOnly = true;
-            this.DgvFollowings.Size = new System.Drawing.Size(698, 301);
+            this.DgvFollowings.Size = new System.Drawing.Size(698, 366);
             this.DgvFollowings.TabIndex = 1;
             // 
-            // Column1
+            // PbBack
             // 
-            this.Column1.HeaderText = "Client Name";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Client Phone";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Books Name";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
+            this.PbBack.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PbBack.BackgroundImage")));
+            this.PbBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PbBack.Location = new System.Drawing.Point(8, 8);
+            this.PbBack.Name = "PbBack";
+            this.PbBack.Size = new System.Drawing.Size(50, 51);
+            this.PbBack.TabIndex = 17;
+            this.PbBack.TabStop = false;
+            this.PbBack.Click += new System.EventHandler(this.PbBack_Click_1);
             // 
             // Follow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Linen;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 540);
+            this.Controls.Add(this.PbBack);
             this.Controls.Add(this.DgvFollowings);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -142,6 +156,7 @@
             this.Text = "Follow";
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DgvFollowings)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PbBack)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -152,9 +167,10 @@
         private System.Windows.Forms.Button BtnLate;
         private System.Windows.Forms.Button BtnTomorrow;
         private System.Windows.Forms.Button BtnToday;
-        private System.Windows.Forms.DataGridView DgvFollowings;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridView DgvFollowings;
+        private System.Windows.Forms.PictureBox PbBack;
     }
 }

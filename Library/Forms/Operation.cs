@@ -15,7 +15,7 @@ namespace Library.Forms
         private readonly BookService _bookService;
 
 
-        public Operation(Manager manager)
+        public Operation(Manager manager)//brings manager who logged in
         {
             InitializeComponent();
             this.Manager = manager;
@@ -23,6 +23,7 @@ namespace Library.Forms
             _managerService = new ManagerService();
             _clientService = new ClientService();
             _bookService = new BookService();
+            //block some features for managers who are not Admin
             if (!Manager.IsAdmin)
             {
                 BtnBooksCrud.Visible = false;
@@ -57,7 +58,7 @@ namespace Library.Forms
             }
             FillCounts();
         }
-        private void FillCounts()
+        private void FillCounts()//brings the statistic counts
         {
             int Count = 0;
             int ManagerCount = 0;
@@ -97,54 +98,56 @@ namespace Library.Forms
             LblBookCount.Text = BookCount.ToString();
             LblDate.Text = DateTime.Now.ToString("yyyy,MM.dd");
         }
-        private void BtnSearch_Click(object sender, EventArgs e)
+
+        private void BtnSearch_Click(object sender, EventArgs e)//open the 'Search' form
         {
             Search SearchForm = new Search();
             SearchForm.ShowDialog();
         }
 
-        private void BtnBooksCrud_Click(object sender, EventArgs e)
+        private void BtnBooksCrud_Click(object sender, EventArgs e)//open the 'BooksCrud' form
         {
             BookCrud bookCrud = new BookCrud();
             bookCrud.ShowDialog();
         }
 
-        private void BtnClientsCrud_Click(object sender, EventArgs e)
+        private void BtnClientsCrud_Click(object sender, EventArgs e)//open the 'ClientsCrud' form
         {
             ClientCrud clientCrud = new ClientCrud();
             clientCrud.ShowDialog();
         }
 
-        private void BtnFollow_Click(object sender, EventArgs e)
+        private void BtnFollow_Click(object sender, EventArgs e)//open the 'Follow' form
         {
             Follow follow = new Follow();
             follow.ShowDialog();
         }
-        private void BtnReport_Click(object sender, EventArgs e)
+
+        private void BtnReport_Click(object sender, EventArgs e)//open the 'Report' form
         {
             Reports reports = new Reports();
             reports.ShowDialog();
         }
 
-        private void BtnAddOrder_Click(object sender, EventArgs e)
+        private void BtnAddOrder_Click(object sender, EventArgs e)//open the 'Adding' form
         {
             Adding adding = new Adding(null);
             adding.ShowDialog();
         }
 
-        private void BtnReturn_Click(object sender, EventArgs e)
+        private void BtnReturn_Click(object sender, EventArgs e)//open the 'Returning' form
         {
             Returning returning = new Returning(null);
             returning.ShowDialog();
         }
 
-        private void BtnManagerCrud_Click_1(object sender, EventArgs e)
+        private void BtnManagerCrud_Click_1(object sender, EventArgs e)//open the 'ManagerCrud' form
         {
             ManagerCrud managerCrud = new ManagerCrud();
             managerCrud.ShowDialog();
         }
 
-        private void BtnLogout_Click(object sender, EventArgs e)
+        private void BtnLogout_Click(object sender, EventArgs e)//return the login form
         {
             this.Hide();
             Login login = new Login();
@@ -152,7 +155,7 @@ namespace Library.Forms
             login.FormClosed += (s, args) => this.Close();
         }
 
-        private void BtnClose_Click(object sender, EventArgs e)
+        private void BtnClose_Click(object sender, EventArgs e)//exit from the application
         {
             Application.Exit();
         }
